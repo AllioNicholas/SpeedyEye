@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */; };
+		01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB921BC6BBC0004C3695 /* StartViewController.swift */; };
+		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };
+		01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB971BC6BBC0004C3695 /* Assets.xcassets */; };
+		01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		01DAAB8D1BC6BBC0004C3695 /* FastEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01DAAB921BC6BBC0004C3695 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		01DAAB951BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01DAAB971BC6BBC0004C3695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01DAAB9A1BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		01DAAB9C1BC6BBC0004C3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01DAAB8A1BC6BBC0004C3695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01DAAB841BC6BBC0004C3695 = {
+			isa = PBXGroup;
+			children = (
+				01DAAB8F1BC6BBC0004C3695 /* FastEye */,
+				01DAAB8E1BC6BBC0004C3695 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01DAAB8E1BC6BBC0004C3695 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01DAAB8D1BC6BBC0004C3695 /* FastEye.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01DAAB8F1BC6BBC0004C3695 /* FastEye */ = {
+			isa = PBXGroup;
+			children = (
+				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
+				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
+				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
+				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
+				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
+				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
+				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
+			);
+			path = FastEye;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01DAAB8C1BC6BBC0004C3695 /* FastEye */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01DAAB9F1BC6BBC0004C3695 /* Build configuration list for PBXNativeTarget "FastEye" */;
+			buildPhases = (
+				01DAAB891BC6BBC0004C3695 /* Sources */,
+				01DAAB8A1BC6BBC0004C3695 /* Frameworks */,
+				01DAAB8B1BC6BBC0004C3695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastEye;
+			productName = FastEye;
+			productReference = 01DAAB8D1BC6BBC0004C3695 /* FastEye.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01DAAB851BC6BBC0004C3695 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Nicholas Allio";
+				TargetAttributes = {
+					01DAAB8C1BC6BBC0004C3695 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 4R644JN289;
+					};
+				};
+			};
+			buildConfigurationList = 01DAAB881BC6BBC0004C3695 /* Build configuration list for PBXProject "FastEye" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01DAAB841BC6BBC0004C3695;
+			productRefGroup = 01DAAB8E1BC6BBC0004C3695 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01DAAB8C1BC6BBC0004C3695 /* FastEye */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01DAAB8B1BC6BBC0004C3695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
+				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
+				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01DAAB891BC6BBC0004C3695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */,
+				015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */,
+				01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		01DAAB941BC6BBC0004C3695 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01DAAB951BC6BBC0004C3695 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01DAAB9A1BC6BBC0004C3695 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01DAAB9D1BC6BBC0004C3695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01DAAB9E1BC6BBC0004C3695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01DAABA01BC6BBC0004C3695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FastEye/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01DAABA11BC6BBC0004C3695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FastEye/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01DAAB881BC6BBC0004C3695 /* Build configuration list for PBXProject "FastEye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01DAAB9D1BC6BBC0004C3695 /* Debug */,
+				01DAAB9E1BC6BBC0004C3695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01DAAB9F1BC6BBC0004C3695 /* Build configuration list for PBXNativeTarget "FastEye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01DAABA01BC6BBC0004C3695 /* Debug */,
+				01DAABA11BC6BBC0004C3695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01DAAB851BC6BBC0004C3695 /* Project object */;
+}
