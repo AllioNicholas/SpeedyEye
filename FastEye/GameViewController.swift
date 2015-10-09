@@ -83,6 +83,7 @@ class GameViewController: UIViewController {
                 while takenRand.contains(Int(num)) {
                     num = rand() % 26
                 }
+                takenRand.append(Int(num))
                 display = Int(num)
                 if takenRand.count == 26 {
                     //end of the game
