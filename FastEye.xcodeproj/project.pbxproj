@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011F8CD11BC9218500C9A832 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 011F8CCF1BC9218500C9A832 /* correct.mp3 */; settings = {ASSET_TAGS = (); }; };
+		011F8CD21BC9218500C9A832 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 011F8CD01BC9218500C9A832 /* wrong.mp3 */; settings = {ASSET_TAGS = (); }; };
+		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; settings = {ASSET_TAGS = (); }; };
+		01350DFF1BC7FBBA00C0FEFD /* Candara Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01350DFE1BC7FBBA00C0FEFD /* Candara Bold.ttf */; settings = {ASSET_TAGS = (); }; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */; };
 		01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB921BC6BBC0004C3695 /* StartViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011F8CCF1BC9218500C9A832 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		011F8CD01BC9218500C9A832 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		01350DFE1BC7FBBA00C0FEFD /* Candara Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Candara Bold.ttf"; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		01DAAB8D1BC6BBC0004C3695 /* FastEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011F8CCE1BC9217B00C9A832 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01350DFE1BC7FBBA00C0FEFD /* Candara Bold.ttf */,
+				011F8CCF1BC9218500C9A832 /* correct.mp3 */,
+				011F8CD01BC9218500C9A832 /* wrong.mp3 */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		01DAAB841BC6BBC0004C3695 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +74,12 @@
 		01DAAB8F1BC6BBC0004C3695 /* FastEye */ = {
 			isa = PBXGroup;
 			children = (
+				011F8CCE1BC9217B00C9A832 /* Supporting Files */,
 				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
 				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
 				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
 				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
+				01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
 				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
 				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
@@ -125,9 +145,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011F8CD11BC9218500C9A832 /* correct.mp3 in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
 				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
+				011F8CD21BC9218500C9A832 /* wrong.mp3 in Resources */,
+				01350DFF1BC7FBBA00C0FEFD /* Candara Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */,
 				01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */,
 				015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */,
 				01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */,

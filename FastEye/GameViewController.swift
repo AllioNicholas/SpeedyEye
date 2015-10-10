@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -22,13 +23,26 @@ class GameViewController: UIViewController {
     var takenRand = [0]
     var timer: NSTimer = NSTimer()
     var elapsedTime = 0.0
+    var correctCount = 0
+    
+    var correctPlayer: AVAudioPlayer!
+    var wrongPlayer: AVAudioPlayer!
     
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var cronoLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var prog2: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var filePath = NSBundle.mainBundle().pathForResource("correct", ofType: "mp3")
+        
+        correctPlayer = try! AVAudioPlayer(contentsOfURL: NSURL.fileURLWithPath(filePath!))
+        
+        filePath = NSBundle.mainBundle().pathForResource("wrong", ofType: "mp3")
+        
+        wrongPlayer = try! AVAudioPlayer(contentsOfURL: NSURL.fileURLWithPath(filePath!))
         
     }
     
@@ -38,6 +52,8 @@ class GameViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        progressBar.progress = 0.0
+        prog2.progress = 0.0
         displayLabel.text = "\(display)"
         cronoLabel.text = "0.0"
         var taken = [0]
@@ -58,27 +74,41 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
+        correctPlayer.stop()
+        wrongPlayer.stop()
         if sender.titleLabel?.text == String(display) {
+            correctPlayer.play()
             switch gameMode! {
             case .UpCount:
+                correctCount++
                 display!++
                 if display == 26 {
                     //end of the game
                     timer.invalidate()
                     displayLabel.text = ""
+                    progressBar.setProgress(1.0, animated: true)
+                    prog2.setProgress(1.0, animated: true)
                 } else {
+                    progressBar.setProgress(Float(correctCount)/25.0, animated: true)
+                    prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display)"
                 }
             case .DownCount:
+                correctCount++
                 display!--
                 if display == 0 {
                     //end of the game
                     timer.invalidate()
                     displayLabel.text = ""
+                    progressBar.setProgress(1.0, animated: true)
+                    prog2.setProgress(1.0, animated: true)
                 } else {
+                    progressBar.setProgress(Float(correctCount)/25.0, animated: true)
+                    prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display)"
                 }
             case .Random:
+                correctCount++
                 var num = rand() % 26
                 while takenRand.contains(Int(num)) {
                     num = rand() % 26
@@ -89,11 +119,39 @@ class GameViewController: UIViewController {
                     //end of the game
                     timer.invalidate()
                     displayLabel.text = ""
+                    progressBar.setProgress(1.0, animated: true)
+                    prog2.setProgress(1.0, animated: true)
                 } else {
+                    progressBar.setProgress(Float(correctCount)/25.0, animated: true)
+                    prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display)"
                 }
             }
+        } else {
+            wrongPlayer.play()
+            correctCount = 0
+            progressBar.setProgress(0.0, animated: true)
+            prog2.setProgress(0.0, animated: true)
+            switch gameMode! {
+            case .UpCount:
+                display! = 1
+            case .DownCount:
+                display! = 25
+            case .Random:
+                takenRand = [0]
+                var num = rand() % 26
+                while takenRand.contains(Int(num)) {
+                    num = rand() % 26
+                }
+                takenRand.append(Int(num))
+                display = Int(num)
+            }
+            displayLabel.text = "\(display)"
         }
+    }
+    
+    @IBAction func backButton(sender: CustomButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
 }
