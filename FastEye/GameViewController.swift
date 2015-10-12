@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 import AVFoundation
+import Darwin
+import CoreGraphics
 
 class GameViewController: UIViewController {
     
@@ -24,10 +26,12 @@ class GameViewController: UIViewController {
     var timer: NSTimer = NSTimer()
     var elapsedTime = 0.0
     var correctCount = 0
+    var highscore = DBL_MAX
     
     var correctPlayer: AVAudioPlayer!
     var wrongPlayer: AVAudioPlayer!
-    
+   
+    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var cronoLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -66,6 +70,33 @@ class GameViewController: UIViewController {
             taken.append(lab)
             but.setTitle(String(lab), forState: UIControlState.Normal)
         }
+        
+        //load high score
+        switch gameMode! {
+        case .UpCount:
+            if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_up") {
+                highscore = Double(hs as! NSNumber)
+                highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+            } else {
+                highScoreLabel.text = "High score: 0.0"
+            }
+        case .DownCount:
+            if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_down") {
+                highscore = Double(hs as! NSNumber)
+                highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+            } else {
+                highScoreLabel.text = "High score: 0.0"
+            }
+        case .Random:
+            if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_rand") {
+                highscore = Double(hs as! NSNumber)
+                highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+            } else {
+                highScoreLabel.text = "High score: 0.0"
+            }
+        }
+        
+        
     }
     
     func updateTime() {
@@ -88,6 +119,7 @@ class GameViewController: UIViewController {
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
+                    gameEnded(.UpCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
@@ -102,6 +134,7 @@ class GameViewController: UIViewController {
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
+                    gameEnded(.DownCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
@@ -121,6 +154,7 @@ class GameViewController: UIViewController {
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
+                    gameEnded(.Random)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
@@ -148,6 +182,24 @@ class GameViewController: UIViewController {
             }
             displayLabel.text = "\(display)"
         }
+    }
+    
+    func gameEnded(inMode: GameMode) {
+        switch inMode {
+        case .UpCount:
+            if elapsedTime < highscore {
+                NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_up")
+            }
+        case .DownCount:
+            if elapsedTime < highscore {
+                NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_down")
+            }
+        case .Random:
+            if elapsedTime < highscore {
+                NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_rand")
+            }
+        }
+        
     }
     
     @IBAction func backButton(sender: CustomButton) {
