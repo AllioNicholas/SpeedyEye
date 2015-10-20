@@ -17,6 +17,8 @@ class CustomLabel: UILabel {
         self.clipsToBounds = true
         self.font = UIFont(name: "Candara", size: 20)
         self.numberOfLines = 2
+        self.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.shadowOffset = CGSize(width: 1.0, height: 1.0)
     }
     
 }

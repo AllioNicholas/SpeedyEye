@@ -32,7 +32,7 @@ class HighScoresViewController: UIViewController {
         
         if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_rand") {
             let highscore = Double(hs as! NSNumber)
-            downHS.text = NSString(format: "Random Count:\n%.2f", highscore) as String
+            randomHS.text = NSString(format: "Random Count:\n%.2f", highscore) as String
         } else {
             randomHS.text = "Random Count:\n-.-"
         }

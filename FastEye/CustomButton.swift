@@ -16,5 +16,7 @@ class CustomButton: UIButton {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
         self.titleLabel!.font = UIFont(name: "Candara", size: 20)
+        self.titleLabel!.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.titleLabel!.shadowOffset = CGSize(width: 1.0, height: 1.0)
     }
 }

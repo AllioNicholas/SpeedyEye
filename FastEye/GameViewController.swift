@@ -189,14 +189,20 @@ class GameViewController: UIViewController {
         case .UpCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_up")
+                //TODO: notify new highscore
+                highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
         case .DownCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_down")
+                //TODO: notify new highscore
+                highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
         case .Random:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_rand")
+                //TODO: notify new highscore
+                highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
         }
         

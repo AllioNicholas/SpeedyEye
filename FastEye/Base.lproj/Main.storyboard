@@ -35,8 +35,10 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="YVi-td-eRb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Down count mode">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -59,8 +61,10 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="aE8-ND-Uxs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Up count mode">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -83,8 +87,10 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="z4j-Qg-8q2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Random mode">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -107,13 +113,15 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="u29-1L-dNE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="High Scores">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="C7R-LR-3yo"/>
                                         <exclude reference="8ze-rb-3kc"/>
+                                        <exclude reference="C7R-LR-3yo"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -204,8 +212,10 @@
                                     <constraint firstAttribute="height" constant="35" id="5hk-yY-mQJ"/>
                                     <constraint firstAttribute="width" constant="108" id="Vms-MU-YIC"/>
                                 </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backToHome:" destination="dm0-ag-aNF" eventType="touchUpInside" id="yRu-Qg-D4A"/>
@@ -266,8 +276,10 @@
                                     <constraint firstAttribute="height" constant="50" id="TlL-Vw-Gb5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="Ee6-CH-5Jb"/>
@@ -282,8 +294,10 @@
                                     <constraint firstAttribute="height" constant="50" id="gYJ-Fs-VId"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="WAh-Ne-8QW"/>
@@ -298,8 +312,10 @@
                                     <constraint firstAttribute="width" constant="50" id="jhY-qX-2Fk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="lst-aI-izv"/>
@@ -314,8 +330,10 @@
                                     <constraint firstAttribute="height" constant="50" id="yph-Ob-mwK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="wZB-r2-4Wg"/>
@@ -330,8 +348,10 @@
                                     <constraint firstAttribute="height" constant="50" id="eXu-24-M7h"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="m2d-u3-cpW"/>
@@ -346,8 +366,10 @@
                                     <constraint firstAttribute="width" constant="50" id="NHB-bs-eZD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="EPB-3p-dkL"/>
@@ -362,8 +384,10 @@
                                     <constraint firstAttribute="width" constant="50" id="c62-sK-sZP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="T1n-jf-IL8"/>
@@ -378,8 +402,10 @@
                                     <constraint firstAttribute="width" constant="50" id="tdY-H3-Srg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="Dzy-FM-mw0"/>
@@ -394,8 +420,10 @@
                                     <constraint firstAttribute="height" constant="50" id="gEJ-ak-Fvp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="hfb-Cs-8xD"/>
@@ -410,8 +438,10 @@
                                     <constraint firstAttribute="height" constant="50" id="dlX-5y-ZV7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="fY8-zO-3Aj"/>
@@ -426,8 +456,10 @@
                                     <constraint firstAttribute="width" constant="50" id="8Z1-AH-hxP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="fbM-tm-VZd"/>
@@ -442,8 +474,10 @@
                                     <constraint firstAttribute="width" constant="50" id="egJ-UK-JCG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="dBy-EQ-jSo"/>
@@ -458,8 +492,10 @@
                                     <constraint firstAttribute="width" constant="50" id="ob9-Oj-rcC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="hcn-A0-OOU"/>
@@ -474,8 +510,10 @@
                                     <constraint firstAttribute="width" constant="50" id="ony-8f-grN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="ccM-5l-mKy"/>
@@ -490,8 +528,10 @@
                                     <constraint firstAttribute="width" constant="50" id="TL5-gC-1Oe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="uGD-zD-jcF"/>
@@ -506,8 +546,10 @@
                                     <constraint firstAttribute="width" constant="50" id="uoC-oh-Nfh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="5kg-mS-Gvj"/>
@@ -522,8 +564,10 @@
                                     <constraint firstAttribute="width" constant="50" id="jDK-0o-KDc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="OUe-YH-cww"/>
@@ -538,8 +582,10 @@
                                     <constraint firstAttribute="width" constant="50" id="qwZ-Sa-ho0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="TqH-fo-kJI"/>
@@ -554,8 +600,10 @@
                                     <constraint firstAttribute="height" constant="50" id="PkV-jG-5ad"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="uKY-Hf-SZq"/>
@@ -570,8 +618,10 @@
                                     <constraint firstAttribute="height" constant="50" id="aHU-r3-DLH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="WQ3-WF-KdY"/>
@@ -586,8 +636,10 @@
                                     <constraint firstAttribute="height" constant="50" id="P3H-su-oSa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="P1T-jh-3xF"/>
@@ -602,8 +654,10 @@
                                     <constraint firstAttribute="width" constant="50" id="z0j-8c-hqW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="CGx-xD-czK"/>
@@ -618,8 +672,10 @@
                                     <constraint firstAttribute="width" constant="50" id="waB-bC-RSU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="hxT-8o-FNM"/>
@@ -634,8 +690,10 @@
                                     <constraint firstAttribute="width" constant="50" id="NRx-TJ-pyU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="bYS-g9-7ki"/>
@@ -650,26 +708,32 @@
                                     <constraint firstAttribute="width" constant="50" id="psR-Qb-CAD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="oS5-Qm-fXu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-wH-U0G">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-wH-U0G">
                                 <rect key="frame" x="271" y="124" width="58" height="31"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-2Q-Q9p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-2Q-Q9p">
                                 <rect key="frame" x="271" y="497" width="58" height="31"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-Tc-qtw">
                                 <rect key="frame" x="159" y="170" width="282" height="2"/>
@@ -693,8 +757,10 @@
                                 <rect key="frame" x="159" y="86" width="108" height="35"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="vSn-bZ-hyP"/>
