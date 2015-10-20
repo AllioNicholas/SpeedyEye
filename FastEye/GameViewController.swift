@@ -91,6 +91,7 @@ class GameViewController: UIViewController {
             if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_rand") {
                 highscore = Double(hs as! NSNumber)
                 highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+                takenRand.append(display)
             } else {
                 highScoreLabel.text = "High score: 0.0"
             }
