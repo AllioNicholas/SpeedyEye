@@ -190,23 +190,32 @@ class GameViewController: UIViewController {
         case .UpCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_up")
-                //TODO: notify new highscore
+                displayHighScore(elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
+            displayHighScore(elapsedTime, inMode: inMode)
         case .DownCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_down")
-                //TODO: notify new highscore
+                displayHighScore(elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
         case .Random:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_rand")
-                //TODO: notify new highscore
+                displayHighScore(elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
         }
         
+    }
+    
+    func displayHighScore(withTime: Double, inMode: GameMode) {
+        let newHS = UIAlertController(title: "New Highscore in \(inMode) mode!", message: NSString(format: "New best time of: %.2f", withTime) as String, preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        newHS.addAction(OKAction)
+        self.presentViewController(newHS, animated: true, completion: nil)
     }
     
     @IBAction func backButton(sender: CustomButton) {
