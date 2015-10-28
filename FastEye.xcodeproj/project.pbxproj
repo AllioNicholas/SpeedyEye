@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		011F8CD11BC9218500C9A832 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 011F8CCF1BC9218500C9A832 /* correct.mp3 */; settings = {ASSET_TAGS = (); }; };
-		011F8CD21BC9218500C9A832 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 011F8CD01BC9218500C9A832 /* wrong.mp3 */; settings = {ASSET_TAGS = (); }; };
 		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; settings = {ASSET_TAGS = (); }; };
-		01350DFF1BC7FBBA00C0FEFD /* Candara Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01350DFE1BC7FBBA00C0FEFD /* Candara Bold.ttf */; settings = {ASSET_TAGS = (); }; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		01A5CFDE1BCC59D2002ABBF0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */; settings = {ASSET_TAGS = (); }; };
@@ -22,10 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		011F8CCF1BC9218500C9A832 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
-		011F8CD01BC9218500C9A832 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		01350DFE1BC7FBBA00C0FEFD /* Candara Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Candara Bold.ttf"; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 		01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -49,16 +43,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		011F8CCE1BC9217B00C9A832 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				01350DFE1BC7FBBA00C0FEFD /* Candara Bold.ttf */,
-				011F8CCF1BC9218500C9A832 /* correct.mp3 */,
-				011F8CD01BC9218500C9A832 /* wrong.mp3 */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		01DAAB841BC6BBC0004C3695 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +62,6 @@
 		01DAAB8F1BC6BBC0004C3695 /* FastEye */ = {
 			isa = PBXGroup;
 			children = (
-				011F8CCE1BC9217B00C9A832 /* Supporting Files */,
 				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
 				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
 				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
@@ -151,12 +134,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				011F8CD11BC9218500C9A832 /* correct.mp3 in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
 				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
-				011F8CD21BC9218500C9A832 /* wrong.mp3 in Resources */,
-				01350DFF1BC7FBBA00C0FEFD /* Candara Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
