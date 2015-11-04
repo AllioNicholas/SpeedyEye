@@ -193,7 +193,6 @@ class GameViewController: UIViewController {
                 displayHighScore(elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             }
-            displayHighScore(elapsedTime, inMode: inMode)
         case .DownCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_down")
