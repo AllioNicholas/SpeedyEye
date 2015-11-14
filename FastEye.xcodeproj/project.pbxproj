@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; settings = {ASSET_TAGS = (); }; };
-		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		01A5CFDE1BCC59D2002ABBF0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */; settings = {ASSET_TAGS = (); }; };
+		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; };
+		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
+		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
+		01A5CFDE1BCC59D2002ABBF0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */; };
 		01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */; };
 		01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB921BC6BBC0004C3695 /* StartViewController.swift */; };
 		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };

@@ -21,4 +21,14 @@ class CustomLabel: UILabel {
         self.shadowOffset = CGSize(width: 1.0, height: 1.0)
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
+        self.font = UIFont(name: "Candara", size: 20)
+        self.numberOfLines = 2
+        self.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.shadowOffset = CGSize(width: 1.0, height: 1.0)
+    }
+    
 }

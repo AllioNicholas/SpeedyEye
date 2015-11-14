@@ -190,30 +190,62 @@ class GameViewController: UIViewController {
         case .UpCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_up")
-                displayHighScore(elapsedTime, inMode: inMode)
+                displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
+            } else {
+                displayScore(false, withTime: elapsedTime, inMode: inMode)
             }
         case .DownCount:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_down")
-                displayHighScore(elapsedTime, inMode: inMode)
+                displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
+            } else {
+                displayScore(false, withTime: elapsedTime, inMode: inMode)
             }
         case .Random:
             if elapsedTime < highscore {
                 NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_rand")
-                displayHighScore(elapsedTime, inMode: inMode)
+                displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
+            } else {
+                displayScore(false, withTime: elapsedTime, inMode: inMode)
             }
         }
         
     }
     
-    func displayHighScore(withTime: Double, inMode: GameMode) {
-        let newHS = UIAlertController(title: "New Highscore in \(inMode) mode!", message: NSString(format: "New best time of: %.2f", withTime) as String, preferredStyle: .Alert)
+    func displayScore(isHighScore: Bool, withTime: Double, inMode: GameMode) {
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = self.view.bounds
+            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+                        
+            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        } 
+        else {
+            self.view.backgroundColor = UIColor.blackColor()
+        }
         
-        let OKAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        var newHS: UIAlertController
+        
+        if isHighScore {
+            newHS = UIAlertController(title: "New Highscore in \(inMode) mode!", message: NSString(format: "New best time of: %.2f seconds", withTime) as String, preferredStyle: .Alert)
+        } else {
+            newHS = UIAlertController(title: "Your score in \(inMode) mode", message: NSString(format: "With time of: %.2f seconds", withTime) as String, preferredStyle: .Alert)
+        }
+        
+        let OKAction = UIAlertAction(title: "Ok", style: .Default, handler: { (UIAlertAction) -> Void in
+            self.view.subviews.last!.removeFromSuperview()
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        })
         newHS.addAction(OKAction)
+        
+        newHS.view.backgroundColor = UIColor.clearColor()
+        
         self.presentViewController(newHS, animated: true, completion: nil)
     }
     
