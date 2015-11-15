@@ -11,6 +11,7 @@ import Foundation
 import AVFoundation
 import Darwin
 import CoreGraphics
+import AudioToolbox
 
 class GameViewController: UIViewController {
     
@@ -28,8 +29,8 @@ class GameViewController: UIViewController {
     var correctCount = 0
     var highscore = DBL_MAX
     
-    var correctPlayer: AVAudioPlayer!
-    var wrongPlayer: AVAudioPlayer!
+    var correctSound : SystemSoundID = 0
+    var wrongSound : SystemSoundID = 1
    
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
@@ -40,13 +41,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var filePath = NSBundle.mainBundle().pathForResource("correct", ofType: "mp3")
+        var filePath = NSBundle.mainBundle().pathForResource("Correct", ofType: "wav")
+        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &correctSound)
         
-        correctPlayer = try! AVAudioPlayer(contentsOfURL: NSURL.fileURLWithPath(filePath!))
-        
-        filePath = NSBundle.mainBundle().pathForResource("wrong", ofType: "mp3")
-        
-        wrongPlayer = try! AVAudioPlayer(contentsOfURL: NSURL.fileURLWithPath(filePath!))
+        filePath = NSBundle.mainBundle().pathForResource("Fail", ofType: "wav")
+        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &wrongSound)
         
     }
     
@@ -106,10 +105,8 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
-        correctPlayer.stop()
-        wrongPlayer.stop()
         if sender.titleLabel?.text == String(display) {
-            correctPlayer.play()
+            AudioServicesPlaySystemSound(correctSound)
             switch gameMode! {
             case .UpCount:
                 correctCount++
@@ -163,7 +160,7 @@ class GameViewController: UIViewController {
                 }
             }
         } else {
-            wrongPlayer.play()
+            AudioServicesPlaySystemSound(wrongSound)
             correctCount = 0
             progressBar.setProgress(0.0, animated: true)
             prog2.setProgress(0.0, animated: true)
