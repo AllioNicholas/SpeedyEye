@@ -9,6 +9,40 @@
             <string>Candara-Bold</string>
             <string>Candara-Bold</string>
             <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -34,7 +68,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Hcv-MN-QEH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="YVi-td-eRb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Down count mode">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,7 +94,7 @@
                                     <constraint firstAttribute="height" constant="30" id="S4F-zF-5CN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="aE8-ND-Uxs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Up count mode">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,7 +120,7 @@
                                     <constraint firstAttribute="width" constant="150" id="RUh-M4-LGk"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="z4j-Qg-8q2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Random mode">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -112,7 +146,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="IHG-oe-L9f"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="u29-1L-dNE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="High Scores">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -176,9 +210,11 @@
                                     <constraint firstAttribute="height" constant="60" id="AC4-ax-V2Y"/>
                                     <constraint firstAttribute="width" constant="200" id="dlw-ne-dpg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWj-TG-UGs" customClass="CustomLabel" customModule="FastEye" customModuleProvider="target">
                                 <rect key="frame" x="200" y="270" width="200" height="60"/>
@@ -188,9 +224,11 @@
                                     <constraint firstAttribute="width" constant="200" id="ASO-U3-oLi"/>
                                     <constraint firstAttribute="height" constant="60" id="nlr-Y4-JjQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-cO-dzk" customClass="CustomLabel" customModule="FastEye" customModuleProvider="target">
                                 <rect key="frame" x="200" y="338" width="200" height="60"/>
@@ -200,9 +238,11 @@
                                     <constraint firstAttribute="width" constant="200" id="YBd-0s-Ild"/>
                                     <constraint firstAttribute="height" constant="60" id="o9r-ip-MsF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-R2-aR0" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
                                 <rect key="frame" x="472" y="28" width="108" height="35"/>
@@ -212,6 +252,7 @@
                                     <constraint firstAttribute="height" constant="35" id="5hk-yY-mQJ"/>
                                     <constraint firstAttribute="width" constant="108" id="Vms-MU-YIC"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -275,7 +316,7 @@
                                     <constraint firstAttribute="width" constant="50" id="8pV-5I-Iau"/>
                                     <constraint firstAttribute="height" constant="50" id="TlL-Vw-Gb5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -293,7 +334,7 @@
                                     <constraint firstAttribute="width" constant="50" id="cEN-f8-CaV"/>
                                     <constraint firstAttribute="height" constant="50" id="gYJ-Fs-VId"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,7 +352,7 @@
                                     <constraint firstAttribute="height" constant="50" id="cW0-wy-CdI"/>
                                     <constraint firstAttribute="width" constant="50" id="jhY-qX-2Fk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -329,7 +370,7 @@
                                     <constraint firstAttribute="width" constant="50" id="c92-C0-Wci"/>
                                     <constraint firstAttribute="height" constant="50" id="yph-Ob-mwK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,7 +388,7 @@
                                     <constraint firstAttribute="width" constant="50" id="Ho9-mJ-4Cw"/>
                                     <constraint firstAttribute="height" constant="50" id="eXu-24-M7h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -365,7 +406,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Ebp-wh-Kf4"/>
                                     <constraint firstAttribute="width" constant="50" id="NHB-bs-eZD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -383,7 +424,7 @@
                                     <constraint firstAttribute="height" constant="50" id="ZU6-Mp-WBH"/>
                                     <constraint firstAttribute="width" constant="50" id="c62-sK-sZP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,7 +442,7 @@
                                     <constraint firstAttribute="height" constant="50" id="bLP-mf-X4k"/>
                                     <constraint firstAttribute="width" constant="50" id="tdY-H3-Srg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -419,7 +460,7 @@
                                     <constraint firstAttribute="width" constant="50" id="0tu-He-XvC"/>
                                     <constraint firstAttribute="height" constant="50" id="gEJ-ak-Fvp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -437,7 +478,7 @@
                                     <constraint firstAttribute="width" constant="50" id="RkU-yP-gnd"/>
                                     <constraint firstAttribute="height" constant="50" id="dlX-5y-ZV7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -455,7 +496,7 @@
                                     <constraint firstAttribute="height" constant="50" id="4aY-cN-e72"/>
                                     <constraint firstAttribute="width" constant="50" id="8Z1-AH-hxP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -473,7 +514,7 @@
                                     <constraint firstAttribute="height" constant="50" id="BaN-d2-pe7"/>
                                     <constraint firstAttribute="width" constant="50" id="egJ-UK-JCG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -491,7 +532,7 @@
                                     <constraint firstAttribute="height" constant="50" id="o6x-nm-RHa"/>
                                     <constraint firstAttribute="width" constant="50" id="ob9-Oj-rcC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -509,7 +550,7 @@
                                     <constraint firstAttribute="height" constant="50" id="UY1-5W-FPV"/>
                                     <constraint firstAttribute="width" constant="50" id="ony-8f-grN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -527,7 +568,7 @@
                                     <constraint firstAttribute="height" constant="50" id="QVn-Nv-Mbh"/>
                                     <constraint firstAttribute="width" constant="50" id="TL5-gC-1Oe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -545,7 +586,7 @@
                                     <constraint firstAttribute="height" constant="50" id="lZR-OO-zUl"/>
                                     <constraint firstAttribute="width" constant="50" id="uoC-oh-Nfh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -563,7 +604,7 @@
                                     <constraint firstAttribute="height" constant="50" id="P9b-YK-vEM"/>
                                     <constraint firstAttribute="width" constant="50" id="jDK-0o-KDc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -581,7 +622,7 @@
                                     <constraint firstAttribute="height" constant="50" id="f8o-5e-1iZ"/>
                                     <constraint firstAttribute="width" constant="50" id="qwZ-Sa-ho0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -599,7 +640,7 @@
                                     <constraint firstAttribute="width" constant="50" id="1lZ-Um-zZH"/>
                                     <constraint firstAttribute="height" constant="50" id="PkV-jG-5ad"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -617,7 +658,7 @@
                                     <constraint firstAttribute="width" constant="50" id="SAu-Fa-J97"/>
                                     <constraint firstAttribute="height" constant="50" id="aHU-r3-DLH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -635,7 +676,7 @@
                                     <constraint firstAttribute="width" constant="50" id="GY2-FN-z8W"/>
                                     <constraint firstAttribute="height" constant="50" id="P3H-su-oSa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -653,7 +694,7 @@
                                     <constraint firstAttribute="height" constant="50" id="0Jk-gs-t7w"/>
                                     <constraint firstAttribute="width" constant="50" id="z0j-8c-hqW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -671,7 +712,7 @@
                                     <constraint firstAttribute="height" constant="50" id="wCj-nj-mgV"/>
                                     <constraint firstAttribute="width" constant="50" id="waB-bC-RSU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -689,7 +730,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Df1-pv-xz0"/>
                                     <constraint firstAttribute="width" constant="50" id="NRx-TJ-pyU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -707,7 +748,7 @@
                                     <constraint firstAttribute="height" constant="50" id="WUW-mF-iB8"/>
                                     <constraint firstAttribute="width" constant="50" id="psR-Qb-CAD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -757,6 +798,7 @@
                                 <rect key="frame" x="159" y="86" width="108" height="35"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -779,6 +821,8 @@
                                 <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
                         <animations/>
