@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Candara Bold.ttf">
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+            <string>Candara-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOr-f5-piN">
+                    <rect key="frame" x="253" y="229" width="94" height="50"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="40"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09p-tI-m0A">
+                    <rect key="frame" x="276" y="287" width="47.5" height="25.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-GG-y3w">
+                    <rect key="frame" x="277" y="320" width="48" height="26"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95c-Yb-6wH" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                    <rect key="frame" x="200" y="354" width="200" height="60"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="DIA-4d-1XU"/>
+                        <constraint firstAttribute="width" constant="200" id="gKf-Ob-aRN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <animations/>
+            <constraints>
+                <constraint firstItem="P2b-GG-y3w" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8aK-Wh-okh"/>
+                <constraint firstItem="rOr-f5-piN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ep1-za-0F3"/>
+                <constraint firstItem="09p-tI-m0A" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="G0P-zi-Sji"/>
+                <constraint firstItem="95c-Yb-6wH" firstAttribute="top" secondItem="P2b-GG-y3w" secondAttribute="bottom" constant="8" id="GZY-p2-yOJ"/>
+                <constraint firstItem="09p-tI-m0A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KWj-LY-BQH"/>
+                <constraint firstItem="09p-tI-m0A" firstAttribute="top" secondItem="rOr-f5-piN" secondAttribute="bottom" constant="8" id="L4Y-vV-RFd"/>
+                <constraint firstItem="09p-tI-m0A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WBM-Ae-p2u"/>
+                <constraint firstItem="95c-Yb-6wH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="b68-SL-Zb7"/>
+                <constraint firstItem="P2b-GG-y3w" firstAttribute="top" secondItem="09p-tI-m0A" secondAttribute="bottom" constant="8" id="zdl-K3-85d"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

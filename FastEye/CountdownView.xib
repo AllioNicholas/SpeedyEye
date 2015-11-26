@@ -21,6 +21,8 @@
                     <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="60"/>
                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
                 </label>
             </subviews>
             <animations/>

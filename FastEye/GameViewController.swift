@@ -252,40 +252,50 @@ class GameViewController: UIViewController {
     }
     
     func displayScore(isHighScore: Bool, withTime: Double, inMode: GameMode) {
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
-            
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
-            blurEffectView.frame = self.view.bounds
-            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-                        
-            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-        } 
-        else {
-            self.view.backgroundColor = UIColor.blackColor()
-        }
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        //always fill the view
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-        var newHS: UIAlertController
+        let array = NSBundle.mainBundle().loadNibNamed("EndGameView", owner: self, options: nil) as NSArray
+        let endView = array.objectAtIndex(0) as! UIView
+        
+        //Customization endView according to the result and the game mode
+        //Main label (tag 10)
+        let mainLabel = endView.viewWithTag(10) as! UILabel
+        //Game mode label (tag 11)
+        let modeLabel = endView.viewWithTag(11) as! UILabel
+        modeLabel.text = "Mode \(inMode)"
+        //Time label (tag 12)
+        let timeLabel = endView.viewWithTag(12) as! UILabel
         
         if isHighScore {
-            newHS = UIAlertController(title: "New Highscore in \(inMode) mode!", message: NSString(format: "New best time of: %.2f seconds", withTime) as String, preferredStyle: .Alert)
+            mainLabel.text = "New Highscore!"
+            timeLabel.text = NSString(format: "New best time: %.2f s", withTime) as String
         } else {
-            newHS = UIAlertController(title: "Your score in \(inMode) mode", message: NSString(format: "With time of: %.2f seconds", withTime) as String, preferredStyle: .Alert)
+            mainLabel.text = "Too slow!"
+            timeLabel.text = NSString(format: "Your time: %.2f s", withTime) as String
         }
+    
+        //Back button (tag 13)
+        let backButton = endView.viewWithTag(13) as! CustomButton
+        backButton.addTarget(self, action: Selector("dismissEndView"), forControlEvents: UIControlEvents.TouchUpInside)
         
-        let OKAction = UIAlertAction(title: "Ok", style: .Default, handler: { (UIAlertAction) -> Void in
-            self.view.subviews.last!.removeFromSuperview()
-            self.navigationController?.popToRootViewControllerAnimated(true)
-        })
-        newHS.addAction(OKAction)
         
-        newHS.view.backgroundColor = UIColor.clearColor()
+        endView.frame = self.view.bounds
         
-        self.presentViewController(newHS, animated: true, completion: nil)
+        blurEffectView.addSubview(endView)
+                        
+        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        
     }
     
     @IBAction func backButton(sender: CustomButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func dismissEndView() {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
