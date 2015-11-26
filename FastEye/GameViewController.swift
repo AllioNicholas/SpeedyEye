@@ -24,8 +24,11 @@ class GameViewController: UIViewController {
     var display: Int!
     var gameMode: GameMode!
     var takenRand = [0]
-    var timer: NSTimer = NSTimer()
+    var gameTimer: NSTimer = NSTimer()
+    var countDownTimer: NSTimer = NSTimer()
     var elapsedTime = 0.0
+    var countDown = 3
+    var countdownLabel: UILabel!
     var correctCount = 0
     var highscore = DBL_MAX
     
@@ -50,11 +53,31 @@ class GameViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        //Start chrono with 0.01 precision
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
+        //Prepare countdown before game
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        //always fill the view
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        let array = NSBundle.mainBundle().loadNibNamed("CountdownView", owner: self, options: nil) as NSArray
+        let cdView = array.objectAtIndex(0) as! UIView
+        countdownLabel = cdView.viewWithTag(1) as! UILabel
+        countdownLabel.text = "3"
+        
+        cdView.frame = self.view.bounds
+
+        blurEffectView.addSubview(cdView)
+        
+        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        
+        countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateCountdownAndStart"), userInfo: nil, repeats: true)
+        
+        //Setup game
         progressBar.progress = 0.0
         prog2.progress = 0.0
         displayLabel.text = "\(display)"
@@ -104,6 +127,22 @@ class GameViewController: UIViewController {
         cronoLabel.text = NSString(format: "%.2f", elapsedTime) as String
     }
     
+    func updateCountdownAndStart() {
+        countDown--
+        if countDown == 0 {
+            countdownLabel.text = "GO!"
+        } else {
+            countdownLabel.text = String(countDown)
+        }
+        if countDown == -1 {
+            countDownTimer.invalidate()
+            //Start chrono with 0.01 precision
+            gameTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+            self.view.subviews.last!.removeFromSuperview()
+        }
+        
+    }
+    
     @IBAction func buttonPressed(sender: UIButton) {
         if sender.titleLabel?.text == String(display) {
             AudioServicesPlaySystemSound(correctSound)
@@ -113,7 +152,7 @@ class GameViewController: UIViewController {
                 display!++
                 if display == 26 {
                     //end of the game
-                    timer.invalidate()
+                    gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
@@ -128,7 +167,7 @@ class GameViewController: UIViewController {
                 display!--
                 if display == 0 {
                     //end of the game
-                    timer.invalidate()
+                    gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
@@ -148,7 +187,7 @@ class GameViewController: UIViewController {
                 display = Int(num)
                 if takenRand.count == 26 {
                     //end of the game
-                    timer.invalidate()
+                    gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)

@@ -10,6 +10,7 @@
 		01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0E1BF93C1C00CF5B32 /* Correct.wav */; };
 		01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0F1BF93C1C00CF5B32 /* Fail.wav */; };
 		010EB8991C046AC0007D49E0 /* Candara Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010EB8981C046AC0007D49E0 /* Candara Bold.ttf */; };
+		010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89A1C0728C1007D49E0 /* CountdownView.xib */; };
 		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
@@ -25,6 +26,7 @@
 		01025F0E1BF93C1C00CF5B32 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
 		01025F0F1BF93C1C00CF5B32 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fail.wav; sourceTree = "<group>"; };
 		010EB8981C046AC0007D49E0 /* Candara Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Candara Bold.ttf"; sourceTree = "<group>"; };
+		010EB89A1C0728C1007D49E0 /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 		01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		010EB89C1C072EDE007D49E0 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				010EB89A1C0728C1007D49E0 /* CountdownView.xib */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		01DAAB841BC6BBC0004C3695 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		01DAAB8F1BC6BBC0004C3695 /* FastEye */ = {
 			isa = PBXGroup;
 			children = (
+				010EB89C1C072EDE007D49E0 /* Custom Views */,
 				01025F071BF9344500CF5B32 /* Supporting files */,
 				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
 				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
@@ -151,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */,
 				01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
 				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
