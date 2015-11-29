@@ -85,9 +85,9 @@ class GameViewController: UIViewController {
         var taken = [0]
         for idx in 1...25 {
             let but = self.view.viewWithTag(idx) as! UIButton
-            var lab = Int(rand() % 26)
+            var lab = Int(arc4random_uniform(26))
             while taken.contains(lab) {
-                lab = Int(rand() % 26)
+                lab = Int(arc4random_uniform(26))
             }
             taken.append(lab)
             but.setTitle(String(lab), forState: UIControlState.Normal)
