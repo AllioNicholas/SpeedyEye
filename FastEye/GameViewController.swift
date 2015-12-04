@@ -271,7 +271,7 @@ class GameViewController: UIViewController {
         let timeLabel = endView.viewWithTag(12) as! UILabel
         
         if isHighScore {
-            mainLabel.text = "New Highscore!"
+            mainLabel.text = "New Record!"
             timeLabel.text = NSString(format: "New best time: %.2f s", withTime) as String
         } else {
             mainLabel.text = "Too slow!"
