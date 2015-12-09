@@ -38,7 +38,7 @@ class HighScoresViewController: UIViewController {
         }
     }
 
-    @IBAction func backToHome(sender: CustomButton) {
+    @IBAction func backToHome(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

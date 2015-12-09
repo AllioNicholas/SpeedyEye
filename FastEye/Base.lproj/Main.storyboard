@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gi4-7F-ifd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gi4-7F-ifd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Candara Bold.ttf">
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
-            <string>Candara-Bold</string>
+        <mutableArray key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
+            <string>Ubuntu-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -58,21 +58,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g88-zR-UfG" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g88-zR-UfG">
                                 <rect key="frame" x="200" y="236" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.4823529411764706" green="0.66274509803921566" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="C1t-Ss-5u3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="F89-DV-R4s"/>
                                     <constraint firstAttribute="height" constant="30" id="Hcv-MN-QEH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="YVi-td-eRb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Down count mode">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -84,21 +82,19 @@
                                     <segue destination="zn8-sO-Ez2" kind="show" identifier="down" id="dWk-sf-2ZP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-tK-Ugc" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-tK-Ugc">
                                 <rect key="frame" x="200" y="168" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.32549019607843138" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="I3v-Re-KEl"/>
                                     <constraint firstAttribute="width" constant="150" id="I5s-5j-6ZJ"/>
                                     <constraint firstAttribute="height" constant="30" id="S4F-zF-5CN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="aE8-ND-Uxs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Up count mode">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -110,21 +106,19 @@
                                     <segue destination="zn8-sO-Ez2" kind="show" identifier="up" id="1oc-v9-ykf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d1-Pv-H55" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d1-Pv-H55">
                                 <rect key="frame" x="200" y="304" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.45882352941176469" green="0.85098039215686272" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Q12-Xs-BqG"/>
                                     <constraint firstAttribute="height" constant="30" id="RQz-9i-NV1"/>
                                     <constraint firstAttribute="width" constant="150" id="RUh-M4-LGk"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="z4j-Qg-8q2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Random mode">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -136,21 +130,19 @@
                                     <segue destination="zn8-sO-Ez2" kind="show" identifier="random" id="mPL-XI-sdF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-Za-fgd" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-Za-fgd">
                                 <rect key="frame" x="200" y="372" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.84313725490196079" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="8ze-rb-3kc"/>
                                     <constraint firstAttribute="height" constant="30" id="C7R-LR-3yo"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="IHG-oe-L9f"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="u29-1L-dNE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="High Scores">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -163,8 +155,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="g88-zR-UfG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-34" id="0mf-xh-gTA"/>
                             <constraint firstItem="QBs-tK-Ugc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2YS-Ig-9oo"/>
@@ -202,69 +193,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-bI-1ds" customClass="CustomLabel" customModule="FastEye" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-bI-1ds">
                                 <rect key="frame" x="200" y="202" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.32549019607843138" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AC4-ax-V2Y"/>
                                     <constraint firstAttribute="width" constant="200" id="dlw-ne-dpg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWj-TG-UGs" customClass="CustomLabel" customModule="FastEye" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWj-TG-UGs">
                                 <rect key="frame" x="200" y="270" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.4823529411764706" green="0.66274509803921566" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ASO-U3-oLi"/>
                                     <constraint firstAttribute="height" constant="60" id="nlr-Y4-JjQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-cO-dzk" customClass="CustomLabel" customModule="FastEye" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-cO-dzk">
                                 <rect key="frame" x="200" y="338" width="200" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.45882352941176469" green="0.85098039215686272" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="YBd-0s-Ild"/>
                                     <constraint firstAttribute="height" constant="60" id="o9r-ip-MsF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-R2-aR0" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-R2-aR0">
                                 <rect key="frame" x="472" y="28" width="108" height="35"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="5hk-yY-mQJ"/>
                                     <constraint firstAttribute="width" constant="108" id="Vms-MU-YIC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Done">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backToHome:" destination="dm0-ag-aNF" eventType="touchUpInside" id="yRu-Qg-D4A"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VEz-bI-1ds" firstAttribute="top" secondItem="1ey-fp-oIn" secondAttribute="bottom" constant="240" id="A5z-sl-gbK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jAZ-R2-aR0" secondAttribute="trailing" id="LhS-Sn-aKj"/>
@@ -308,477 +290,415 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-JO-Wxn" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-JO-Wxn">
                                 <rect key="frame" x="159" y="187" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="8pV-5I-Iau"/>
                                     <constraint firstAttribute="height" constant="50" id="TlL-Vw-Gb5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="Ee6-CH-5Jb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXn-6S-g39" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXn-6S-g39">
                                 <rect key="frame" x="275" y="187" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="cEN-f8-CaV"/>
                                     <constraint firstAttribute="height" constant="50" id="gYJ-Fs-VId"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="WAh-Ne-8QW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-s4-2Td" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-s4-2Td">
                                 <rect key="frame" x="217" y="187" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cW0-wy-CdI"/>
                                     <constraint firstAttribute="width" constant="50" id="jhY-qX-2Fk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="lst-aI-izv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-2n-KRb" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-2n-KRb">
                                 <rect key="frame" x="333" y="187" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="c92-C0-Wci"/>
                                     <constraint firstAttribute="height" constant="50" id="yph-Ob-mwK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="wZB-r2-4Wg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWj-WL-9O8" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWj-WL-9O8">
                                 <rect key="frame" x="391" y="187" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Ho9-mJ-4Cw"/>
                                     <constraint firstAttribute="height" constant="50" id="eXu-24-M7h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="m2d-u3-cpW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSu-yr-7sc" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSu-yr-7sc">
                                 <rect key="frame" x="275" y="245" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ebp-wh-Kf4"/>
                                     <constraint firstAttribute="width" constant="50" id="NHB-bs-eZD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="EPB-3p-dkL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Neb-s1-xZp" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Neb-s1-xZp">
                                 <rect key="frame" x="217" y="245" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZU6-Mp-WBH"/>
                                     <constraint firstAttribute="width" constant="50" id="c62-sK-sZP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="T1n-jf-IL8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uau-QN-pmB" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uau-QN-pmB">
                                 <rect key="frame" x="333" y="245" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bLP-mf-X4k"/>
                                     <constraint firstAttribute="width" constant="50" id="tdY-H3-Srg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="Dzy-FM-mw0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICn-lr-yxb" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICn-lr-yxb">
                                 <rect key="frame" x="391" y="245" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0tu-He-XvC"/>
                                     <constraint firstAttribute="height" constant="50" id="gEJ-ak-Fvp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="hfb-Cs-8xD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4n-sv-Uuk" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4n-sv-Uuk">
                                 <rect key="frame" x="159" y="303" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="RkU-yP-gnd"/>
                                     <constraint firstAttribute="height" constant="50" id="dlX-5y-ZV7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="fY8-zO-3Aj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUK-lK-bME" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUK-lK-bME">
                                 <rect key="frame" x="275" y="303" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4aY-cN-e72"/>
                                     <constraint firstAttribute="width" constant="50" id="8Z1-AH-hxP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="fbM-tm-VZd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80B-My-uhf" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80B-My-uhf">
                                 <rect key="frame" x="217" y="303" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BaN-d2-pe7"/>
                                     <constraint firstAttribute="width" constant="50" id="egJ-UK-JCG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="dBy-EQ-jSo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-zJ-8Qg" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-zJ-8Qg">
                                 <rect key="frame" x="333" y="303" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="o6x-nm-RHa"/>
                                     <constraint firstAttribute="width" constant="50" id="ob9-Oj-rcC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="hcn-A0-OOU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2H-Wu-07A" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2H-Wu-07A">
                                 <rect key="frame" x="391" y="303" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UY1-5W-FPV"/>
                                     <constraint firstAttribute="width" constant="50" id="ony-8f-grN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="ccM-5l-mKy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mur-gC-dcm" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mur-gC-dcm">
                                 <rect key="frame" x="159" y="361" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QVn-Nv-Mbh"/>
                                     <constraint firstAttribute="width" constant="50" id="TL5-gC-1Oe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="uGD-zD-jcF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjR-PX-VVr" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjR-PX-VVr">
                                 <rect key="frame" x="275" y="361" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lZR-OO-zUl"/>
                                     <constraint firstAttribute="width" constant="50" id="uoC-oh-Nfh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="5kg-mS-Gvj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSE-M3-es2" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSE-M3-es2">
                                 <rect key="frame" x="217" y="361" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P9b-YK-vEM"/>
                                     <constraint firstAttribute="width" constant="50" id="jDK-0o-KDc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="OUe-YH-cww"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQW-34-Y06" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQW-34-Y06">
                                 <rect key="frame" x="333" y="361" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="f8o-5e-1iZ"/>
                                     <constraint firstAttribute="width" constant="50" id="qwZ-Sa-ho0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="TqH-fo-kJI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RK-px-Jyc" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RK-px-Jyc">
                                 <rect key="frame" x="391" y="361" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="1lZ-Um-zZH"/>
                                     <constraint firstAttribute="height" constant="50" id="PkV-jG-5ad"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="uKY-Hf-SZq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICN-Lb-hP6" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICN-Lb-hP6">
                                 <rect key="frame" x="159" y="419" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="SAu-Fa-J97"/>
                                     <constraint firstAttribute="height" constant="50" id="aHU-r3-DLH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="WQ3-WF-KdY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geV-YL-A1a" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geV-YL-A1a">
                                 <rect key="frame" x="275" y="419" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="GY2-FN-z8W"/>
                                     <constraint firstAttribute="height" constant="50" id="P3H-su-oSa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="P1T-jh-3xF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ3-A2-vke" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ3-A2-vke">
                                 <rect key="frame" x="217" y="419" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Jk-gs-t7w"/>
                                     <constraint firstAttribute="width" constant="50" id="z0j-8c-hqW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="CGx-xD-czK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-6e-vXo" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-6e-vXo">
                                 <rect key="frame" x="333" y="419" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wCj-nj-mgV"/>
                                     <constraint firstAttribute="width" constant="50" id="waB-bC-RSU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="hxT-8o-FNM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQG-gw-zAF" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQG-gw-zAF">
                                 <rect key="frame" x="391" y="419" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Df1-pv-xz0"/>
                                     <constraint firstAttribute="width" constant="50" id="NRx-TJ-pyU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="bYS-g9-7ki"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-kj-09E" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-kj-09E">
                                 <rect key="frame" x="159" y="245" width="50" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WUW-mF-iB8"/>
                                     <constraint firstAttribute="width" constant="50" id="psR-Qb-CAD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="oS5-Qm-fXu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-wH-U0G">
-                                <rect key="frame" x="271" y="124" width="58" height="31"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="25"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-2Q-Q9p">
+                                <rect key="frame" x="267" y="490" width="66" height="29"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-2Q-Q9p">
-                                <rect key="frame" x="271" y="497" width="58" height="31"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="25"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-Tc-qtw">
                                 <rect key="frame" x="159" y="170" width="282" height="2"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="282" id="f5L-1W-DFR"/>
                                 </constraints>
@@ -787,61 +707,62 @@
                             </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rIu-4Y-zTN">
                                 <rect key="frame" x="159" y="172" width="282" height="2"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="282" id="di4-Kv-Jc0"/>
                                 </constraints>
                                 <color key="progressTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-IE-hNw" customClass="CustomButton" customModule="FastEye" customModuleProvider="target">
-                                <rect key="frame" x="159" y="86" width="108" height="35"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-IE-hNw">
+                                <rect key="frame" x="159" y="90" width="108" height="35"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="zn8-sO-Ez2" eventType="touchUpInside" id="vSn-bZ-hyP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-Zf-sI2" customClass="CustomLabel" customModule="FastEye" customModuleProvider="target">
-                                <rect key="frame" x="275" y="86" width="166" height="35"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-Zf-sI2">
+                                <rect key="frame" x="275" y="90" width="166" height="35"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="0Lg-iu-wAH"/>
                                     <constraint firstAttribute="height" constant="35" id="HNM-HS-Zca"/>
                                     <constraint firstAttribute="width" constant="166" id="h66-OD-ajj"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="zqK-pn-3JS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Candara-Bold" family="Candara" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-wH-U0G">
+                                <rect key="frame" x="267" y="133" width="66" height="29"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="TXn-6S-g39" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" id="15f-3w-vD1"/>
                             <constraint firstItem="xuM-wH-U0G" firstAttribute="top" secondItem="BKt-IE-hNw" secondAttribute="bottom" constant="8" id="2bu-Tf-VcH"/>
                             <constraint firstItem="80B-My-uhf" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="-58" id="3vs-Nj-DBH"/>
-                            <constraint firstItem="g1K-Tc-qtw" firstAttribute="top" secondItem="xuM-wH-U0G" secondAttribute="bottom" constant="15" id="43p-O4-jwJ"/>
+                            <constraint firstItem="g1K-Tc-qtw" firstAttribute="top" secondItem="xuM-wH-U0G" secondAttribute="bottom" constant="8" id="43p-O4-jwJ"/>
                             <constraint firstItem="rIu-4Y-zTN" firstAttribute="leading" secondItem="g1K-Tc-qtw" secondAttribute="leading" id="4Jv-Lo-hr0"/>
                             <constraint firstItem="Neb-s1-xZp" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="-58" id="4Vq-ye-e67"/>
-                            <constraint firstItem="xuM-wH-U0G" firstAttribute="top" secondItem="VHj-Zf-sI2" secondAttribute="bottom" constant="3" id="6Me-A6-HSg"/>
+                            <constraint firstItem="xuM-wH-U0G" firstAttribute="top" secondItem="VHj-Zf-sI2" secondAttribute="bottom" constant="8" id="6Me-A6-HSg"/>
                             <constraint firstItem="ICN-Lb-hP6" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="144" id="795-Sa-orK"/>
                             <constraint firstItem="Uau-QN-pmB" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="58" id="7bU-m7-moS"/>
                             <constraint firstItem="xuM-wH-U0G" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" id="8U8-ST-QoV"/>
                             <constraint firstItem="FQG-gw-zAF" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="144" id="A5f-ML-gPO"/>
                             <constraint firstItem="Neb-s1-xZp" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-30" id="Ayg-4f-5s3"/>
                             <constraint firstItem="e4n-sv-Uuk" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="28" id="Azy-X2-eWC"/>
-                            <constraint firstItem="BKt-IE-hNw" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-196.5" id="Bez-jX-ZAY"/>
+                            <constraint firstItem="BKt-IE-hNw" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-192.5" id="Bez-jX-ZAY"/>
                             <constraint firstItem="bmW-kj-09E" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="-116" id="DrK-Ug-mJo"/>
                             <constraint firstItem="4RK-px-Jyc" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="86" id="DtA-WT-wbG"/>
                             <constraint firstItem="tLq-zJ-8Qg" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="58" id="EUR-ZI-T2C"/>
@@ -863,7 +784,7 @@
                             <constraint firstItem="Kmp-JO-Wxn" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="-116" id="TlW-Mn-HmT"/>
                             <constraint firstItem="geV-YL-A1a" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" id="U4a-ke-sIM"/>
                             <constraint firstItem="ICN-Lb-hP6" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="-116" id="UCP-X3-LTn"/>
-                            <constraint firstItem="n5N-2Q-Q9p" firstAttribute="top" secondItem="geV-YL-A1a" secondAttribute="bottom" constant="28" id="VoZ-zX-DlL"/>
+                            <constraint firstItem="n5N-2Q-Q9p" firstAttribute="top" secondItem="geV-YL-A1a" secondAttribute="bottom" constant="21" id="VoZ-zX-DlL"/>
                             <constraint firstItem="VHj-Zf-sI2" firstAttribute="leading" secondItem="BKt-IE-hNw" secondAttribute="trailing" constant="8" id="WJi-LH-wQd"/>
                             <constraint firstItem="80B-My-uhf" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="28" id="WWU-Zz-WJU"/>
                             <constraint firstItem="TXn-6S-g39" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-88" id="XJI-ff-51h"/>
@@ -878,7 +799,7 @@
                             <constraint firstItem="DSu-yr-7sc" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-30" id="d1D-sj-O6s"/>
                             <constraint firstItem="geV-YL-A1a" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="144" id="diC-mG-Ijg"/>
                             <constraint firstItem="fUK-lK-bME" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" id="eaI-mG-4al"/>
-                            <constraint firstItem="xuM-wH-U0G" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-160.5" id="ezz-z0-hUd"/>
+                            <constraint firstItem="xuM-wH-U0G" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-152.5" id="ezz-z0-hUd"/>
                             <constraint firstItem="VHj-Zf-sI2" firstAttribute="height" secondItem="BKt-IE-hNw" secondAttribute="height" id="gqR-kQ-Qsb"/>
                             <constraint firstItem="fUK-lK-bME" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="28" id="hll-3h-mAZ"/>
                             <constraint firstItem="g1K-Tc-qtw" firstAttribute="leading" secondItem="Kmp-JO-Wxn" secondAttribute="leading" id="jIV-GY-06y"/>
@@ -888,7 +809,7 @@
                             <constraint firstItem="e4n-sv-Uuk" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="-116" id="pah-Yj-6jO"/>
                             <constraint firstItem="bmW-kj-09E" firstAttribute="centerY" secondItem="XEK-m6-cxl" secondAttribute="centerY" constant="-30" id="qMU-CI-g9M"/>
                             <constraint firstItem="u0S-6e-vXo" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="58" id="rCD-ft-0mv"/>
-                            <constraint firstItem="TXn-6S-g39" firstAttribute="top" secondItem="xuM-wH-U0G" secondAttribute="bottom" constant="32" id="tNt-dU-nAe"/>
+                            <constraint firstItem="TXn-6S-g39" firstAttribute="top" secondItem="xuM-wH-U0G" secondAttribute="bottom" constant="25" id="tNt-dU-nAe"/>
                             <constraint firstItem="Weg-2n-KRb" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="58" id="u9d-C4-Y3I"/>
                             <constraint firstItem="4RK-px-Jyc" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="116" id="wdi-gf-0B2"/>
                             <constraint firstItem="FQG-gw-zAF" firstAttribute="centerX" secondItem="XEK-m6-cxl" secondAttribute="centerX" constant="116" id="wx5-KB-388"/>
@@ -922,7 +843,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFJ-hf-hHA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

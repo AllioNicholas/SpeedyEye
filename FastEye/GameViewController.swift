@@ -13,6 +13,20 @@ import Darwin
 import CoreGraphics
 import AudioToolbox
 
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
+}
+
 class GameViewController: UIViewController {
     
     enum GameMode {
@@ -77,9 +91,21 @@ class GameViewController: UIViewController {
         
         countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateCountdownAndStart"), userInfo: nil, repeats: true)
         
-        //Setup game
+        //Setup game with according color
+        let colorGame: UIColor!
+        switch gameMode! {
+        case .UpCount:
+            colorGame = UIColor(netHex: 0xE9534E)
+        case .DownCount:
+            colorGame = UIColor(netHex: 0x7BA9F7)
+        case .Random:
+            colorGame = UIColor(netHex: 0x75D975)
+        }
+        
         progressBar.progress = 0.0
+        progressBar.progressTintColor = colorGame
         prog2.progress = 0.0
+        prog2.progressTintColor = colorGame
         displayLabel.text = "\(display)"
         cronoLabel.text = "0.0"
         var taken = [0]
@@ -91,6 +117,7 @@ class GameViewController: UIViewController {
             }
             taken.append(lab)
             but.setTitle(String(lab), forState: UIControlState.Normal)
+            but.backgroundColor = colorGame
         }
         
         //load high score

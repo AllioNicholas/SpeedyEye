@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0E1BF93C1C00CF5B32 /* Correct.wav */; };
 		01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0F1BF93C1C00CF5B32 /* Fail.wav */; };
-		010EB8991C046AC0007D49E0 /* Candara Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 010EB8981C046AC0007D49E0 /* Candara Bold.ttf */; };
 		010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89A1C0728C1007D49E0 /* CountdownView.xib */; };
 		010EB89E1C077F66007D49E0 /* EndGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89D1C077F66007D49E0 /* EndGameView.xib */; };
 		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; };
@@ -21,12 +20,12 @@
 		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };
 		01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB971BC6BBC0004C3695 /* Assets.xcassets */; };
 		01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */; };
+		01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01025F0E1BF93C1C00CF5B32 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
 		01025F0F1BF93C1C00CF5B32 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fail.wav; sourceTree = "<group>"; };
-		010EB8981C046AC0007D49E0 /* Candara Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Candara Bold.ttf"; sourceTree = "<group>"; };
 		010EB89A1C0728C1007D49E0 /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 		010EB89D1C077F66007D49E0 /* EndGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EndGameView.xib; sourceTree = "<group>"; };
 		01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		01DAAB971BC6BBC0004C3695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01DAAB9A1BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01DAAB9C1BC6BBC0004C3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +56,9 @@
 		01025F071BF9344500CF5B32 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
 				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
-				010EB8981C046AC0007D49E0 /* Candara Bold.ttf */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
@@ -169,10 +169,10 @@
 				01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
 				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
+				01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */,
 				010EB89E1C077F66007D49E0 /* EndGameView.xib in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
 				01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */,
-				010EB8991C046AC0007D49E0 /* Candara Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
