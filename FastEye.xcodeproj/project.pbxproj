@@ -11,10 +11,8 @@
 		01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0F1BF93C1C00CF5B32 /* Fail.wav */; };
 		010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89A1C0728C1007D49E0 /* CountdownView.xib */; };
 		010EB89E1C077F66007D49E0 /* EndGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89D1C077F66007D49E0 /* EndGameView.xib */; };
-		01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
-		01A5CFDE1BCC59D2002ABBF0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */; };
 		01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */; };
 		01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB921BC6BBC0004C3695 /* StartViewController.swift */; };
 		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };
@@ -28,10 +26,8 @@
 		01025F0F1BF93C1C00CF5B32 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fail.wav; sourceTree = "<group>"; };
 		010EB89A1C0728C1007D49E0 /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 		010EB89D1C077F66007D49E0 /* EndGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EndGameView.xib; sourceTree = "<group>"; };
-		01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
-		01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		01DAAB8D1BC6BBC0004C3695 /* FastEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01DAAB921BC6BBC0004C3695 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -98,8 +94,6 @@
 				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
 				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
 				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
-				01350DFC1BC7F3DD00C0FEFD /* CustomButton.swift */,
-				01A5CFDD1BCC59D2002ABBF0 /* CustomLabel.swift */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
 				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
 				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
@@ -184,8 +178,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */,
-				01A5CFDE1BCC59D2002ABBF0 /* CustomLabel.swift in Sources */,
-				01350DFD1BC7F3DD00C0FEFD /* CustomButton.swift in Sources */,
 				01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */,
 				015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */,
 				01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */,

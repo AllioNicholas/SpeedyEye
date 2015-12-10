@@ -304,9 +304,9 @@ class GameViewController: UIViewController {
             mainLabel.text = "Too slow!"
             timeLabel.text = NSString(format: "Your time: %.2f s", withTime) as String
         }
-    
+        
         //Back button (tag 13)
-        let backButton = endView.viewWithTag(13) as! CustomButton
+        let backButton = endView.viewWithTag(13) as! UIButton
         backButton.addTarget(self, action: Selector("dismissEndView"), forControlEvents: UIControlEvents.TouchUpInside)
         
         
@@ -318,7 +318,7 @@ class GameViewController: UIViewController {
         
     }
     
-    @IBAction func backButton(sender: CustomButton) {
+    @IBAction func backButton(sender: UIButton) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
