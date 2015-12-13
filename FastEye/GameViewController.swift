@@ -95,11 +95,14 @@ class GameViewController: UIViewController {
         let colorGame: UIColor!
         switch gameMode! {
         case .UpCount:
-            colorGame = UIColor(netHex: 0xE9534E)
+            //Viola
+            colorGame = UIColor(netHex: 0x332433)
         case .DownCount:
-            colorGame = UIColor(netHex: 0x7BA9F7)
+            //Azzurro scuro
+            colorGame = UIColor(netHex: 0x4A5B82)
         case .Random:
-            colorGame = UIColor(netHex: 0x75D975)
+            //Verde acqua
+            colorGame = UIColor(netHex: 0x6FA79A)
         }
         
         progressBar.progress = 0.0
