@@ -18,6 +18,9 @@
 		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };
 		01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB971BC6BBC0004C3695 /* Assets.xcassets */; };
 		01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */; };
+		01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392331C1E3F5F0053B644 /* ending_sound.wav */; };
+		01F392371C1E3F5F0053B644 /* navigation_button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392341C1E3F5F0053B644 /* navigation_button.wav */; };
+		01F392381C1E3F5F0053B644 /* new_record.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392351C1E3F5F0053B644 /* new_record.wav */; };
 		01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		01DAAB971BC6BBC0004C3695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01DAAB9A1BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01DAAB9C1BC6BBC0004C3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F392331C1E3F5F0053B644 /* ending_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ending_sound.wav; sourceTree = "<group>"; };
+		01F392341C1E3F5F0053B644 /* navigation_button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = navigation_button.wav; sourceTree = "<group>"; };
+		01F392351C1E3F5F0053B644 /* new_record.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_record.wav; sourceTree = "<group>"; };
 		01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +58,9 @@
 		01025F071BF9344500CF5B32 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				01F392331C1E3F5F0053B644 /* ending_sound.wav */,
+				01F392341C1E3F5F0053B644 /* navigation_button.wav */,
+				01F392351C1E3F5F0053B644 /* new_record.wav */,
 				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
 				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
@@ -159,11 +168,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F392381C1E3F5F0053B644 /* new_record.wav in Resources */,
 				010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */,
+				01F392371C1E3F5F0053B644 /* navigation_button.wav in Resources */,
 				01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
 				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
 				01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */,
+				01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */,
 				010EB89E1C077F66007D49E0 /* EndGameView.xib in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
 				01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */,

@@ -46,8 +46,11 @@ class GameViewController: UIViewController {
     var correctCount = 0
     var highscore = DBL_MAX
     
-    var correctSound : SystemSoundID = 0
-    var wrongSound : SystemSoundID = 1
+    var navigation_buttonSound : SystemSoundID = 0
+    var correctSound : SystemSoundID = 1
+    var wrongSound : SystemSoundID = 2
+    var end_gameSound : SystemSoundID = 3
+    var new_recordSound :  SystemSoundID = 4
    
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
@@ -58,12 +61,25 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Correct button pressed
         var filePath = NSBundle.mainBundle().pathForResource("Correct", ofType: "wav")
         AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &correctSound)
         
+        //Wronf button pressed
         filePath = NSBundle.mainBundle().pathForResource("Fail", ofType: "wav")
         AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &wrongSound)
         
+        //Game ended with no new record
+        filePath = NSBundle.mainBundle().pathForResource("ending_sound", ofType: "wav")
+        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &end_gameSound)
+        
+        //Game ended with new record
+        filePath = NSBundle.mainBundle().pathForResource("new_record", ofType: "wav")
+        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &new_recordSound)
+        
+        //Navigation button
+        filePath = NSBundle.mainBundle().pathForResource("navigation_button", ofType: "wav")
+        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &navigation_buttonSound)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -303,9 +319,11 @@ class GameViewController: UIViewController {
         if isHighScore {
             mainLabel.text = "New Record!"
             timeLabel.text = NSString(format: "New best time: %.2f s", withTime) as String
+            AudioServicesPlaySystemSound(new_recordSound)
         } else {
             mainLabel.text = "Too slow!"
             timeLabel.text = NSString(format: "Your time: %.2f s", withTime) as String
+            AudioServicesPlaySystemSound(end_gameSound)
         }
         
         //Back button (tag 13)
@@ -322,10 +340,12 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func backButton(sender: UIButton) {
+        AudioServicesPlaySystemSound(navigation_buttonSound)
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func dismissEndView() {
+        AudioServicesPlaySystemSound(navigation_buttonSound)
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     

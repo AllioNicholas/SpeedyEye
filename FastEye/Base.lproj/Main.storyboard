@@ -79,6 +79,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahl-Qs-Sv8"/>
                                     <segue destination="zn8-sO-Ez2" kind="show" identifier="down" id="dWk-sf-2ZP"/>
                                 </connections>
                             </button>
@@ -103,6 +104,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wu8-Vk-2Si"/>
                                     <segue destination="zn8-sO-Ez2" kind="show" identifier="up" id="1oc-v9-ykf"/>
                                 </connections>
                             </button>
@@ -127,6 +129,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HQc-kw-GaW"/>
                                     <segue destination="zn8-sO-Ez2" kind="show" identifier="random" id="mPL-XI-sdF"/>
                                 </connections>
                             </button>
@@ -151,6 +154,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WhF-av-NtL"/>
                                     <segue destination="dm0-ag-aNF" kind="presentation" id="HXr-Cd-x0W"/>
                                 </connections>
                             </button>

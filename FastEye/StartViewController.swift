@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class StartViewController: UIViewController {
+    
+    var navigation_buttonSound : SystemSoundID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let filePath = NSBundle.mainBundle().pathForResource("navigation_button", ofType: "wav")
+        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &navigation_buttonSound)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +42,10 @@ class StartViewController: UIViewController {
             vc.display = Int(num)
             vc.gameMode = GameViewController.GameMode.Random
         }
+    }
+    
+    @IBAction func playNavigationSound(sender: UIButton) {
+        AudioServicesPlaySystemSound(navigation_buttonSound)
     }
 
 
