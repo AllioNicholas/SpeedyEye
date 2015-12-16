@@ -13,8 +13,8 @@ class StartViewController: UIViewController {
     
     var navigation_buttonSound : SystemSoundID = 0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         let filePath = NSBundle.mainBundle().pathForResource("navigation_button", ofType: "wav")
         AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &navigation_buttonSound)
     }
