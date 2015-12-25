@@ -35,9 +35,9 @@ class StartViewController: UIViewController {
             vc.gameMode = GameViewController.GameMode.DownCount
         } else if segue.identifier == "random" {
             let vc:GameViewController = segue.destinationViewController as! GameViewController
-            var num = rand() % 26
+            var num = Int(arc4random_uniform(26))
             while num == 0 {
-                num = rand() % 26
+                num = Int(arc4random_uniform(26))
             }
             vc.display = Int(num)
             vc.gameMode = GameViewController.GameMode.Random
