@@ -30,16 +30,16 @@ extension UIColor {
 class GameViewController: UIViewController {
     
     enum GameMode {
-        case UpCount
-        case DownCount
-        case Random
+        case upCount
+        case downCount
+        case random
     }
     
     var display: Int!
     var gameMode: GameMode!
     var takenRand = [0]
-    var gameTimer: NSTimer = NSTimer()
-    var countDownTimer: NSTimer = NSTimer()
+    var gameTimer: Timer = Timer()
+    var countDownTimer: Timer = Timer()
     var elapsedTime = 0.0
     var countDown = 3
     var countdownLabel: UILabel!
@@ -62,40 +62,36 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         //Correct button pressed
-        var filePath = NSBundle.mainBundle().pathForResource("Correct", ofType: "wav")
-        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &correctSound)
+        var filePath = Bundle.main.path(forResource: "Correct", ofType: "wav")
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &correctSound)
         
         //Wronf button pressed
-        filePath = NSBundle.mainBundle().pathForResource("Fail", ofType: "wav")
-        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &wrongSound)
+        filePath = Bundle.main.path(forResource: "Fail", ofType: "wav")
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &wrongSound)
         
         //Game ended with no new record
-        filePath = NSBundle.mainBundle().pathForResource("ending_sound", ofType: "wav")
-        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &end_gameSound)
+        filePath = Bundle.main.path(forResource: "ending_sound", ofType: "wav")
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &end_gameSound)
         
         //Game ended with new record
-        filePath = NSBundle.mainBundle().pathForResource("new_record", ofType: "wav")
-        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &new_recordSound)
+        filePath = Bundle.main.path(forResource: "new_record", ofType: "wav")
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &new_recordSound)
         
         //Navigation button
-        filePath = NSBundle.mainBundle().pathForResource("navigation_button", ofType: "wav")
-        AudioServicesCreateSystemSoundID(NSURL.fileURLWithPath(filePath!), &navigation_buttonSound)
+        filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &navigation_buttonSound)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //Prepare countdown before game
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         //always fill the view
         blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        let array = NSBundle.mainBundle().loadNibNamed("CountdownView", owner: self, options: nil) as NSArray
-        let cdView = array.objectAtIndex(0) as! UIView
+        let cdView = Bundle.main.loadNibNamed("CountdownView", owner: self, options: nil)?[0] as! UIView
+//        let cdView = array.object(at: 0) as! UIView
         countdownLabel = cdView.viewWithTag(1) as! UILabel
         countdownLabel.text = "3"
         
@@ -105,18 +101,18 @@ class GameViewController: UIViewController {
         
         self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
         
-        countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateCountdownAndStart"), userInfo: nil, repeats: true)
+        countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.updateCountdownAndStart), userInfo: nil, repeats: true)
         
         //Setup game with according color
         let colorGame: UIColor!
         switch gameMode! {
-        case .UpCount:
+        case .upCount:
             //Viola
             colorGame = UIColor(netHex: 0x332433)
-        case .DownCount:
+        case .downCount:
             //Azzurro scuro
             colorGame = UIColor(netHex: 0x4A5B82)
-        case .Random:
+        case .random:
             //Verde acqua
             colorGame = UIColor(netHex: 0x6FA79A)
         }
@@ -125,7 +121,7 @@ class GameViewController: UIViewController {
         progressBar.progressTintColor = colorGame
         prog2.progress = 0.0
         prog2.progressTintColor = colorGame
-        displayLabel.text = "\(display)"
+        displayLabel.text = "\(display!)"
         cronoLabel.text = "0.0"
         var taken = [0]
         for idx in 1...25 {
@@ -135,28 +131,28 @@ class GameViewController: UIViewController {
                 lab = Int(arc4random_uniform(26))
             }
             taken.append(lab)
-            but.setTitle(String(lab), forState: UIControlState.Normal)
+            but.setTitle(String(lab), for: UIControlState())
             but.backgroundColor = colorGame
         }
         
         //load high score
         switch gameMode! {
-        case .UpCount:
-            if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_up") {
+        case .upCount:
+            if let hs = UserDefaults.standard.value(forKey: "highscore_up") {
                 highscore = Double(hs as! NSNumber)
                 highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
             } else {
                 highScoreLabel.text = "High score: 0.0"
             }
-        case .DownCount:
-            if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_down") {
+        case .downCount:
+            if let hs = UserDefaults.standard.value(forKey: "highscore_down") {
                 highscore = Double(hs as! NSNumber)
                 highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
             } else {
                 highScoreLabel.text = "High score: 0.0"
             }
-        case .Random:
-            if let hs = NSUserDefaults.standardUserDefaults().valueForKey("highscore_rand") {
+        case .random:
+            if let hs = UserDefaults.standard.value(forKey: "highscore_rand") {
                 highscore = Double(hs as! NSNumber)
                 highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
                 takenRand.append(display)
@@ -174,7 +170,7 @@ class GameViewController: UIViewController {
     }
     
     func updateCountdownAndStart() {
-        countDown--
+        countDown -= 1
         if countDown == 0 {
             countdownLabel.text = "GO!"
         } else {
@@ -183,51 +179,51 @@ class GameViewController: UIViewController {
         if countDown == -1 {
             countDownTimer.invalidate()
             //Start chrono with 0.01 precision
-            gameTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+            gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
             self.view.subviews.last!.removeFromSuperview()
         }
         
     }
     
-    @IBAction func buttonPressed(sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == String(display) {
             AudioServicesPlaySystemSound(correctSound)
             switch gameMode! {
-            case .UpCount:
-                correctCount++
-                display!++
+            case .upCount:
+                correctCount += 1
+                display! += 1
                 if display == 26 {
                     //end of the game
                     gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
-                    gameEnded(.UpCount)
+                    gameEnded(.upCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
-                    displayLabel.text = "\(display)"
+                    displayLabel.text = "\(display!)"
                 }
-            case .DownCount:
-                correctCount++
-                display!--
+            case .downCount:
+                correctCount += 1
+                display! -= 1
                 if display == 0 {
                     //end of the game
                     gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
-                    gameEnded(.DownCount)
+                    gameEnded(.downCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
-                    displayLabel.text = "\(display)"
+                    displayLabel.text = "\(display!)"
                 }
-            case .Random:
-                correctCount++
-                var num = rand() % 26
+            case .random:
+                correctCount += 1
+                var num = arc4random() % 26
                 while takenRand.contains(Int(num)) {
-                    num = rand() % 26
+                    num = arc4random() % 26
                 }
                 takenRand.append(Int(num))
                 display = Int(num)
@@ -237,11 +233,11 @@ class GameViewController: UIViewController {
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
-                    gameEnded(.Random)
+                    gameEnded(.random)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
-                    displayLabel.text = "\(display)"
+                    displayLabel.text = "\(display!)"
                 }
             }
         } else {
@@ -250,44 +246,44 @@ class GameViewController: UIViewController {
             progressBar.setProgress(0.0, animated: true)
             prog2.setProgress(0.0, animated: true)
             switch gameMode! {
-            case .UpCount:
+            case .upCount:
                 display! = 1
-            case .DownCount:
+            case .downCount:
                 display! = 25
-            case .Random:
+            case .random:
                 takenRand = [0]
-                var num = rand() % 26
+                var num = arc4random() % 26
                 while takenRand.contains(Int(num)) {
-                    num = rand() % 26
+                    num = arc4random() % 26
                 }
                 takenRand.append(Int(num))
                 display = Int(num)
             }
-            displayLabel.text = "\(display)"
+            displayLabel.text = "\(display!)"
         }
     }
     
-    func gameEnded(inMode: GameMode) {
+    func gameEnded(_ inMode: GameMode) {
         switch inMode {
-        case .UpCount:
+        case .upCount:
             if elapsedTime < highscore {
-                NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_up")
+                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_up")
                 displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             } else {
                 displayScore(false, withTime: elapsedTime, inMode: inMode)
             }
-        case .DownCount:
+        case .downCount:
             if elapsedTime < highscore {
-                NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_down")
+                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_down")
                 displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             } else {
                 displayScore(false, withTime: elapsedTime, inMode: inMode)
             }
-        case .Random:
+        case .random:
             if elapsedTime < highscore {
-                NSUserDefaults.standardUserDefaults().setValue(elapsedTime, forKey: "highscore_rand")
+                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_rand")
                 displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
             } else {
@@ -297,15 +293,15 @@ class GameViewController: UIViewController {
         
     }
     
-    func displayScore(isHighScore: Bool, withTime: Double, inMode: GameMode) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+    func displayScore(_ isHighScore: Bool, withTime: Double, inMode: GameMode) {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         //always fill the view
         blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        let array = NSBundle.mainBundle().loadNibNamed("EndGameView", owner: self, options: nil) as NSArray
-        let endView = array.objectAtIndex(0) as! UIView
+        let endView = Bundle.main.loadNibNamed("EndGameView", owner: self, options: nil)?[0] as! UIView
+//        let endView = array.object(at: 0) as! UIView
         
         //Customization endView according to the result and the game mode
         //Main label (tag 10)
@@ -328,7 +324,7 @@ class GameViewController: UIViewController {
         
         //Back button (tag 13)
         let backButton = endView.viewWithTag(13) as! UIButton
-        backButton.addTarget(self, action: Selector("dismissEndView"), forControlEvents: UIControlEvents.TouchUpInside)
+        backButton.addTarget(self, action: #selector(GameViewController.dismissEndView), for: UIControlEvents.touchUpInside)
         
         
         endView.frame = self.view.bounds
@@ -339,14 +335,14 @@ class GameViewController: UIViewController {
         
     }
     
-    @IBAction func backButton(sender: UIButton) {
+    @IBAction func backButton(_ sender: UIButton) {
         AudioServicesPlaySystemSound(navigation_buttonSound)
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func dismissEndView() {
         AudioServicesPlaySystemSound(navigation_buttonSound)
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
