@@ -27,13 +27,13 @@ extension UIColor {
     }
 }
 
+enum GameMode {
+    case upCount
+    case downCount
+    case random
+}
+
 class GameViewController: UIViewController {
-    
-    enum GameMode {
-        case upCount
-        case downCount
-        case random
-    }
     
     var display: Int!
     var gameMode: GameMode!
@@ -337,12 +337,12 @@ class GameViewController: UIViewController {
     
     @IBAction func backButton(_ sender: UIButton) {
         AudioServicesPlaySystemSound(navigation_buttonSound)
-        self.navigationController?.popToRootViewController(animated: true)
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     func dismissEndView() {
         AudioServicesPlaySystemSound(navigation_buttonSound)
-        self.navigationController?.popToRootViewController(animated: true)
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

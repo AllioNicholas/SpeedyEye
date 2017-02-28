@@ -10,29 +10,24 @@ import UIKit
 import AudioToolbox
 
 class StartViewController: UIViewController {
-    
-    var navigation_buttonSound : SystemSoundID = 0
+
+    var navigation_buttonSound: SystemSoundID = 0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
         AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &navigation_buttonSound)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "up" {
             let vc:GameViewController = segue.destination as! GameViewController
             vc.display = 1
-            vc.gameMode = GameViewController.GameMode.upCount
+            vc.gameMode = GameMode.upCount
         } else if segue.identifier == "down" {
             let vc:GameViewController = segue.destination as! GameViewController
             vc.display = 25
-            vc.gameMode = GameViewController.GameMode.downCount
+            vc.gameMode = GameMode.downCount
         } else if segue.identifier == "random" {
             let vc:GameViewController = segue.destination as! GameViewController
             var num = Int(arc4random_uniform(26))
@@ -40,7 +35,7 @@ class StartViewController: UIViewController {
                 num = Int(arc4random_uniform(26))
             }
             vc.display = Int(num)
-            vc.gameMode = GameViewController.GameMode.random
+            vc.gameMode = GameMode.random
         }
     }
     

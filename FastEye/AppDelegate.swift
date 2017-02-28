@@ -12,35 +12,85 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var launchedShortcutItem: UIApplicationShortcutItem?
+    
+    enum ShortcutItemType: String {
+        case UpCount
+        case DownCount
+        case Random
+        
+        // MARK: - Initializers
+        
+        init?(fullType: String) {
+            guard let last = fullType.components(separatedBy: ".").last else { return nil }
+            
+            self.init(rawValue: last)
+        }
+        
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        // Override point for customization after application launch.
+        var shouldPerformAdditionalDelegateHandling = true
+        
+        // If a shortcut was launched, display its information and take the appropriate action
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            
+            launchedShortcutItem = shortcutItem
+            
+            // This will block "performActionForShortcutItem:completionHandler" from being called.
+            shouldPerformAdditionalDelegateHandling = false
+        }
+        
+        return shouldPerformAdditionalDelegateHandling
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        guard let shortcut = launchedShortcutItem else { return }
+        
+        _ = handleShortCutItem(shortcut)
+        
+        launchedShortcutItem = nil
+    }
+    
+    func handleShortCutItem(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
+        var handled = false
+                
+        guard let shortCutType = shortcutItem.type as String? else { return false }
+        
+        var segueID = ""
+        
+        switch (shortCutType) {
+        case ShortcutItemType.UpCount.rawValue:
+            segueID = "up"
+            handled = true
+            break
+        case ShortcutItemType.DownCount.rawValue:
+            segueID = "down"
+            handled = true
+            break
+        case ShortcutItemType.Random.rawValue:
+            segueID = "random"
+            handled = true
+            break
+        default:
+            break
+        }
+        
+        // Display an alert indicating the shortcut selected from the home screen.
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        window!.rootViewController = sb.instantiateViewController(withIdentifier: "root")
+        window?.rootViewController?.addChildViewController(sb.instantiateViewController(withIdentifier: "Start"))
+        window?.rootViewController?.childViewControllers.first?.performSegue(withIdentifier: segueID, sender: nil)
+        
+        return handled
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        let handledShortCutItem = handleShortCutItem(shortcutItem)
+        
+        completionHandler(handledShortCutItem)
     }
-
-
 }
 

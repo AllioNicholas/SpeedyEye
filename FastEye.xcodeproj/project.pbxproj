@@ -68,13 +68,13 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
-		010EB89C1C072EDE007D49E0 /* Custom Views */ = {
+		010EB89C1C072EDE007D49E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				010EB89A1C0728C1007D49E0 /* CountdownView.xib */,
 				010EB89D1C077F66007D49E0 /* EndGameView.xib */,
 			);
-			name = "Custom Views";
+			name = View;
 			sourceTree = "<group>";
 		};
 		01DAAB841BC6BBC0004C3695 = {
@@ -96,18 +96,26 @@
 		01DAAB8F1BC6BBC0004C3695 /* FastEye */ = {
 			isa = PBXGroup;
 			children = (
-				010EB89C1C072EDE007D49E0 /* Custom Views */,
+				01ECF20E1E6582D000BDC321 /* Controller */,
+				010EB89C1C072EDE007D49E0 /* View */,
 				01025F071BF9344500CF5B32 /* Supporting files */,
 				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
-				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
-				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
-				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
 				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
 				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
 				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
 			);
 			path = FastEye;
+			sourceTree = "<group>";
+		};
+		01ECF20E1E6582D000BDC321 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
+				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
+				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +150,8 @@
 					01DAAB8C1BC6BBC0004C3695 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 4R644JN289;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -309,14 +318,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 4R644JN289;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FastEye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f469b4a-ec23-46a1-8448-c38668c13235";
-				PROVISIONING_PROFILE_SPECIFIER = "SpeedyEye Distribution";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -326,13 +335,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nicholas Allio (4R644JN289)";
-				DEVELOPMENT_TEAM = 4R644JN289;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FastEye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f469b4a-ec23-46a1-8448-c38668c13235";
-				PROVISIONING_PROFILE_SPECIFIER = "SpeedyEye Distribution";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
