@@ -27,8 +27,6 @@
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>up</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Start Up Count mode</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Up Count</string>
 			<key>UIApplicationShortcutItemType</key>
@@ -42,8 +40,6 @@
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>down</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Start Down Count mode</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Down Count</string>
 			<key>UIApplicationShortcutItemType</key>
@@ -57,8 +53,6 @@
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>random</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Start Random mode</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Random</string>
 			<key>UIApplicationShortcutItemType</key>
@@ -77,6 +71,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>gamekit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

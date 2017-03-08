@@ -12,25 +12,19 @@ import AVFoundation
 import Darwin
 import CoreGraphics
 import AudioToolbox
-
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-    
-    convenience init(netHex:Int) {
-        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
-    }
-}
+import GameKit
 
 enum GameMode {
     case upCount
     case downCount
     case random
+}
+
+enum LeaderboardID: String {
+    case main = "nicholas.allio.fasteye"
+    case upCount = "nicholas.allio.fasteye.upcount"
+    case downCount = "nicholas.allio.fasteye.downcount"
+    case random = "nicholas.allio.fasteye.random"
 }
 
 class GameViewController: UIViewController {
@@ -46,11 +40,11 @@ class GameViewController: UIViewController {
     var correctCount = 0
     var highscore = DBL_MAX
     
-    var navigation_buttonSound : SystemSoundID = 0
-    var correctSound : SystemSoundID = 1
-    var wrongSound : SystemSoundID = 2
-    var end_gameSound : SystemSoundID = 3
-    var new_recordSound :  SystemSoundID = 4
+    var navigation_buttonSound: SystemSoundID = 0
+    var correctSound: SystemSoundID = 1
+    var wrongSound: SystemSoundID = 2
+    var end_gameSound: SystemSoundID = 3
+    var new_recordSound:  SystemSoundID = 4
    
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
@@ -264,33 +258,27 @@ class GameViewController: UIViewController {
     }
     
     func gameEnded(_ inMode: GameMode) {
-        switch inMode {
-        case .upCount:
-            if elapsedTime < highscore {
+        if elapsedTime < highscore {
+            switch inMode {
+            case .upCount:
                 UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_up")
                 displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
-            } else {
-                displayScore(false, withTime: elapsedTime, inMode: inMode)
-            }
-        case .downCount:
-            if elapsedTime < highscore {
+                break
+            case .downCount:
                 UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_down")
                 displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
-            } else {
-                displayScore(false, withTime: elapsedTime, inMode: inMode)
-            }
-        case .random:
-            if elapsedTime < highscore {
+                break
+            case .random:
                 UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_rand")
                 displayScore(true, withTime: elapsedTime, inMode: inMode)
                 highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
-            } else {
-                displayScore(false, withTime: elapsedTime, inMode: inMode)
+                break
             }
+        } else {
+            displayScore(false, withTime: elapsedTime, inMode: inMode)
         }
-        
     }
     
     func displayScore(_ isHighScore: Bool, withTime: Double, inMode: GameMode) {
@@ -301,7 +289,6 @@ class GameViewController: UIViewController {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         let endView = Bundle.main.loadNibNamed("EndGameView", owner: self, options: nil)?[0] as! UIView
-//        let endView = array.object(at: 0) as! UIView
         
         //Customization endView according to the result and the game mode
         //Main label (tag 10)
@@ -316,6 +303,7 @@ class GameViewController: UIViewController {
             mainLabel.text = "New Record!"
             timeLabel.text = NSString(format: "New best time: %.2f s", withTime) as String
             AudioServicesPlaySystemSound(new_recordSound)
+            submitHighScoreToGC(highScore: withTime, inMode: inMode)
         } else {
             mainLabel.text = "Too slow!"
             timeLabel.text = NSString(format: "Your time: %.2f s", withTime) as String
@@ -331,7 +319,7 @@ class GameViewController: UIViewController {
         
         blurEffectView.addSubview(endView)
                         
-        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        self.view.addSubview(blurEffectView)
         
     }
     
@@ -345,4 +333,41 @@ class GameViewController: UIViewController {
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
+    func submitHighScoreToGC(highScore: Double, inMode: GameMode) {
+        var leaderboardID = ""
+        switch inMode {
+        case .upCount:
+            leaderboardID = LeaderboardID.upCount.rawValue
+            break
+        case .downCount:
+            leaderboardID = LeaderboardID.downCount.rawValue
+            break
+        case .random:
+            leaderboardID = LeaderboardID.random.rawValue
+            break
+        }
+        
+        let bestScoreInt = GKScore(leaderboardIdentifier: leaderboardID)
+        bestScoreInt.value = Int64(highScore*100)
+        GKScore.report([bestScoreInt]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
 }

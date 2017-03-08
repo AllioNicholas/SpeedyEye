@@ -11,6 +11,7 @@
 		01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0F1BF93C1C00CF5B32 /* Fail.wav */; };
 		010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89A1C0728C1007D49E0 /* CountdownView.xib */; };
 		010EB89E1C077F66007D49E0 /* EndGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89D1C077F66007D49E0 /* EndGameView.xib */; };
+		0146613C1E66E102008C2410 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0146613B1E66E102008C2410 /* GameKit.framework */; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
 		01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 		01025F0F1BF93C1C00CF5B32 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fail.wav; sourceTree = "<group>"; };
 		010EB89A1C0728C1007D49E0 /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 		010EB89D1C077F66007D49E0 /* EndGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EndGameView.xib; sourceTree = "<group>"; };
+		0146613B1E66E102008C2410 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 		01DAAB8D1BC6BBC0004C3695 /* FastEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0146613C1E66E102008C2410 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,11 +80,20 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		0146613A1E66E102008C2410 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0146613B1E66E102008C2410 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		01DAAB841BC6BBC0004C3695 = {
 			isa = PBXGroup;
 			children = (
 				01DAAB8F1BC6BBC0004C3695 /* FastEye */,
 				01DAAB8E1BC6BBC0004C3695 /* Products */,
+				0146613A1E66E102008C2410 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +164,11 @@
 						DevelopmentTeam = 4R644JN289;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

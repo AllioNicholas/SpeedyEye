@@ -8,10 +8,19 @@
 
 import UIKit
 import AudioToolbox
+import GameKit
 
 class StartViewController: UIViewController {
 
     var navigation_buttonSound: SystemSoundID = 0
+    
+    var gcEnabled = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        authenticateGCUser()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,7 +51,31 @@ class StartViewController: UIViewController {
     @IBAction func playNavigationSound(_ sender: UIButton) {
         AudioServicesPlaySystemSound(navigation_buttonSound)
     }
+}
 
-
+extension StartViewController: GKGameCenterControllerDelegate {
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func authenticateGCUser() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {(vc, error) -> Void in
+            if vc != nil {
+                // 1. Show login if player is not logged in
+                self.present(vc!, animated: true, completion: nil)
+            } else if (localPlayer.isAuthenticated) {
+                // 2. Player is already authenticated & logged in, load game center
+                self.gcEnabled = true
+            } else {
+                // 3. Game center is not enabled on the users device
+                self.gcEnabled = false
+                print("Local player could not be authenticated!")
+                print(error ?? "")
+            }
+        }
+    }
 }
 
