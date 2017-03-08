@@ -20,13 +20,6 @@ enum GameMode {
     case random
 }
 
-enum LeaderboardID: String {
-    case main = "nicholas.allio.fasteye"
-    case upCount = "nicholas.allio.fasteye.upcount"
-    case downCount = "nicholas.allio.fasteye.downcount"
-    case random = "nicholas.allio.fasteye.random"
-}
-
 class GameViewController: UIViewController {
     
     var display: Int!
@@ -349,11 +342,8 @@ class GameViewController: UIViewController {
         
         let bestScoreInt = GKScore(leaderboardIdentifier: leaderboardID)
         bestScoreInt.value = Int64(highScore*100)
-        GKScore.report([bestScoreInt]) { (error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-        }
+        
+        GKScore.report([bestScoreInt], withCompletionHandler: nil)
     }
     
 }

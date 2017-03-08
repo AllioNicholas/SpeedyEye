@@ -10,6 +10,13 @@ import UIKit
 import AudioToolbox
 import GameKit
 
+enum LeaderboardID: String {
+    case main = "nicholas.allio.fasteye"
+    case upCount = "nicholas.allio.fasteye.upcount"
+    case downCount = "nicholas.allio.fasteye.downcount"
+    case random = "nicholas.allio.fasteye.random"
+}
+
 class StartViewController: UIViewController {
 
     var navigation_buttonSound: SystemSoundID = 0
@@ -72,8 +79,6 @@ extension StartViewController: GKGameCenterControllerDelegate {
             } else {
                 // 3. Game center is not enabled on the users device
                 self.gcEnabled = false
-                print("Local player could not be authenticated!")
-                print(error ?? "")
             }
         }
     }

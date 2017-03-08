@@ -100,10 +100,8 @@ extension HighScoresViewController: GKGameCenterControllerDelegate {
         
         let bestScoreInt = GKScore(leaderboardIdentifier: leaderboardID)
         bestScoreInt.value = Int64(highScore*100)
-        GKScore.report([bestScoreInt]) { (error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-        }
+        
+        GKScore.report([bestScoreInt], withCompletionHandler: nil)
+
     }
 }
