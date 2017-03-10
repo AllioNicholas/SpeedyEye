@@ -1,2 +1,2 @@
 # SpeedyEye
-Simple iOS game developed with Swift
+Challange your friends and discover who's the quickest finger!
