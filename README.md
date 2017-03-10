@@ -1,3 +1,4 @@
+![Icon](https://github.com/AllioNicholas/SpeedyEye/blob/master/images/App%20Icon/Icon%402x.png?raw=true)
 # Speedy Eye
 Challenge your friends and discover who's the quickest finger!
 
