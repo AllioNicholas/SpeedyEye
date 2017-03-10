@@ -1,5 +1,5 @@
-# SpeedyEye
-Challange your friends and discover who's the quickest finger!
+# Speedy Eye
+Challenge your friends and discover who's the quickest finger!
 
 ## 3 game modes
 * **UpCount**: Select numbers in ascending order
