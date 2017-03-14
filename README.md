@@ -18,3 +18,6 @@ Immediatelly start a new game thanks to the powerful 3D touch, time is precious!
 #### Download it now!
 [![Dowload it from the App Store](https://github.com/AllioNicholas/Images/blob/master/Shared/Download_badge.png?raw=true)](https://itunes.apple.com/app/speedyeye/id1058077458?mt=8)
 
+___
+Need help? <a href="mailto:nicholas.allio@me.com?Subject=SpeedyEye%20support" target="_top">Contact the developer</a>
+
