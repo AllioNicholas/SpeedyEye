@@ -127,22 +127,40 @@ class GameViewController: UIViewController {
         case .upCount:
             if let hs = UserDefaults.standard.value(forKey: "highscore_up") {
                 highscore = Double(hs as! NSNumber)
-                highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+                if highscore >= 60.0 {
+                    let minutes = Int(highscore / 60)
+                    let secAndMill = highscore - Double(60 * minutes)
+                    highScoreLabel.text = NSString(format: "High score: %d:%05.2f", minutes, secAndMill) as String
+                } else {
+                    highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+                }
             } else {
                 highScoreLabel.text = "High score: 0.0"
             }
         case .downCount:
             if let hs = UserDefaults.standard.value(forKey: "highscore_down") {
                 highscore = Double(hs as! NSNumber)
-                highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+                if highscore >= 60.0 {
+                    let minutes = Int(highscore / 60)
+                    let secAndMill = highscore - Double(60 * minutes)
+                    highScoreLabel.text = NSString(format: "High score: %d:%05.2f", minutes, secAndMill) as String
+                } else {
+                    highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+                }
             } else {
                 highScoreLabel.text = "High score: 0.0"
             }
         case .random:
             if let hs = UserDefaults.standard.value(forKey: "highscore_rand") {
                 highscore = Double(hs as! NSNumber)
-                highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
                 takenRand.append(display)
+                if highscore >= 60.0 {
+                    let minutes = Int(highscore / 60)
+                    let secAndMill = highscore - Double(60 * minutes)
+                    highScoreLabel.text = NSString(format: "High score: %d:%05.2f", minutes, secAndMill) as String
+                } else {
+                    highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
+                }
             } else {
                 highScoreLabel.text = "High score: 0.0"
             }
@@ -153,7 +171,13 @@ class GameViewController: UIViewController {
     
     func updateTime() {
         elapsedTime += 0.01
-        cronoLabel.text = NSString(format: "%.2f", elapsedTime) as String
+        if elapsedTime >= 60.0 {
+            let minutes = Int(elapsedTime / 60)
+            let secAndMill = elapsedTime - Double(60 * minutes)
+            cronoLabel.text = NSString(format: "%d:%05.2f", minutes, secAndMill) as String
+        } else {
+            cronoLabel.text = NSString(format: "%.2f", elapsedTime) as String
+        }
     }
     
     func updateCountdownAndStart() {
