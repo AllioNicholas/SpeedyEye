@@ -18,7 +18,7 @@ class HighScoresViewController: UIViewController {
     @IBOutlet weak var randomHS: UILabel!
     
     var navigation_buttonSound : SystemSoundID = 0
-    var bestTime = DBL_MAX
+    var bestTime = Double.greatestFiniteMagnitude
     var defaultHS = LeaderboardID.main.rawValue
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class HighScoresViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let hs = UserDefaults.standard.value(forKey: "highscore_up") {
-            let highscore = Double(hs as! NSNumber)
+            let highscore = hs as! Double
             if highscore < bestTime {
                 bestTime = highscore
                 defaultHS = LeaderboardID.upCount.rawValue
@@ -40,7 +40,7 @@ class HighScoresViewController: UIViewController {
         }
         
         if let hs = UserDefaults.standard.value(forKey: "highscore_down") {
-            let highscore = Double(hs as! NSNumber)
+            let highscore = hs as! Double
             if highscore < bestTime {
                 bestTime = highscore
                 defaultHS = LeaderboardID.downCount.rawValue
@@ -52,7 +52,7 @@ class HighScoresViewController: UIViewController {
         }
         
         if let hs = UserDefaults.standard.value(forKey: "highscore_rand") {
-            let highscore = Double(hs as! NSNumber)
+            let highscore = hs as! Double
             if highscore < bestTime {
                 bestTime = highscore
                 defaultHS = LeaderboardID.random.rawValue

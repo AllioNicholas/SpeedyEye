@@ -31,7 +31,7 @@ class GameViewController: UIViewController {
     var countDown = 3
     var countdownLabel: UILabel!
     var correctCount = 0
-    var highscore = DBL_MAX
+    var highscore = Double.greatestFiniteMagnitude
     
     var navigation_buttonSound: SystemSoundID = 0
     var correctSound: SystemSoundID = 1
@@ -84,7 +84,7 @@ class GameViewController: UIViewController {
         
         cdView.frame = self.view.bounds
 
-        blurEffectView.addSubview(cdView)
+        blurEffectView.contentView.addSubview(cdView)
         
         self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
         
@@ -126,7 +126,7 @@ class GameViewController: UIViewController {
         switch gameMode! {
         case .upCount:
             if let hs = UserDefaults.standard.value(forKey: "highscore_up") {
-                highscore = Double(hs as! NSNumber)
+                highscore = hs as! Double
                 if highscore >= 60.0 {
                     let minutes = Int(highscore / 60)
                     let secAndMill = highscore - Double(60 * minutes)
@@ -139,7 +139,7 @@ class GameViewController: UIViewController {
             }
         case .downCount:
             if let hs = UserDefaults.standard.value(forKey: "highscore_down") {
-                highscore = Double(hs as! NSNumber)
+                highscore = hs as! Double
                 if highscore >= 60.0 {
                     let minutes = Int(highscore / 60)
                     let secAndMill = highscore - Double(60 * minutes)
@@ -152,7 +152,7 @@ class GameViewController: UIViewController {
             }
         case .random:
             if let hs = UserDefaults.standard.value(forKey: "highscore_rand") {
-                highscore = Double(hs as! NSNumber)
+                highscore = hs as! Double
                 takenRand.append(display)
                 if highscore >= 60.0 {
                     let minutes = Int(highscore / 60)
@@ -169,7 +169,7 @@ class GameViewController: UIViewController {
         
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         elapsedTime += 0.01
         if elapsedTime >= 60.0 {
             let minutes = Int(elapsedTime / 60)
@@ -180,7 +180,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func updateCountdownAndStart() {
+    @objc func updateCountdownAndStart() {
         countDown -= 1
         if countDown == 0 {
             countdownLabel.text = "GO!"
@@ -334,7 +334,7 @@ class GameViewController: UIViewController {
         
         endView.frame = self.view.bounds
         
-        blurEffectView.addSubview(endView)
+        blurEffectView.contentView.addSubview(endView)
                         
         self.view.addSubview(blurEffectView)
         
@@ -345,7 +345,7 @@ class GameViewController: UIViewController {
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func dismissEndView() {
+    @objc func dismissEndView() {
         AudioServicesPlaySystemSound(navigation_buttonSound)
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
