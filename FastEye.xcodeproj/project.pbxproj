@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0E1BF93C1C00CF5B32 /* Correct.wav */; };
 		01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01025F0F1BF93C1C00CF5B32 /* Fail.wav */; };
-		010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89A1C0728C1007D49E0 /* CountdownView.xib */; };
 		010EB89E1C077F66007D49E0 /* EndGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EB89D1C077F66007D49E0 /* EndGameView.xib */; };
+		013C0B0D1EEF2D92009092D2 /* CountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C0B0C1EEF2D92009092D2 /* CountDownViewController.swift */; };
 		0146613C1E66E102008C2410 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0146613B1E66E102008C2410 /* GameKit.framework */; };
+		014AE6DA1EEF26B800547207 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014AE6D91EEF26B800547207 /* EndGameView.swift */; };
+		015466FE1EEF38E600ED375A /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015466FD1EEF38E600ED375A /* GameCenterManager.swift */; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
+		019A34BD1EEDE32500736C8A /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A34BC1EEDE32500736C8A /* CountdownView.swift */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
 		01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */; };
 		01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAAB921BC6BBC0004C3695 /* StartViewController.swift */; };
@@ -26,24 +29,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01025F0E1BF93C1C00CF5B32 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
-		01025F0F1BF93C1C00CF5B32 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fail.wav; sourceTree = "<group>"; };
-		010EB89A1C0728C1007D49E0 /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
-		010EB89D1C077F66007D49E0 /* EndGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EndGameView.xib; sourceTree = "<group>"; };
+		01025F0E1BF93C1C00CF5B32 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Correct.wav; path = Sounds/Correct.wav; sourceTree = "<group>"; };
+		01025F0F1BF93C1C00CF5B32 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Fail.wav; path = Sounds/Fail.wav; sourceTree = "<group>"; };
+		010EB89D1C077F66007D49E0 /* EndGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EndGameView.xib; path = UI/EndGameView.xib; sourceTree = "<group>"; };
+		013C0B0C1EEF2D92009092D2 /* CountDownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountDownViewController.swift; path = Controllers/CountDownViewController.swift; sourceTree = "<group>"; };
 		0146613B1E66E102008C2410 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
+		014AE6D91EEF26B800547207 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndGameView.swift; path = View/EndGameView.swift; sourceTree = "<group>"; };
+		015466FD1EEF38E600ED375A /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCenterManager.swift; path = Controllers/Manager/GameCenterManager.swift; sourceTree = "<group>"; };
+		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/GameViewController.swift; sourceTree = "<group>"; };
+		019A34BC1EEDE32500736C8A /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = View/CountdownView.swift; sourceTree = "<group>"; };
+		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = Controllers/HighScoresViewController.swift; sourceTree = "<group>"; };
 		01DAAB8D1BC6BBC0004C3695 /* FastEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01DAAB921BC6BBC0004C3695 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		01DAAB921BC6BBC0004C3695 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = Controllers/StartViewController.swift; sourceTree = "<group>"; };
 		01DAAB951BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01DAAB971BC6BBC0004C3695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01DAAB9A1BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01DAAB9C1BC6BBC0004C3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01F392331C1E3F5F0053B644 /* ending_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ending_sound.wav; sourceTree = "<group>"; };
-		01F392341C1E3F5F0053B644 /* navigation_button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = navigation_button.wav; sourceTree = "<group>"; };
-		01F392351C1E3F5F0053B644 /* new_record.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_record.wav; sourceTree = "<group>"; };
-		01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		01F392331C1E3F5F0053B644 /* ending_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ending_sound.wav; path = Sounds/ending_sound.wav; sourceTree = "<group>"; };
+		01F392341C1E3F5F0053B644 /* navigation_button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = navigation_button.wav; path = Sounds/navigation_button.wav; sourceTree = "<group>"; };
+		01F392351C1E3F5F0053B644 /* new_record.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = new_record.wav; path = Sounds/new_record.wav; sourceTree = "<group>"; };
+		01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Bold.ttf"; path = "Resources/Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,26 +64,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01025F071BF9344500CF5B32 /* Supporting files */ = {
+		010EB89C1C072EDE007D49E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				019A34BC1EEDE32500736C8A /* CountdownView.swift */,
+				014AE6D91EEF26B800547207 /* EndGameView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		013C0B0A1EEF2AA6009092D2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				010EB89D1C077F66007D49E0 /* EndGameView.xib */,
+				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
+				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		013C0B0B1EEF2AB1009092D2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
 				01F392331C1E3F5F0053B644 /* ending_sound.wav */,
 				01F392341C1E3F5F0053B644 /* navigation_button.wav */,
 				01F392351C1E3F5F0053B644 /* new_record.wav */,
-				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
 				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
 			);
-			name = "Supporting files";
-			sourceTree = "<group>";
-		};
-		010EB89C1C072EDE007D49E0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				010EB89A1C0728C1007D49E0 /* CountdownView.xib */,
-				010EB89D1C077F66007D49E0 /* EndGameView.xib */,
-			);
-			name = View;
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		0146613A1E66E102008C2410 /* Frameworks */ = {
@@ -86,6 +101,23 @@
 				0146613B1E66E102008C2410 /* GameKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		015466FC1EEF38A600ED375A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				015466FD1EEF38E600ED375A /* GameCenterManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		019A34BB1EEDE2ED00736C8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				013C0B0B1EEF2AB1009092D2 /* Sounds */,
+				013C0B0A1EEF2AA6009092D2 /* UI */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		01DAAB841BC6BBC0004C3695 = {
@@ -110,11 +142,9 @@
 			children = (
 				01ECF20E1E6582D000BDC321 /* Controller */,
 				010EB89C1C072EDE007D49E0 /* View */,
-				01025F071BF9344500CF5B32 /* Supporting files */,
-				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
-				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
+				019A34BB1EEDE2ED00736C8A /* Resources */,
+				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
-				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
 				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
 			);
 			path = FastEye;
@@ -123,9 +153,12 @@
 		01ECF20E1E6582D000BDC321 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
+				015466FC1EEF38A600ED375A /* Manager */,
 				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
 				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
 				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
+				013C0B0C1EEF2D92009092D2 /* CountDownViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F392381C1E3F5F0053B644 /* new_record.wav in Resources */,
-				010EB89B1C0728C1007D49E0 /* CountdownView.xib in Resources */,
 				01F392371C1E3F5F0053B644 /* navigation_button.wav in Resources */,
 				01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
@@ -216,10 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015466FE1EEF38E600ED375A /* GameCenterManager.swift in Sources */,
 				01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */,
+				019A34BD1EEDE32500736C8A /* CountdownView.swift in Sources */,
 				01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */,
 				015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */,
+				014AE6DA1EEF26B800547207 /* EndGameView.swift in Sources */,
 				01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */,
+				013C0B0D1EEF2D92009092D2 /* CountDownViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +268,7 @@
 				01DAAB951BC6BBC0004C3695 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */ = {
@@ -240,6 +277,7 @@
 				01DAAB9A1BC6BBC0004C3695 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -356,7 +394,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -374,7 +412,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

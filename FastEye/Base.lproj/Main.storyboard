@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +49,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahl-Qs-Sv8"/>
-                                    <segue destination="zn8-sO-Ez2" kind="show" identifier="down" id="dWk-sf-2ZP"/>
+                                    <segue destination="L7D-pw-YPa" kind="custom" identifier="downcount" id="qCg-MJ-B58"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-tK-Ugc">
@@ -73,7 +74,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wu8-Vk-2Si"/>
-                                    <segue destination="zn8-sO-Ez2" kind="show" identifier="up" id="1oc-v9-ykf"/>
+                                    <segue destination="L7D-pw-YPa" kind="custom" identifier="upcount" id="UgH-54-LFC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d1-Pv-H55">
@@ -98,7 +99,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HQc-kw-GaW"/>
-                                    <segue destination="zn8-sO-Ez2" kind="show" identifier="random" id="mPL-XI-sdF"/>
+                                    <segue destination="L7D-pw-YPa" kind="custom" identifier="random" id="GAS-Fu-It5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-Za-fgd">
@@ -123,7 +124,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WhF-av-NtL"/>
-                                    <segue destination="dm0-ag-aNF" kind="presentation" id="HXr-Cd-x0W"/>
+                                    <segue destination="dm0-ag-aNF" kind="presentation" identifier="displayHighScores" id="HXr-Cd-x0W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -276,6 +277,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2I-VZ-2jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2020" y="1054"/>
+        </scene>
+        <!--Count Down View Controller-->
+        <scene sceneID="RuI-v1-rTP">
+            <objects>
+                <viewController id="L7D-pw-YPa" customClass="CountDownViewController" customModule="FastEye" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bBZ-BE-uHj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zbg-ua-UHs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JDj-79-lao">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgs-Re-c2l">
+                                <rect key="frame" x="108" y="299" width="158" height="68"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kgs-Re-c2l" firstAttribute="centerX" secondItem="JDj-79-lao" secondAttribute="centerX" id="GXx-WA-GmP"/>
+                            <constraint firstItem="kgs-Re-c2l" firstAttribute="centerY" secondItem="JDj-79-lao" secondAttribute="centerY" id="mGQ-gj-FN9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="kgs-Re-c2l" id="HFg-Dm-ZMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtt-83-XKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2785" y="337"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="5jV-U9-KYw">
@@ -690,7 +724,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-2Q-Q9p">
-                                <rect key="frame" x="154.5" y="523.5" width="66" height="29"/>
+                                <rect key="frame" x="155" y="523.5" width="66" height="29"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
                                 <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -739,7 +773,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-wH-U0G">
-                                <rect key="frame" x="154.5" y="166.5" width="66" height="29"/>
+                                <rect key="frame" x="155" y="166.5" width="66" height="29"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
                                 <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -832,7 +866,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRS-AD-UBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="337"/>
+            <point key="canvasLocation" x="3546" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mqD-IH-BEx">
@@ -854,6 +888,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1oc-v9-ykf"/>
+        <segue reference="qCg-MJ-B58"/>
     </inferredMetricsTieBreakers>
 </document>
