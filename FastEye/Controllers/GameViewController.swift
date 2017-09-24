@@ -26,10 +26,7 @@ class GameViewController: UIViewController {
     var gameMode: GameMode!
     var takenRand = [0]
     var gameTimer: Timer = Timer()
-    var countDownTimer: Timer = Timer()
     var elapsedTime = 0.0
-    var countDown = 3
-    var countdownLabel: UILabel!
     var correctCount = 0
     var highscore = Double.greatestFiniteMagnitude
     
@@ -52,7 +49,7 @@ class GameViewController: UIViewController {
         var filePath = Bundle.main.path(forResource: "Correct", ofType: "wav")
         AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &correctSound)
         
-        //Wronf button pressed
+        //Wrong button pressed
         filePath = Bundle.main.path(forResource: "Fail", ofType: "wav")
         AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &wrongSound)
         
@@ -67,29 +64,34 @@ class GameViewController: UIViewController {
         //Navigation button
         filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
         AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &navigation_buttonSound)
+        
+        
+        self.setupUIForNewGame()
+        
+        
+        
+        //load high score
+        self.loadingScore()
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //Prepare countdown before game
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        //always fill the view
-        blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        let cdView = Bundle.main.loadNibNamed("CountdownView", owner: self, options: nil)?[0] as! UIView
-//        let cdView = array.object(at: 0) as! UIView
-        countdownLabel = cdView.viewWithTag(1) as! UILabel
-        countdownLabel.text = "3"
-        
-        cdView.frame = self.view.bounds
-
-        blurEffectView.contentView.addSubview(cdView)
-        
-        self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-        
-        countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.updateCountdownAndStart), userInfo: nil, repeats: true)
-        
+    func startCrono()  {
+        //Start chrono with 0.01 precision
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTime() {
+        elapsedTime += 0.01
+        if elapsedTime >= 60.0 {
+            let minutes = Int(elapsedTime / 60)
+            let secAndMill = elapsedTime - Double(60 * minutes)
+            cronoLabel.text = NSString(format: "%d:%05.2f", minutes, secAndMill) as String
+        } else {
+            cronoLabel.text = NSString(format: "%.2f", elapsedTime) as String
+        }
+    }
+    
+    func setupUIForNewGame() {
         //Setup game with according color
         let colorGame: UIColor!
         switch gameMode! {
@@ -110,6 +112,7 @@ class GameViewController: UIViewController {
         prog2.progressTintColor = colorGame
         displayLabel.text = "\(display!)"
         cronoLabel.text = "0.0"
+        
         var taken = [0]
         for idx in 1...25 {
             let but = self.view.viewWithTag(idx) as! UIButton
@@ -118,11 +121,15 @@ class GameViewController: UIViewController {
                 lab = Int(arc4random_uniform(26))
             }
             taken.append(lab)
-            but.setTitle(String(lab), for: UIControlState())
+            but.setTitle(String(lab), for: .normal)
             but.backgroundColor = colorGame
         }
         
-        //load high score
+        let cdView = CountdownView(frame: self.view.frame)
+        self.view.addSubview(cdView)
+    }
+    
+    func loadingScore() {
         switch gameMode! {
         case .upCount:
             if let hs = UserDefaults.standard.value(forKey: "highscore_up") {
@@ -165,35 +172,6 @@ class GameViewController: UIViewController {
                 highScoreLabel.text = "High score: 0.0"
             }
         }
-        
-        
-    }
-    
-    @objc func updateTime() {
-        elapsedTime += 0.01
-        if elapsedTime >= 60.0 {
-            let minutes = Int(elapsedTime / 60)
-            let secAndMill = elapsedTime - Double(60 * minutes)
-            cronoLabel.text = NSString(format: "%d:%05.2f", minutes, secAndMill) as String
-        } else {
-            cronoLabel.text = NSString(format: "%.2f", elapsedTime) as String
-        }
-    }
-    
-    @objc func updateCountdownAndStart() {
-        countDown -= 1
-        if countDown == 0 {
-            countdownLabel.text = "GO!"
-        } else {
-            countdownLabel.text = String(countDown)
-        }
-        if countDown == -1 {
-            countDownTimer.invalidate()
-            //Start chrono with 0.01 precision
-            gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
-            self.view.subviews.last!.removeFromSuperview()
-        }
-        
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -298,45 +276,23 @@ class GameViewController: UIViewController {
         }
     }
     
-    func displayScore(_ isHighScore: Bool, withTime: Double, inMode: GameMode) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        //always fill the view
-        blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        let endView = Bundle.main.loadNibNamed("EndGameView", owner: self, options: nil)?[0] as! UIView
+    func displayScore(_ isHighScore: Bool, withTime time: Double, inMode mode: GameMode) {
         
         //Customization endView according to the result and the game mode
-        //Main label (tag 10)
-        let mainLabel = endView.viewWithTag(10) as! UILabel
-        //Game mode label (tag 11)
-        let modeLabel = endView.viewWithTag(11) as! UILabel
-        modeLabel.text = "Mode \(inMode)"
-        //Time label (tag 12)
-        let timeLabel = endView.viewWithTag(12) as! UILabel
+        let finalView = EndGameView(frame: self.view.frame)
+        finalView.modeLabel.text = "Mode \(mode)"
         
         if isHighScore {
-            mainLabel.text = "New Record!"
-            timeLabel.text = NSString(format: "New best time: %.2f s", withTime) as String
+            finalView.mainTitleLabel.text = "New Record!"
+            finalView.finalTimeLabel.text = NSString(format: "New best time: %.2f s", time) as String
             AudioServicesPlaySystemSound(new_recordSound)
-            submitHighScoreToGC(highScore: withTime, inMode: inMode)
+            GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: time, inMode: mode)
         } else {
-            mainLabel.text = "Too slow!"
-            timeLabel.text = NSString(format: "Your time: %.2f s", withTime) as String
+            finalView.mainTitleLabel.text = "Too slow!"
+            finalView.finalTimeLabel.text = NSString(format: "Your time: %.2f s", time) as String
             AudioServicesPlaySystemSound(end_gameSound)
         }
         
-        //Back button (tag 13)
-        let backButton = endView.viewWithTag(13) as! UIButton
-        backButton.addTarget(self, action: #selector(GameViewController.dismissEndView), for: UIControlEvents.touchUpInside)
-        
-        
-        endView.frame = self.view.bounds
-        
-        blurEffectView.contentView.addSubview(endView)
-                        
-        self.view.addSubview(blurEffectView)
         
     }
     
@@ -348,26 +304,6 @@ class GameViewController: UIViewController {
     @objc func dismissEndView() {
         AudioServicesPlaySystemSound(navigation_buttonSound)
         _ = self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func submitHighScoreToGC(highScore: Double, inMode: GameMode) {
-        var leaderboardID = ""
-        switch inMode {
-        case .upCount:
-            leaderboardID = LeaderboardID.upCount.rawValue
-            break
-        case .downCount:
-            leaderboardID = LeaderboardID.downCount.rawValue
-            break
-        case .random:
-            leaderboardID = LeaderboardID.random.rawValue
-            break
-        }
-        
-        let bestScoreInt = GKScore(leaderboardIdentifier: leaderboardID)
-        bestScoreInt.value = Int64(highScore*100)
-        
-        GKScore.report([bestScoreInt], withCompletionHandler: nil)
     }
     
 }
