@@ -86,53 +86,13 @@ class GameViewController: UIViewController {
             but.setTitle(String(lab), for: .normal)
             but.backgroundColor = colorGame
         }
-        
-        let cdView = CountdownView(frame: self.view.frame)
-        self.view.addSubview(cdView)
     }
     
     func loadingScore() {
-        switch gameMode! {
-        case .upCount:
-            if let hs = UserDefaults.standard.value(forKey: "highscore_up") {
-                highscore = hs as! Double
-                if highscore >= 60.0 {
-                    let minutes = Int(highscore / 60)
-                    let secAndMill = highscore - Double(60 * minutes)
-                    highScoreLabel.text = NSString(format: "High score: %d:%05.2f", minutes, secAndMill) as String
-                } else {
-                    highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
-                }
-            } else {
-                highScoreLabel.text = "High score: 0.0"
-            }
-        case .downCount:
-            if let hs = UserDefaults.standard.value(forKey: "highscore_down") {
-                highscore = hs as! Double
-                if highscore >= 60.0 {
-                    let minutes = Int(highscore / 60)
-                    let secAndMill = highscore - Double(60 * minutes)
-                    highScoreLabel.text = NSString(format: "High score: %d:%05.2f", minutes, secAndMill) as String
-                } else {
-                    highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
-                }
-            } else {
-                highScoreLabel.text = "High score: 0.0"
-            }
-        case .random:
-            if let hs = UserDefaults.standard.value(forKey: "highscore_rand") {
-                highscore = hs as! Double
-                takenRand.append(display)
-                if highscore >= 60.0 {
-                    let minutes = Int(highscore / 60)
-                    let secAndMill = highscore - Double(60 * minutes)
-                    highScoreLabel.text = NSString(format: "High score: %d:%05.2f", minutes, secAndMill) as String
-                } else {
-                    highScoreLabel.text = NSString(format: "High score: %.2f", highscore) as String
-                }
-            } else {
-                highScoreLabel.text = "High score: 0.0"
-            }
+        if let highScore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: gameMode) {
+            highScoreLabel.text = "High score: \(highScore.formatHighScore())"
+        } else {
+            highScoreLabel.text = "High score: -.-"
         }
     }
     
@@ -240,19 +200,24 @@ class GameViewController: UIViewController {
     
     func displayScore(_ isHighScore: Bool, withTime time: Double, inMode mode: GameMode) {
         
-        //Customization endView according to the result and the game mode
-        let finalView = EndGameView(frame: self.view.frame)
-        finalView.modeLabel.text = "Mode \(mode)"
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        if let endViewController = storyboard.instantiateViewController(withIdentifier: "EndViewController") as? EndGameViewController {
         
-        if isHighScore {
-            finalView.mainTitleLabel.text = "New Record!"
-            finalView.finalTimeLabel.text = NSString(format: "New best time: %.2f s", time) as String
-            SoundManager.sharedInstance().playRecordSound()
-            GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: time, inMode: mode)
-        } else {
-            finalView.mainTitleLabel.text = "Too slow!"
-            finalView.finalTimeLabel.text = NSString(format: "Your time: %.2f s", time) as String
-            SoundManager.sharedInstance().playEndSound()
+            //Customization endView according to the result and the game mode
+            endViewController.modeLabel.text = "Mode \(mode)"
+            
+            if isHighScore {
+                endViewController.mainTitleLabel.text = "New Record!"
+                endViewController.finalTimeLabel.text = NSString(format: "New best time: %.2f s", time) as String
+                SoundManager.sharedInstance().playRecordSound()
+                GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: time, inMode: mode)
+            } else {
+                endViewController.mainTitleLabel.text = "Too slow!"
+                endViewController.finalTimeLabel.text = NSString(format: "Your time: %.2f s", time) as String
+                SoundManager.sharedInstance().playEndSound()
+            }
+            
+            self.present(endViewController, animated: true, completion: nil)
         }
         
         
@@ -268,18 +233,4 @@ class GameViewController: UIViewController {
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
-}
-
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-    
-    convenience init(netHex:Int) {
-        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
-    }
 }
