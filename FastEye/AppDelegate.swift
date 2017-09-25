@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        _ = GameCenterManager.sharedInstance()
+        _ = SoundManager.sharedInstance()
+        
         // Override point for customization after application launch.
         var shouldPerformAdditionalDelegateHandling = true
         
@@ -78,7 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             break
         }
         
-        // Display an alert indicating the shortcut selected from the home screen.
         let sb = UIStoryboard(name: "Main", bundle: nil)
         window!.rootViewController = sb.instantiateViewController(withIdentifier: "root")
         window?.rootViewController?.addChildViewController(sb.instantiateViewController(withIdentifier: "Start"))
