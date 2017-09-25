@@ -7,19 +7,11 @@
 //
 
 import UIKit
-import AudioToolbox
-
-
 
 class StartViewController: UIViewController {
-
-    var navigation_buttonSound: SystemSoundID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &navigation_buttonSound)
         
         weak var weakSelf = self
         GameCenterManager.sharedInstance().authenticateGameCenterUser(successBlockOrViewController: { (success, viewController) in
@@ -51,7 +43,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func playNavigationSound(_ sender: UIButton) {
-        AudioServicesPlaySystemSound(navigation_buttonSound)
+        SoundManager.sharedInstance().playNavigationSound()
     }
 }
 

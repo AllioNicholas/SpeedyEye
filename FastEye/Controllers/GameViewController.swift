@@ -11,14 +11,6 @@ import Foundation
 import AVFoundation
 import Darwin
 import CoreGraphics
-import AudioToolbox
-import GameKit
-
-enum GameMode {
-    case upCount
-    case downCount
-    case random
-}
 
 class GameViewController: UIViewController {
     
@@ -29,12 +21,6 @@ class GameViewController: UIViewController {
     var elapsedTime = 0.0
     var correctCount = 0
     var highscore = Double.greatestFiniteMagnitude
-    
-    var navigation_buttonSound: SystemSoundID = 0
-    var correctSound: SystemSoundID = 1
-    var wrongSound: SystemSoundID = 2
-    var end_gameSound: SystemSoundID = 3
-    var new_recordSound:  SystemSoundID = 4
    
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
@@ -45,34 +31,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Correct button pressed
-        var filePath = Bundle.main.path(forResource: "Correct", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &correctSound)
-        
-        //Wrong button pressed
-        filePath = Bundle.main.path(forResource: "Fail", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &wrongSound)
-        
-        //Game ended with no new record
-        filePath = Bundle.main.path(forResource: "ending_sound", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &end_gameSound)
-        
-        //Game ended with new record
-        filePath = Bundle.main.path(forResource: "new_record", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &new_recordSound)
-        
-        //Navigation button
-        filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &navigation_buttonSound)
-        
-        
         self.setupUIForNewGame()
-        
-        
         
         //load high score
         self.loadingScore()
-        
     }
     
     func startCrono()  {
@@ -285,24 +247,24 @@ class GameViewController: UIViewController {
         if isHighScore {
             finalView.mainTitleLabel.text = "New Record!"
             finalView.finalTimeLabel.text = NSString(format: "New best time: %.2f s", time) as String
-            AudioServicesPlaySystemSound(new_recordSound)
+            SoundManager.sharedInstance().playRecordSound()
             GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: time, inMode: mode)
         } else {
             finalView.mainTitleLabel.text = "Too slow!"
             finalView.finalTimeLabel.text = NSString(format: "Your time: %.2f s", time) as String
-            AudioServicesPlaySystemSound(end_gameSound)
+            SoundManager.sharedInstance().playEndSound()
         }
         
         
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        AudioServicesPlaySystemSound(navigation_buttonSound)
+        SoundManager.sharedInstance().playNavigationSound()
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func dismissEndView() {
-        AudioServicesPlaySystemSound(navigation_buttonSound)
+        SoundManager.sharedInstance().playNavigationSound()
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
