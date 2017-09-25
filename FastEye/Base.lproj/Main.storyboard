@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -290,6 +290,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mg-0m-TRl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJs-C7-ChV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgs-Re-c2l">
                                 <rect key="frame" x="108" y="299" width="158" height="68"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="60"/>
@@ -300,7 +308,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kgs-Re-c2l" firstAttribute="centerX" secondItem="JDj-79-lao" secondAttribute="centerX" id="GXx-WA-GmP"/>
+                            <constraint firstItem="Zbg-ua-UHs" firstAttribute="top" secondItem="4mg-0m-TRl" secondAttribute="bottom" id="HkN-bN-2ia"/>
+                            <constraint firstItem="4mg-0m-TRl" firstAttribute="top" secondItem="JDj-79-lao" secondAttribute="top" id="PV4-AY-4i0"/>
+                            <constraint firstAttribute="trailing" secondItem="4mg-0m-TRl" secondAttribute="trailing" id="UJD-ve-jcq"/>
                             <constraint firstItem="kgs-Re-c2l" firstAttribute="centerY" secondItem="JDj-79-lao" secondAttribute="centerY" id="mGQ-gj-FN9"/>
+                            <constraint firstItem="4mg-0m-TRl" firstAttribute="leading" secondItem="JDj-79-lao" secondAttribute="leading" id="oPG-zG-9im"/>
                         </constraints>
                     </view>
                     <connections>
@@ -309,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtt-83-XKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2785" y="337"/>
+            <point key="canvasLocation" x="2784.8000000000002" y="336.88155922038982"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="5jV-U9-KYw">
@@ -868,13 +880,97 @@
             </objects>
             <point key="canvasLocation" x="3546" y="337"/>
         </scene>
+        <!--End Game View Controller-->
+        <scene sceneID="0qb-Dc-vJR">
+            <objects>
+                <viewController storyboardIdentifier="EndViewController" id="Fu1-mW-fAS" customClass="EndGameViewController" customModule="FastEye" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UVx-r6-Vcf"/>
+                        <viewControllerLayoutGuide type="bottom" id="A3r-Rz-m5r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jFF-OP-9Dg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4X-kx-rBL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CzP-g1-WCU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewd-Ek-cgm">
+                                <rect key="frame" x="135" y="239.5" width="105.5" height="45"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKS-xq-Vwg">
+                                <rect key="frame" x="161" y="292.5" width="53" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-OC-9BD">
+                                <rect key="frame" x="161" y="322.5" width="53" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-fO-lsl">
+                                <rect key="frame" x="87.5" y="353" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4vP-Rr-89Y"/>
+                                    <constraint firstAttribute="width" constant="200" id="uY7-dI-jee"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="Fu1-mW-fAS" eventType="touchUpInside" id="VgN-3y-evn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N4X-kx-rBL" firstAttribute="top" secondItem="jFF-OP-9Dg" secondAttribute="top" id="1Oz-dv-fuj"/>
+                            <constraint firstItem="PUX-fO-lsl" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="1dK-6R-ZBc"/>
+                            <constraint firstItem="iKS-xq-Vwg" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="5kq-HB-8uR"/>
+                            <constraint firstItem="FEZ-OC-9BD" firstAttribute="top" secondItem="iKS-xq-Vwg" secondAttribute="bottom" constant="8" id="Afb-vb-5wr"/>
+                            <constraint firstItem="A3r-Rz-m5r" firstAttribute="top" secondItem="N4X-kx-rBL" secondAttribute="bottom" id="N7P-zN-Zya"/>
+                            <constraint firstItem="iKS-xq-Vwg" firstAttribute="top" secondItem="Ewd-Ek-cgm" secondAttribute="bottom" constant="8" id="YwJ-op-ntO"/>
+                            <constraint firstItem="PUX-fO-lsl" firstAttribute="top" secondItem="FEZ-OC-9BD" secondAttribute="bottom" constant="8" id="Yxs-rq-Des"/>
+                            <constraint firstItem="Ewd-Ek-cgm" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="bjw-23-IHB"/>
+                            <constraint firstAttribute="trailing" secondItem="N4X-kx-rBL" secondAttribute="trailing" id="mr7-xo-JkC"/>
+                            <constraint firstItem="FEZ-OC-9BD" firstAttribute="centerY" secondItem="jFF-OP-9Dg" secondAttribute="centerY" id="nse-Em-gKQ"/>
+                            <constraint firstItem="N4X-kx-rBL" firstAttribute="leading" secondItem="jFF-OP-9Dg" secondAttribute="leading" id="p6s-AN-Kao"/>
+                            <constraint firstItem="FEZ-OC-9BD" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="tym-lM-gAy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButtonPressed" destination="PUX-fO-lsl" id="5cH-bm-QTX"/>
+                        <outlet property="finalTimeLabel" destination="FEZ-OC-9BD" id="oZg-sN-j0V"/>
+                        <outlet property="mainTitleLabel" destination="Ewd-Ek-cgm" id="nOa-p5-DRT"/>
+                        <outlet property="modeLabel" destination="iKS-xq-Vwg" id="CNj-Ix-rGk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVa-Jb-h0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4277.6000000000004" y="336.88155922038982"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mqD-IH-BEx">
             <objects>
                 <navigationController storyboardIdentifier="root" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gi4-7F-ifd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFJ-hf-hHA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
