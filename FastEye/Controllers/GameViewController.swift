@@ -39,33 +39,41 @@ class GameViewController: UIViewController {
     
     func startCrono()  {
         //Start chrono with 0.01 precision
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateTime() {
-        elapsedTime += 0.01
-        if elapsedTime >= 60.0 {
-            let minutes = Int(elapsedTime / 60)
-            let secAndMill = elapsedTime - Double(60 * minutes)
-            cronoLabel.text = NSString(format: "%d:%05.2f", minutes, secAndMill) as String
-        } else {
-            cronoLabel.text = NSString(format: "%.2f", elapsedTime) as String
-        }
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
+            self.elapsedTime += 0.01
+            if self.elapsedTime >= 60.0 {
+                let minutes = Int(self.elapsedTime / 60)
+                let secAndMill = self.elapsedTime - Double(60 * minutes)
+                self.cronoLabel.text = NSString(format: "%d:%05.2f", minutes, secAndMill) as String
+            } else {
+                self.cronoLabel.text = NSString(format: "%.2f", self.elapsedTime) as String
+            }
+        })
     }
     
     func setupUIForNewGame() {
         //Setup game with according color
         let colorGame: UIColor!
         switch gameMode! {
-        case .upCount:
+        case .UpCount:
+            display = 1
             //Viola
             colorGame = UIColor(netHex: 0x332433)
-        case .downCount:
+            break
+        case .DownCount:
+            display = 25
             //Azzurro scuro
             colorGame = UIColor(netHex: 0x4A5B82)
-        case .random:
+            break
+        case .Random:
+            var num = Int(arc4random_uniform(26))
+            while num == 0 {
+                num = Int(arc4random_uniform(26))
+            }
+            display = Int(num)
             //Verde acqua
             colorGame = UIColor(netHex: 0x6FA79A)
+            break
         }
         
         progressBar.progress = 0.0
@@ -98,24 +106,25 @@ class GameViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == String(display) {
-            AudioServicesPlaySystemSound(correctSound)
+            SoundManager.sharedInstance().playCorrectSound()
             switch gameMode! {
-            case .upCount:
+            case .UpCount:
                 correctCount += 1
                 display! += 1
+                gameEnded(self.gameMode)
                 if display == 26 {
                     //end of the game
                     gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
-                    gameEnded(.upCount)
+                    gameEnded(.UpCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display!)"
                 }
-            case .downCount:
+            case .DownCount:
                 correctCount += 1
                 display! -= 1
                 if display == 0 {
@@ -124,13 +133,13 @@ class GameViewController: UIViewController {
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
-                    gameEnded(.downCount)
+                    gameEnded(.DownCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display!)"
                 }
-            case .random:
+            case .Random:
                 correctCount += 1
                 var num = arc4random() % 26
                 while takenRand.contains(Int(num)) {
@@ -144,7 +153,7 @@ class GameViewController: UIViewController {
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
                     prog2.setProgress(1.0, animated: true)
-                    gameEnded(.random)
+                    gameEnded(.Random)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
                     prog2.setProgress(Float(correctCount)/25.0, animated: true)
@@ -152,16 +161,16 @@ class GameViewController: UIViewController {
                 }
             }
         } else {
-            AudioServicesPlaySystemSound(wrongSound)
+            SoundManager.sharedInstance().playWrongSound()
             correctCount = 0
             progressBar.setProgress(0.0, animated: true)
             prog2.setProgress(0.0, animated: true)
             switch gameMode! {
-            case .upCount:
+            case .UpCount:
                 display! = 1
-            case .downCount:
+            case .DownCount:
                 display! = 25
-            case .random:
+            case .Random:
                 takenRand = [0]
                 var num = arc4random() % 26
                 while takenRand.contains(Int(num)) {
@@ -175,52 +184,41 @@ class GameViewController: UIViewController {
     }
     
     func gameEnded(_ inMode: GameMode) {
-        if elapsedTime < highscore {
+        if self.elapsedTime < self.highscore {
             switch inMode {
-            case .upCount:
+            case .UpCount:
                 UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_up")
-                displayScore(true, withTime: elapsedTime, inMode: inMode)
-                highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
                 break
-            case .downCount:
+            case .DownCount:
                 UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_down")
-                displayScore(true, withTime: elapsedTime, inMode: inMode)
-                highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
                 break
-            case .random:
+            case .Random:
                 UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_rand")
-                displayScore(true, withTime: elapsedTime, inMode: inMode)
-                highScoreLabel.text = NSString(format: "High score: %.2f", elapsedTime) as String
                 break
             }
-        } else {
-            displayScore(false, withTime: elapsedTime, inMode: inMode)
         }
+        self.performSegue(withIdentifier: "gameEnd", sender: nil)
     }
     
-    func displayScore(_ isHighScore: Bool, withTime time: Double, inMode mode: GameMode) {
-        
-        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        if let endViewController = storyboard.instantiateViewController(withIdentifier: "EndViewController") as? EndGameViewController {
-        
-            //Customization endView according to the result and the game mode
-            endViewController.modeLabel.text = "Mode \(mode)"
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameEnd" {
+            let endViewController : EndGameViewController = segue.destination as! EndGameViewController
             
-            if isHighScore {
-                endViewController.mainTitleLabel.text = "New Record!"
-                endViewController.finalTimeLabel.text = NSString(format: "New best time: %.2f s", time) as String
+            if self.elapsedTime < self.highscore {
+                endViewController.isHighscore = true
                 SoundManager.sharedInstance().playRecordSound()
-                GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: time, inMode: mode)
+                GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
             } else {
-                endViewController.mainTitleLabel.text = "Too slow!"
-                endViewController.finalTimeLabel.text = NSString(format: "Your time: %.2f s", time) as String
+                endViewController.isHighscore = false
                 SoundManager.sharedInstance().playEndSound()
             }
             
-            self.present(endViewController, animated: true, completion: nil)
+            endViewController.timeToDisplay = self.elapsedTime
+            endViewController.gameMode = self.gameMode
+            endViewController.dismissalBlock = {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
-        
-        
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -228,7 +226,7 @@ class GameViewController: UIViewController {
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
-    @objc func dismissEndView() {
+    func dismissEndView() {
         SoundManager.sharedInstance().playNavigationSound()
         _ = self.navigationController?.popToRootViewController(animated: true)
     }

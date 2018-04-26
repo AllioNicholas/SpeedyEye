@@ -18,37 +18,30 @@ class CountDownViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupUI()
-
-        countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCountdownAndStart), userInfo: nil, repeats: true)
+        self.countdownLabel.text = "\(countDown)"
     }
     
-    @objc func updateCountdownAndStart() {
-        countDown -= 1
-        if countDown == 0 {
-            countdownLabel.text = "GO!"
-        } else {
-            countdownLabel.text = "\(countDown)"
-        }
-        if countDown == -1 {
-            countDownTimer.invalidate()
-            self.presentNewGameViewController()
-        }
-        
+    override func viewDidAppear(_ animated: Bool) {
+        countDownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
+            self.countDown -= 1
+            if self.countDown == 0 {
+                self.countdownLabel.text = "GO!"
+            } else {
+                self.countdownLabel.text = "\(self.countDown)"
+            }
+            if self.countDown == -1 {
+                self.countDownTimer.invalidate()
+                self.performSegue(withIdentifier: "showGame", sender: self)
+            }
+        })
     }
     
-    func setupUI() {
-        let visualEffectView = UIVisualEffectView(frame: self.view.frame)
-        visualEffectView.effect = UIBlurEffect(style: .dark)
-        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view = visualEffectView
+    override func viewDidDisappear(_ animated: Bool) {
+        countDownTimer.invalidate()
     }
     
-    func presentNewGameViewController() {
-        let gameViewController = GameViewController()
-        gameViewController.gameMode = self.gameMode
-        self.present(gameViewController, animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController : GameViewController = segue.destination as! GameViewController
+        viewController.gameMode = self.gameMode
     }
-
 }

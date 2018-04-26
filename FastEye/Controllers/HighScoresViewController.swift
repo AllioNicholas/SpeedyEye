@@ -20,23 +20,23 @@ class HighScoresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        self.setupUI()
     }
     
     func setupUI() {
-        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .upCount) {
-            upHS.text = "Up Count:\n\(highscore.formatHighScore()))"
+        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .UpCount) {
+            upHS.text = "Up Count:\n\(highscore.formatHighScore())"
         } else {
             upHS.text = "Up Count:\n-.-"
         }
         
-        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .downCount) {
+        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .DownCount) {
             downHS.text = "Down Count:\n\(highscore.formatHighScore())"
         } else {
             downHS.text = "Down Count:\n-.-"
         }
         
-        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .random) {
+        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .Random) {
             randomHS.text = "Random Count:\n\(highscore.formatHighScore())"
         } else {
             randomHS.text = "Random Count:\n-.-"

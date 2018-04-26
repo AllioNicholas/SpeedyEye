@@ -71,13 +71,13 @@ class GameCenterManager: NSObject {
     
     func getHighScoreForGameMode(gameMode: GameMode) -> Double? {
         switch gameMode {
-        case .upCount:
+        case .UpCount:
             let int64Value = UserDefaults.standard.double(forKey: UserDefaultHighScore.upCount.rawValue)
             return Double(int64Value/100)
-        case .downCount:
+        case .DownCount:
             let int64Value = UserDefaults.standard.double(forKey: UserDefaultHighScore.downCount.rawValue)
             return Double(int64Value/100)
-        case .random:
+        case .Random:
             let int64Value = UserDefaults.standard.double(forKey: UserDefaultHighScore.random.rawValue)
             return Double(int64Value/100)
         }
@@ -87,15 +87,15 @@ class GameCenterManager: NSObject {
         var leaderboardID = ""
         var userDefaultKey : UserDefaultHighScore
         switch inMode {
-        case .upCount:
+        case .UpCount:
             leaderboardID = LeaderboardID.upCount.rawValue
             userDefaultKey = .upCount
             break
-        case .downCount:
+        case .DownCount:
             leaderboardID = LeaderboardID.downCount.rawValue
             userDefaultKey = .downCount
             break
-        case .random:
+        case .Random:
             leaderboardID = LeaderboardID.random.rawValue
             userDefaultKey = .random
             break

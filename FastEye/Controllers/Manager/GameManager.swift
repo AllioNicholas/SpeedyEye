@@ -8,10 +8,18 @@
 
 import UIKit
 
-enum GameMode {
-    case upCount
-    case downCount
-    case random
+enum GameMode : String {
+    case UpCount
+    case DownCount
+    case Random
+    
+    // MARK: - Initializers
+    
+    init?(fullType: String) {
+        guard let last = fullType.components(separatedBy: ".").last else { return nil }
+        
+        self.init(rawValue: last)
+    }
 }
 
 class GameManager: NSObject {
