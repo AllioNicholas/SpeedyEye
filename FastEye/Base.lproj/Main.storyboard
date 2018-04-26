@@ -327,7 +327,7 @@
         <!--Game View Controller-->
         <scene sceneID="5jV-U9-KYw">
             <objects>
-                <viewController storyboardIdentifier="Game" id="zn8-sO-Ez2" customClass="GameViewController" customModule="FastEye" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zn8-sO-Ez2" customClass="GameViewController" customModule="FastEye" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ff3-4F-WOy"/>
                         <viewControllerLayoutGuide type="bottom" id="odf-oa-Ghz"/>
@@ -875,6 +875,7 @@
                         <outlet property="highScoreLabel" destination="VHj-Zf-sI2" id="JOy-Jx-nyW"/>
                         <outlet property="prog2" destination="rIu-4Y-zTN" id="X2I-hJ-d5K"/>
                         <outlet property="progressBar" destination="g1K-Tc-qtw" id="ZTD-o1-t7V"/>
+                        <segue destination="Fu1-mW-fAS" kind="presentation" identifier="gameEnd" id="HoL-8n-q6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRS-AD-UBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -884,7 +885,7 @@
         <!--End Game View Controller-->
         <scene sceneID="0qb-Dc-vJR">
             <objects>
-                <viewController storyboardIdentifier="EndViewController" id="Fu1-mW-fAS" customClass="EndGameViewController" customModule="FastEye" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fu1-mW-fAS" customClass="EndGameViewController" customModule="FastEye" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UVx-r6-Vcf"/>
                         <viewControllerLayoutGuide type="bottom" id="A3r-Rz-m5r"/>
@@ -935,7 +936,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="Fu1-mW-fAS" eventType="touchUpInside" id="VgN-3y-evn"/>
+                                    <action selector="backHomeButtonPressed:" destination="Fu1-mW-fAS" eventType="touchUpInside" id="K8h-q6-9Mv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -956,7 +957,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButtonPressed" destination="PUX-fO-lsl" id="5cH-bm-QTX"/>
                         <outlet property="finalTimeLabel" destination="FEZ-OC-9BD" id="oZg-sN-j0V"/>
                         <outlet property="mainTitleLabel" destination="Ewd-Ek-cgm" id="nOa-p5-DRT"/>
                         <outlet property="modeLabel" destination="iKS-xq-Vwg" id="CNj-Ix-rGk"/>
@@ -981,7 +981,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W11-Ep-5ci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="337"/>
+            <point key="canvasLocation" x="1242" y="337"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
