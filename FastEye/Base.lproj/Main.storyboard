@@ -156,6 +156,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="usb-uf-rYs"/>
+                    <connections>
+                        <outlet property="downcountButton" destination="g88-zR-UfG" id="7PD-iH-3YN"/>
+                        <outlet property="highscoresButton" destination="ndG-Za-fgd" id="c5z-eM-DBT"/>
+                        <outlet property="randomButton" destination="2d1-Pv-H55" id="onR-E0-Y0Z"/>
+                        <outlet property="upcountButton" destination="QBs-tK-Ugc" id="hjH-33-fMb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
