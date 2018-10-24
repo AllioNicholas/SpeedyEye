@@ -6,6 +6,10 @@
   Copyright © 2018 Nicholas Allio. All rights reserved.
 */
 
-"upCount" = "Up Count";
-"downCount" = "Down Count";
-"random" = "Random";
+"upcount" = "Progressivo";
+"downcount" = "Alla rovescia";
+"random" = "Casuale";
+"upcount_mode" = "Modalità Progressiva";
+"downcount_mode" = "Modalità alla rovescia";
+"random_mode" = "Modalità casuale";
+"highscores" = "Risultati";
