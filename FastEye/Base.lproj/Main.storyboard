@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -183,7 +182,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-bI-1ds">
-                                <rect key="frame" x="87" y="201" width="200" height="60"/>
+                                <rect key="frame" x="87.5" y="201" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.14117647058823529" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AC4-ax-V2Y"/>
@@ -195,7 +194,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWj-TG-UGs">
-                                <rect key="frame" x="87" y="269" width="200" height="60"/>
+                                <rect key="frame" x="87.5" y="269" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.29019607843137252" green="0.35686274509803922" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ASO-U3-oLi"/>
@@ -207,7 +206,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-cO-dzk">
-                                <rect key="frame" x="87" y="337" width="200" height="60"/>
+                                <rect key="frame" x="87.5" y="337" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.43529411764705883" green="0.65490196078431373" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="YBd-0s-Ild"/>
@@ -219,7 +218,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX9-iN-5rG">
-                                <rect key="frame" x="87" y="405" width="200" height="60"/>
+                                <rect key="frame" x="87.5" y="405" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.85098039219999999" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Lbt-bY-6Ik"/>
@@ -299,7 +298,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgs-Re-c2l">
-                                <rect key="frame" x="108" y="299" width="158" height="68"/>
+                                <rect key="frame" x="108.5" y="300" width="158" height="67"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -308,7 +307,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kgs-Re-c2l" firstAttribute="centerX" secondItem="JDj-79-lao" secondAttribute="centerX" id="GXx-WA-GmP"/>
-                            <constraint firstItem="Zbg-ua-UHs" firstAttribute="top" secondItem="4mg-0m-TRl" secondAttribute="bottom" id="HkN-bN-2ia"/>
+                            <constraint firstAttribute="bottom" secondItem="4mg-0m-TRl" secondAttribute="bottom" id="HkN-bN-2ia"/>
                             <constraint firstItem="4mg-0m-TRl" firstAttribute="top" secondItem="JDj-79-lao" secondAttribute="top" id="PV4-AY-4i0"/>
                             <constraint firstAttribute="trailing" secondItem="4mg-0m-TRl" secondAttribute="trailing" id="UJD-ve-jcq"/>
                             <constraint firstItem="kgs-Re-c2l" firstAttribute="centerY" secondItem="JDj-79-lao" secondAttribute="centerY" id="mGQ-gj-FN9"/>
@@ -737,7 +736,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-2Q-Q9p">
-                                <rect key="frame" x="155" y="523.5" width="66" height="29"/>
+                                <rect key="frame" x="154.5" y="523.5" width="66" height="29"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
                                 <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -786,7 +785,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-wH-U0G">
-                                <rect key="frame" x="155" y="166.5" width="66" height="29"/>
+                                <rect key="frame" x="154.5" y="166.5" width="66" height="29"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
                                 <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -903,21 +902,21 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewd-Ek-cgm">
-                                <rect key="frame" x="135" y="239.5" width="105.5" height="45"/>
+                                <rect key="frame" x="135" y="239" width="105.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKS-xq-Vwg">
-                                <rect key="frame" x="161" y="292.5" width="53" height="22.5"/>
+                                <rect key="frame" x="161" y="292" width="53" height="22"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-OC-9BD">
-                                <rect key="frame" x="161" y="322.5" width="53" height="22.5"/>
+                                <rect key="frame" x="161" y="322" width="53" height="23"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -946,7 +945,7 @@
                             <constraint firstItem="PUX-fO-lsl" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="1dK-6R-ZBc"/>
                             <constraint firstItem="iKS-xq-Vwg" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="5kq-HB-8uR"/>
                             <constraint firstItem="FEZ-OC-9BD" firstAttribute="top" secondItem="iKS-xq-Vwg" secondAttribute="bottom" constant="8" id="Afb-vb-5wr"/>
-                            <constraint firstItem="A3r-Rz-m5r" firstAttribute="top" secondItem="N4X-kx-rBL" secondAttribute="bottom" id="N7P-zN-Zya"/>
+                            <constraint firstAttribute="bottom" secondItem="N4X-kx-rBL" secondAttribute="bottom" id="N7P-zN-Zya"/>
                             <constraint firstItem="iKS-xq-Vwg" firstAttribute="top" secondItem="Ewd-Ek-cgm" secondAttribute="bottom" constant="8" id="YwJ-op-ntO"/>
                             <constraint firstItem="PUX-fO-lsl" firstAttribute="top" secondItem="FEZ-OC-9BD" secondAttribute="bottom" constant="8" id="Yxs-rq-Des"/>
                             <constraint firstItem="Ewd-Ek-cgm" firstAttribute="centerX" secondItem="jFF-OP-9Dg" secondAttribute="centerX" id="bjw-23-IHB"/>
