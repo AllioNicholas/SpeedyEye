@@ -37,6 +37,7 @@
 		0146613B1E66E102008C2410 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		015466FD1EEF38E600ED375A /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCenterManager.swift; path = Controllers/Manager/GameCenterManager.swift; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/GameViewController.swift; sourceTree = "<group>"; };
+		0164641021811F520046022E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localized.strings; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = Controllers/HighScoresViewController.swift; sourceTree = "<group>"; };
 		01C9BA042092785C00FA1A85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		01D55A9B1F7991110039D03A /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundManager.swift; path = Controllers/Manager/SoundManager.swift; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 01DAAB841BC6BBC0004C3695;
 			productRefGroup = 01DAAB8E1BC6BBC0004C3695 /* Products */;
@@ -282,6 +284,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				01C9BA042092785C00FA1A85 /* en */,
+				0164641021811F520046022E /* it */,
 			);
 			name = Localized.strings;
 			sourceTree = "<group>";
