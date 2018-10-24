@@ -10,8 +10,18 @@ import UIKit
 
 class StartViewController: UIViewController {
     
+    @IBOutlet weak var downcountButton: UIButton!
+    @IBOutlet weak var upcountButton: UIButton!
+    @IBOutlet weak var randomButton: UIButton!
+    @IBOutlet weak var highscoresButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        upcountButton.setTitle(NSLocalizedString("upcount_mode", comment: "button title"), for: UIControl.State.normal)
+        downcountButton.setTitle(NSLocalizedString("downcount_mode", comment: "button title"), for: UIControl.State.normal)
+        randomButton.setTitle(NSLocalizedString("random_mode", comment: "button title"), for: UIControl.State.normal)
+        highscoresButton.setTitle(NSLocalizedString("highscores", comment: "button title"), for: UIControl.State.normal)
         
         weak var weakSelf = self
         GameCenterManager.sharedInstance().authenticateGameCenterUser(successBlockOrViewController: { (success, viewController) in
