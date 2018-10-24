@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         _ = GameCenterManager.sharedInstance()
         _ = SoundManager.sharedInstance()
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var shouldPerformAdditionalDelegateHandling = true
         
         // If a shortcut was launched, display its information and take the appropriate action
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             
             launchedShortcutItem = shortcutItem
             
@@ -83,8 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         window!.rootViewController = sb.instantiateViewController(withIdentifier: "root")
-        window?.rootViewController?.addChildViewController(sb.instantiateViewController(withIdentifier: "Start"))
-        window?.rootViewController?.childViewControllers.first?.performSegue(withIdentifier: segueID, sender: nil)
+        window?.rootViewController?.addChild(sb.instantiateViewController(withIdentifier: "Start"))
+        window?.rootViewController?.children.first?.performSegue(withIdentifier: segueID, sender: nil)
         
         return handled
     }

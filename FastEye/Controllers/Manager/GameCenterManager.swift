@@ -133,7 +133,7 @@ extension GameCenterManager : GKGameCenterControllerDelegate {
     }
     
     func authenticateGameCenterUser(successBlockOrViewController: @escaping (Bool, UIViewController?)->()) -> Void {
-        let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.local
         
         weak var weakSelf : GameCenterManager! = self
         
