@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  FastEye
+
+  Created by Nicholas Allio on 26/04/2018.
+  Copyright © 2018 Nicholas Allio. All rights reserved.
+*/
+
+"upCount" = "Up Count";
+"downCount" = "Down Count";
+"random" = "Random";
