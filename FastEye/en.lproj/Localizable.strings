@@ -13,4 +13,5 @@
 "downcount_mode" = "Down Count mode";
 "random_mode" = "Random mode";
 "highscores" = "High Scores";
-
+"done_button_text" = "Done";
+"go_txt" = "Go!";

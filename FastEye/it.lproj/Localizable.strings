@@ -13,4 +13,5 @@
 "downcount_mode" = "Modalità alla rovescia";
 "random_mode" = "Modalità casuale";
 "highscores" = "Risultati";
-
+"done_button_text" = "Fine";
+"go_txt" = "Via!";
