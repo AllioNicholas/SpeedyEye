@@ -25,7 +25,7 @@ class CountDownViewController: UIViewController {
         countDownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
             self.countDown -= 1
             if self.countDown == 0 {
-                self.countdownLabel.text = "GO!"
+                self.countdownLabel.text = NSLocalizedString("go_txt", comment: "").uppercased()
             } else {
                 self.countdownLabel.text = "\(self.countDown)"
             }

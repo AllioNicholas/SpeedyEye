@@ -286,6 +286,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="jAZ-R2-aR0" id="Sfw-Ux-ajd"/>
                         <outlet property="downHS" destination="IWj-TG-UGs" id="bYO-d2-yT1"/>
                         <outlet property="randomHS" destination="fzZ-cO-dzk" id="7Q6-Xa-skh"/>
                         <outlet property="upHS" destination="VEz-bI-1ds" id="xfH-yc-OUB"/>

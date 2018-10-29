@@ -17,8 +17,12 @@ class HighScoresViewController: UIViewController {
     @IBOutlet weak var downHS: UILabel!
     @IBOutlet weak var randomHS: UILabel!
         
+    @IBOutlet weak var doneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doneButton .setTitle(NSLocalizedString("done_button_text", comment: ""), for: UIControl.State.normal)
         
         self.setupUI()
     }
