@@ -13,8 +13,8 @@
 		0146613C1E66E102008C2410 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0146613B1E66E102008C2410 /* GameKit.framework */; };
 		015466FE1EEF38E600ED375A /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015466FD1EEF38E600ED375A /* GameCenterManager.swift */; };
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
+		018B03032187C7FB00B8908F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 018B03012187C7FB00B8908F /* Localizable.strings */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
-		01C9BA032092785C00FA1A85 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01C9BA052092785C00FA1A85 /* Localized.strings */; };
 		01D55A9C1F7991110039D03A /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9B1F7991110039D03A /* SoundManager.swift */; };
 		01D55A9E1F7991200039D03A /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9D1F7991200039D03A /* GameManager.swift */; };
 		01D55AA01F79A0910039D03A /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9F1F79A0910039D03A /* EndGameViewController.swift */; };
@@ -37,9 +37,12 @@
 		0146613B1E66E102008C2410 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		015466FD1EEF38E600ED375A /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCenterManager.swift; path = Controllers/Manager/GameCenterManager.swift; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/GameViewController.swift; sourceTree = "<group>"; };
-		0164641021811F520046022E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localized.strings; sourceTree = "<group>"; };
+		018B02FE2187C7A500B8908F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		018B02FF2187C7A500B8908F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		018B03022187C7FB00B8908F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = FastEye/Base.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		018B03052187C81800B8908F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = ../it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		018B03062187C83400B8908F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = Controllers/HighScoresViewController.swift; sourceTree = "<group>"; };
-		01C9BA042092785C00FA1A85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		01D55A9B1F7991110039D03A /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundManager.swift; path = Controllers/Manager/SoundManager.swift; sourceTree = "<group>"; };
 		01D55A9D1F7991200039D03A /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameManager.swift; path = Controllers/Manager/GameManager.swift; sourceTree = "<group>"; };
 		01D55A9F1F79A0910039D03A /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndGameViewController.swift; path = Controllers/EndGameViewController.swift; sourceTree = "<group>"; };
@@ -118,9 +121,9 @@
 		019A34BB1EEDE2ED00736C8A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01C9BA052092785C00FA1A85 /* Localized.strings */,
 				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
+				018B03012187C7FB00B8908F /* Localizable.strings */,
 				013C0B0B1EEF2AB1009092D2 /* Sounds */,
 				013C0B0A1EEF2AA6009092D2 /* UI */,
 			);
@@ -246,10 +249,10 @@
 			files = (
 				01F392381C1E3F5F0053B644 /* new_record.wav in Resources */,
 				01F392371C1E3F5F0053B644 /* navigation_button.wav in Resources */,
-				01C9BA032092785C00FA1A85 /* Localized.strings in Resources */,
 				01025F111BF93C1C00CF5B32 /* Fail.wav in Resources */,
 				01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */,
 				01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */,
+				018B03032187C7FB00B8908F /* Localizable.strings in Resources */,
 				01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */,
 				01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
@@ -280,19 +283,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		01C9BA052092785C00FA1A85 /* Localized.strings */ = {
+		018B03012187C7FB00B8908F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				01C9BA042092785C00FA1A85 /* en */,
-				0164641021811F520046022E /* it */,
+				018B03022187C7FB00B8908F /* Base */,
+				018B03052187C81800B8908F /* it */,
+				018B03062187C83400B8908F /* en */,
 			);
-			name = Localized.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		01DAAB941BC6BBC0004C3695 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				01DAAB951BC6BBC0004C3695 /* Base */,
+				018B02FE2187C7A500B8908F /* it */,
 			);
 			name = Main.storyboard;
 			path = ..;
@@ -302,6 +307,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				01DAAB9A1BC6BBC0004C3695 /* Base */,
+				018B02FF2187C7A500B8908F /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;

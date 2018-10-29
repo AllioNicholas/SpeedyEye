@@ -1,8 +1,8 @@
 /* 
-  Localized.strings
+  Localizable.strings
   FastEye
 
-  Created by Nicholas Allio on 26/04/2018.
+  Created by Nicholas Allio on 29/10/2018.
   Copyright © 2018 Nicholas Allio. All rights reserved.
 */
 
@@ -13,3 +13,4 @@
 "downcount_mode" = "Down Count mode";
 "random_mode" = "Random mode";
 "highscores" = "High Scores";
+
