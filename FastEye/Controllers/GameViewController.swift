@@ -26,7 +26,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var cronoLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var prog2: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +77,6 @@ class GameViewController: UIViewController {
         
         progressBar.progress = 0.0
         progressBar.progressTintColor = colorGame
-        prog2.progress = 0.0
-        prog2.progressTintColor = colorGame
         displayLabel.text = "\(display!)"
         cronoLabel.text = "0.0"
         
@@ -117,11 +114,9 @@ class GameViewController: UIViewController {
                     gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
-                    prog2.setProgress(1.0, animated: true)
                     gameEnded(.UpCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
-                    prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display!)"
                 }
             case .DownCount:
@@ -132,11 +127,9 @@ class GameViewController: UIViewController {
                     gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
-                    prog2.setProgress(1.0, animated: true)
                     gameEnded(.DownCount)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
-                    prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display!)"
                 }
             case .Random:
@@ -152,11 +145,9 @@ class GameViewController: UIViewController {
                     gameTimer.invalidate()
                     displayLabel.text = ""
                     progressBar.setProgress(1.0, animated: true)
-                    prog2.setProgress(1.0, animated: true)
                     gameEnded(.Random)
                 } else {
                     progressBar.setProgress(Float(correctCount)/25.0, animated: true)
-                    prog2.setProgress(Float(correctCount)/25.0, animated: true)
                     displayLabel.text = "\(display!)"
                 }
             }
@@ -164,7 +155,6 @@ class GameViewController: UIViewController {
             SoundManager.sharedInstance().playWrongSound()
             correctCount = 0
             progressBar.setProgress(0.0, animated: true)
-            prog2.setProgress(0.0, animated: true)
             switch gameMode! {
             case .UpCount:
                 display! = 1

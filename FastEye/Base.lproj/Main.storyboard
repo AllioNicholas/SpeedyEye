@@ -765,17 +765,10 @@
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-Tc-qtw">
-                                        <rect key="frame" x="19" y="100.5" width="282" height="2"/>
+                                        <rect key="frame" x="19" y="100.5" width="282" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="282" id="f5L-1W-DFR"/>
-                                        </constraints>
-                                        <color key="progressTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="trackTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </progressView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rIu-4Y-zTN">
-                                        <rect key="frame" x="19" y="102.5" width="282" height="2"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="282" id="di4-Kv-Jc0"/>
+                                            <constraint firstAttribute="height" constant="4" id="l3m-og-kkI"/>
                                         </constraints>
                                         <color key="progressTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="trackTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -861,7 +854,6 @@
                                     <constraint firstItem="tLq-zJ-8Qg" firstAttribute="centerY" secondItem="UL4-py-61F" secondAttribute="centerY" constant="23.5" id="fWq-D9-W15"/>
                                     <constraint firstItem="IWj-WL-9O8" firstAttribute="centerX" secondItem="UL4-py-61F" secondAttribute="centerX" constant="116" id="g8k-no-g3J"/>
                                     <constraint firstItem="n5N-2Q-Q9p" firstAttribute="top" secondItem="geV-YL-A1a" secondAttribute="bottom" constant="21" id="gq2-rb-9Id"/>
-                                    <constraint firstItem="IWj-WL-9O8" firstAttribute="top" secondItem="rIu-4Y-zTN" secondAttribute="bottom" constant="13" id="hdd-fK-mve"/>
                                     <constraint firstItem="TXn-6S-g39" firstAttribute="top" secondItem="xuM-wH-U0G" secondAttribute="bottom" constant="25" id="iMQ-L3-5Vq"/>
                                     <constraint firstItem="Weg-2n-KRb" firstAttribute="centerX" secondItem="UL4-py-61F" secondAttribute="centerX" constant="58" id="iTs-ql-fGf"/>
                                     <constraint firstItem="FQG-gw-zAF" firstAttribute="centerX" secondItem="UL4-py-61F" secondAttribute="centerX" constant="116" id="idN-IO-x4b"/>
@@ -873,7 +865,6 @@
                                     <constraint firstItem="4RK-px-Jyc" firstAttribute="centerY" secondItem="UL4-py-61F" secondAttribute="centerY" constant="81.5" id="lki-TM-jyl"/>
                                     <constraint firstItem="Weg-2n-KRb" firstAttribute="centerY" secondItem="UL4-py-61F" secondAttribute="centerY" constant="-92.5" id="nVK-05-Jpd"/>
                                     <constraint firstItem="gQW-34-Y06" firstAttribute="centerY" secondItem="UL4-py-61F" secondAttribute="centerY" constant="81.5" id="oH1-JP-O2L"/>
-                                    <constraint firstItem="rIu-4Y-zTN" firstAttribute="leading" secondItem="g1K-Tc-qtw" secondAttribute="leading" id="pE3-YN-r7i"/>
                                     <constraint firstItem="Neb-s1-xZp" firstAttribute="centerX" secondItem="UL4-py-61F" secondAttribute="centerX" constant="-58" id="qYA-h1-68W"/>
                                     <constraint firstItem="u0S-6e-vXo" firstAttribute="centerX" secondItem="UL4-py-61F" secondAttribute="centerX" constant="58" id="r5O-n3-1Z6"/>
                                     <constraint firstItem="geV-YL-A1a" firstAttribute="centerY" secondItem="UL4-py-61F" secondAttribute="centerY" constant="139.5" id="rEZ-5H-ClD"/>
@@ -897,7 +888,6 @@
                         <outlet property="cronoLabel" destination="n5N-2Q-Q9p" id="pZK-J0-2qB"/>
                         <outlet property="displayLabel" destination="xuM-wH-U0G" id="FWs-aF-6BT"/>
                         <outlet property="highScoreLabel" destination="VHj-Zf-sI2" id="JOy-Jx-nyW"/>
-                        <outlet property="prog2" destination="rIu-4Y-zTN" id="X2I-hJ-d5K"/>
                         <outlet property="progressBar" destination="g1K-Tc-qtw" id="ZTD-o1-t7V"/>
                         <segue destination="Fu1-mW-fAS" kind="presentation" identifier="gameEnd" id="HoL-8n-q6T"/>
                     </connections>
