@@ -1,5 +1,5 @@
 # .circleci/config.yml
-version: 2
+version: 2.0
 jobs:
   build-and-test:
     macos:
@@ -29,6 +29,17 @@ jobs:
           path: output/scan
       - store_artifacts:
           path: output
+
+  swiftlint:
+    docker:
+      - image: dantoml/swiftlint:latest
+    steps:
+      - checkout
+      - run: swiftlint lint --reporter junit | tee result.xml
+      - store_artifacts:
+          path: result.xml
+      - store_test_results:
+          path: result.xml
 
 workflows:
   version: 2
