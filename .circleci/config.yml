@@ -1,9 +1,20 @@
 version: 2.1
-
-orbs:
-    hello: circleci/hello-build@0.0.7 # uses the circleci/buildpack-deps Docker image
-
-workflows:
-    "Hello Workflow":
-        jobs:
-          - hello/hello-build
+jobs:
+  build-and-test:
+    macos:
+      xcode: "10.1.0"
+    working_directory: /Users/nicholas/project
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
