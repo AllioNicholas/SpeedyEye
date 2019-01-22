@@ -24,11 +24,22 @@
 		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };
 		01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB971BC6BBC0004C3695 /* Assets.xcassets */; };
 		01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */; };
+		01ED15DB21F7DB90004699E4 /* SpeedyEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED15DA21F7DB8F004699E4 /* SpeedyEyeTests.swift */; };
 		01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392331C1E3F5F0053B644 /* ending_sound.wav */; };
 		01F392371C1E3F5F0053B644 /* navigation_button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392341C1E3F5F0053B644 /* navigation_button.wav */; };
 		01F392381C1E3F5F0053B644 /* new_record.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392351C1E3F5F0053B644 /* new_record.wav */; };
 		01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01ED15DD21F7DB90004699E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01DAAB851BC6BBC0004C3695 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01DAAB8C1BC6BBC0004C3695;
+			remoteInfo = FastEye;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01025F0E1BF93C1C00CF5B32 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Correct.wav; path = Sounds/Correct.wav; sourceTree = "<group>"; };
@@ -52,6 +63,9 @@
 		01DAAB971BC6BBC0004C3695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01DAAB9A1BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01DAAB9C1BC6BBC0004C3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01ED15D821F7DB8F004699E4 /* SpeedyEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedyEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01ED15DA21F7DB8F004699E4 /* SpeedyEyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedyEyeTests.swift; sourceTree = "<group>"; };
+		01ED15DC21F7DB90004699E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01F392331C1E3F5F0053B644 /* ending_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ending_sound.wav; path = Sounds/ending_sound.wav; sourceTree = "<group>"; };
 		01F392341C1E3F5F0053B644 /* navigation_button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = navigation_button.wav; path = Sounds/navigation_button.wav; sourceTree = "<group>"; };
 		01F392351C1E3F5F0053B644 /* new_record.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = new_record.wav; path = Sounds/new_record.wav; sourceTree = "<group>"; };
@@ -64,6 +78,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0146613C1E66E102008C2410 /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01ED15D521F7DB8F004699E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAAB8F1BC6BBC0004C3695 /* FastEye */,
+				01ED15D921F7DB8F004699E4 /* SpeedyEyeTests */,
 				01DAAB8E1BC6BBC0004C3695 /* Products */,
 				0146613A1E66E102008C2410 /* Frameworks */,
 			);
@@ -149,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAAB8D1BC6BBC0004C3695 /* FastEye.app */,
+				01ED15D821F7DB8F004699E4 /* SpeedyEyeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +202,15 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		01ED15D921F7DB8F004699E4 /* SpeedyEyeTests */ = {
+			isa = PBXGroup;
+			children = (
+				01ED15DA21F7DB8F004699E4 /* SpeedyEyeTests.swift */,
+				01ED15DC21F7DB90004699E4 /* Info.plist */,
+			);
+			path = SpeedyEyeTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,12 +231,31 @@
 			productReference = 01DAAB8D1BC6BBC0004C3695 /* FastEye.app */;
 			productType = "com.apple.product-type.application";
 		};
+		01ED15D721F7DB8F004699E4 /* SpeedyEyeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01ED15E121F7DB90004699E4 /* Build configuration list for PBXNativeTarget "SpeedyEyeTests" */;
+			buildPhases = (
+				01ED15D421F7DB8F004699E4 /* Sources */,
+				01ED15D521F7DB8F004699E4 /* Frameworks */,
+				01ED15D621F7DB8F004699E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01ED15DE21F7DB90004699E4 /* PBXTargetDependency */,
+			);
+			name = SpeedyEyeTests;
+			productName = SpeedyEyeTests;
+			productReference = 01ED15D821F7DB8F004699E4 /* SpeedyEyeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		01DAAB851BC6BBC0004C3695 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Nicholas Allio";
 				TargetAttributes = {
@@ -218,6 +269,12 @@
 								enabled = 1;
 							};
 						};
+					};
+					01ED15D721F7DB8F004699E4 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 4R644JN289;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 01DAAB8C1BC6BBC0004C3695;
 					};
 				};
 			};
@@ -236,6 +293,7 @@
 			projectRoot = "";
 			targets = (
 				01DAAB8C1BC6BBC0004C3695 /* FastEye */,
+				01ED15D721F7DB8F004699E4 /* SpeedyEyeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +313,13 @@
 				01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
 				01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01ED15D621F7DB8F004699E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +343,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01ED15D421F7DB8F004699E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01ED15DB21F7DB90004699E4 /* SpeedyEyeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01ED15DE21F7DB90004699E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01DAAB8C1BC6BBC0004C3695 /* FastEye */;
+			targetProxy = 01ED15DD21F7DB90004699E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		018B03012187C7FB00B8908F /* Localizable.strings */ = {
@@ -449,6 +530,60 @@
 			};
 			name = Release;
 		};
+		01ED15DF21F7DB90004699E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4R644JN289;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SpeedyEyeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.SpeedyEyeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastEye.app/FastEye";
+			};
+			name = Debug;
+		};
+		01ED15E021F7DB90004699E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4R644JN289;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SpeedyEyeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.SpeedyEyeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastEye.app/FastEye";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -466,6 +601,15 @@
 			buildConfigurations = (
 				01DAABA01BC6BBC0004C3695 /* Debug */,
 				01DAABA11BC6BBC0004C3695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01ED15E121F7DB90004699E4 /* Build configuration list for PBXNativeTarget "SpeedyEyeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01ED15DF21F7DB90004699E4 /* Debug */,
+				01ED15E021F7DB90004699E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
