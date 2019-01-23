@@ -27,6 +27,8 @@ class GameManagerTests: XCTestCase {
     func testGameManager() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(1 == 1, "1 equals 1")
+        XCTAssert(1 == 0, "1 not equals 0")
     }
 
 }
