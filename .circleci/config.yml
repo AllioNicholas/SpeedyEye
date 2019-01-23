@@ -4,7 +4,7 @@ jobs:
   build-and-test:
     machine:
       xcode: "10.1.0"
-    working_directory: /Users/distiller/project
+    working_directory: ~/wrk
     environment:
       FL_OUTPUT_DIR: output
 
@@ -46,3 +46,8 @@ workflows:
   build-and-test:
     jobs:
       - build-and-test
+      filters:
+          branches:
+            only:
+            - master
+            - development
