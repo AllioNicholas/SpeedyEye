@@ -10,8 +10,7 @@ jobs:
 
     steps:
       - checkout
-      - run:
-        xcodebuild test -project FastEye.xcodeproj -scheme FastEye -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 8,OS=12.1"
+      - run: xcodebuild test -project FastEye.xcodeproj -scheme FastEye -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 8,OS=12.1"
       - store_test_results:
           path: output/scan
       - store_artifacts:
