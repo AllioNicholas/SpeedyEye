@@ -38,6 +38,16 @@
                ReferencedContainer = "container:FastEye.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "01CD714E21F91EC00022669A"
+               BuildableName = "FastEyeTests.xctest"
+               BlueprintName = "FastEyeTests"
+               ReferencedContainer = "container:FastEye.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
