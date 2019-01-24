@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01ED15D721F7DB8F004699E4"
-               BuildableName = "SpeedyEyeTests.xctest"
-               BlueprintName = "SpeedyEyeTests"
-               ReferencedContainer = "container:FastEye.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "01CD714E21F91EC00022669A"
                BuildableName = "FastEyeTests.xctest"
                BlueprintName = "FastEyeTests"
