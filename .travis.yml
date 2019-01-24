@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: FastEye.xcodeproj
+xcode_scheme: FastEye
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone 8
