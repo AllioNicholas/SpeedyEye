@@ -52,28 +52,7 @@ class GameViewController: UIViewController {
     
     func setupUIForNewGame() {
         //Setup game with according color
-        let colorGame: UIColor!
-        switch gameMode! {
-        case .UpCount:
-            display = 1
-            //Viola
-            colorGame = UIColor(netHex: 0x332433)
-            break
-        case .DownCount:
-            display = 25
-            //Azzurro scuro
-            colorGame = UIColor(netHex: 0x4A5B82)
-            break
-        case .Random:
-            var num = Int(arc4random_uniform(26))
-            while num == 0 {
-                num = Int(arc4random_uniform(26))
-            }
-            display = Int(num)
-            //Verde acqua
-            colorGame = UIColor(netHex: 0x6FA79A)
-            break
-        }
+       
         
         progressBar.progress = 0.0
         progressBar.progressTintColor = colorGame
@@ -108,7 +87,6 @@ class GameViewController: UIViewController {
             case .UpCount:
                 correctCount += 1
                 display! += 1
-                gameEnded(self.gameMode)
                 if display == 26 {
                     //end of the game
                     gameTimer.invalidate()
