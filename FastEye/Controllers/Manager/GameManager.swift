@@ -18,41 +18,48 @@ private let UpCountModeColor = UIColor(netHex: 0x332433) //Viola
 private let DownCountModeColor = UIColor(netHex: 0x4A5B82) //Azzurro scuro
 private let RandomModeColor = UIColor(netHex: 0x6FA79A) //Verde acqua
 
+private let UpCountModeInitialValue = 1
+private let DownCountModeInitialValue = 25
+private let RandomModeInitialValue = Int(arc4random_uniform(25) + 1)
+
 let GameInitialValue = "kGameInitialValue"
 let GameColor = "kGameColor"
 
 class GameManager: NSObject {
     
-    var currentGameMode: GameMode
-    var valueToBeSelected: Int
+    var currentGameMode: GameMode = .UpCount
+    var valueToBeSelected: Int = 0
     
-    init(gameMode: GameMode, initialSetup: @escaping ([String: Any])->()) {
-        currentGameMode = gameMode
+    var randomSelectedValues: [Int] = [0]
+    
+    override init() {
+        super.init()
+    }
+    
+    convenience init(gameMode: GameMode, initialSetup: @escaping ([String: Any])->()) {
+        self.init()
+        self.currentGameMode = gameMode
         
         var returningSetup: [String:Any]
         switch self.currentGameMode {
         case .UpCount:
-            self.valueToBeSelected = 1
+            self.valueToBeSelected = UpCountModeInitialValue
             returningSetup = [
-                GameInitialValue: 1,
+                GameInitialValue: UpCountModeInitialValue,
                 GameColor: UpCountModeColor
             ]
             break
         case .DownCount:
-            self.valueToBeSelected = 25
+            self.valueToBeSelected = DownCountModeInitialValue
             returningSetup = [
-                GameInitialValue: 25,
+                GameInitialValue: DownCountModeInitialValue,
                 GameColor: DownCountModeColor
             ]
             break
         case .Random:
-            var num = Int(arc4random_uniform(26))
-            while num == 0 {
-                num = Int(arc4random_uniform(26))
-            }
-            self.valueToBeSelected = Int(num)
+            self.valueToBeSelected = RandomModeInitialValue
             returningSetup = [
-                GameInitialValue: Int(num),
+                GameInitialValue: RandomModeInitialValue,
                 GameColor: RandomModeColor
             ]
             break
@@ -61,14 +68,28 @@ class GameManager: NSObject {
         initialSetup(returningSetup)
     }
     
-    func didSelectValue(value: Int, withResultBlock: @escaping (Bool, Int)->()) {
+    func didSelectValue(value: Int) -> (finish:Bool, correct:Bool, nextValue:Int) {
+        let correctSelection = self.valueToBeSelected == value
         switch self.currentGameMode {
         case .UpCount:
-            break
+            self.valueToBeSelected = correctSelection ? self.valueToBeSelected + 1 : UpCountModeInitialValue
+            return (self.valueToBeSelected == 26, correctSelection, self.valueToBeSelected)
         case .DownCount:
-            break
+            self.valueToBeSelected = correctSelection ? self.valueToBeSelected - 1 : DownCountModeInitialValue
+            return (self.valueToBeSelected == 0, correctSelection, self.valueToBeSelected)
         case .Random:
-            break
+            var num = arc4random() % 26
+            while self.randomSelectedValues.contains(Int(num)) {
+                num = arc4random() % 26
+            }
+            if correctSelection {
+                self.randomSelectedValues.append(Int(num))
+                self.valueToBeSelected = Int(num)
+            } else {
+                self.randomSelectedValues = [0]
+                self.valueToBeSelected = RandomModeInitialValue
+            }
+            return (self.randomSelectedValues.count == 26, correctSelection, self.valueToBeSelected)
         }
     }
     
