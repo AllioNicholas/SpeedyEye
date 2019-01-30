@@ -14,13 +14,13 @@ import CoreGraphics
 
 class GameViewController: UIViewController {
     
-    var display: Int!
-    var gameMode: GameMode!
-    var takenRand = [0]
     var gameTimer: Timer = Timer()
     var elapsedTime = 0.0
     var correctCount = 0
     var highscore = Double.greatestFiniteMagnitude
+    
+    var gameManager: GameManager = GameManager()
+    var gameMode: GameMode = .UpCount
    
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupUIForNewGame()
+        self.setupNewGame()
         
         //load high score
         self.loadingScore()
@@ -50,47 +50,30 @@ class GameViewController: UIViewController {
         })
     }
     
-    func setupUIForNewGame() {
+    func setupNewGame() {
         //Setup game with according color
-        let colorGame: UIColor!
-        switch gameMode! {
-        case .UpCount:
-            display = 1
-            //Viola
-            colorGame = UIColor(netHex: 0x332433)
-            break
-        case .DownCount:
-            display = 25
-            //Azzurro scuro
-            colorGame = UIColor(netHex: 0x4A5B82)
-            break
-        case .Random:
-            var num = Int(arc4random_uniform(26))
-            while num == 0 {
-                num = Int(arc4random_uniform(26))
+        self.gameManager = GameManager(gameMode: self.gameMode, initialSetup: { (setup) in
+            let colorGame = setup[GameColor] as! UIColor
+            let initialValue = setup[GameInitialValue] as! Int
+            
+            self.correctCount = 0
+            self.progressBar.progress = 0.0
+            self.progressBar.progressTintColor = colorGame
+            self.displayLabel.text = "\(initialValue)"
+            self.cronoLabel.text = "0.0"
+            
+            var taken = [0]
+            for idx in 1...25 {
+                let but = self.view.viewWithTag(idx) as! UIButton
+                var lab = Int(arc4random_uniform(26))
+                while taken.contains(lab) {
+                    lab = Int(arc4random_uniform(26))
+                }
+                taken.append(lab)
+                but.setTitle(String(lab), for: .normal)
+                but.backgroundColor = colorGame
             }
-            display = Int(num)
-            //Verde acqua
-            colorGame = UIColor(netHex: 0x6FA79A)
-            break
-        }
-        
-        progressBar.progress = 0.0
-        progressBar.progressTintColor = colorGame
-        displayLabel.text = "\(display!)"
-        cronoLabel.text = "0.0"
-        
-        var taken = [0]
-        for idx in 1...25 {
-            let but = self.view.viewWithTag(idx) as! UIButton
-            var lab = Int(arc4random_uniform(26))
-            while taken.contains(lab) {
-                lab = Int(arc4random_uniform(26))
-            }
-            taken.append(lab)
-            but.setTitle(String(lab), for: .normal)
-            but.backgroundColor = colorGame
-        }
+        })
     }
     
     func loadingScore() {
@@ -102,74 +85,30 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        if sender.titleLabel?.text == String(display) {
+        let stringNumberSelected = sender.titleLabel?.text
+        guard let numberSelected = NumberFormatter().number(from: stringNumberSelected!) else { return }
+        let (finished, correct, nextValue) = self.gameManager.didSelectValue(value: numberSelected.intValue)
+        if correct {
             SoundManager.sharedInstance().playCorrectSound()
-            switch gameMode! {
-            case .UpCount:
-                correctCount += 1
-                display! += 1
+            self.correctCount += 1
+            
+            if finished {
+                //end of the game
+                self.gameTimer.invalidate()
+                self.displayLabel.text = ""
+                self.progressBar.setProgress(1.0, animated: true)
+                
                 gameEnded(self.gameMode)
-                if display == 26 {
-                    //end of the game
-                    gameTimer.invalidate()
-                    displayLabel.text = ""
-                    progressBar.setProgress(1.0, animated: true)
-                    gameEnded(.UpCount)
-                } else {
-                    progressBar.setProgress(Float(correctCount)/25.0, animated: true)
-                    displayLabel.text = "\(display!)"
-                }
-            case .DownCount:
-                correctCount += 1
-                display! -= 1
-                if display == 0 {
-                    //end of the game
-                    gameTimer.invalidate()
-                    displayLabel.text = ""
-                    progressBar.setProgress(1.0, animated: true)
-                    gameEnded(.DownCount)
-                } else {
-                    progressBar.setProgress(Float(correctCount)/25.0, animated: true)
-                    displayLabel.text = "\(display!)"
-                }
-            case .Random:
-                correctCount += 1
-                var num = arc4random() % 26
-                while takenRand.contains(Int(num)) {
-                    num = arc4random() % 26
-                }
-                takenRand.append(Int(num))
-                display = Int(num)
-                if takenRand.count == 26 {
-                    //end of the game
-                    gameTimer.invalidate()
-                    displayLabel.text = ""
-                    progressBar.setProgress(1.0, animated: true)
-                    gameEnded(.Random)
-                } else {
-                    progressBar.setProgress(Float(correctCount)/25.0, animated: true)
-                    displayLabel.text = "\(display!)"
-                }
+            } else {
+                self.progressBar.setProgress(Float(self.correctCount)/25.0, animated: true)
+                self.displayLabel.text = "\(nextValue)"
             }
+            
         } else {
             SoundManager.sharedInstance().playWrongSound()
-            correctCount = 0
-            progressBar.setProgress(0.0, animated: true)
-            switch gameMode! {
-            case .UpCount:
-                display! = 1
-            case .DownCount:
-                display! = 25
-            case .Random:
-                takenRand = [0]
-                var num = arc4random() % 26
-                while takenRand.contains(Int(num)) {
-                    num = arc4random() % 26
-                }
-                takenRand.append(Int(num))
-                display = Int(num)
-            }
-            displayLabel.text = "\(display!)"
+            self.correctCount = 0
+            self.progressBar.setProgress(0.0, animated: true)
+            self.displayLabel.text = "\(nextValue)"
         }
     }
     
