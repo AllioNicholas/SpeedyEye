@@ -40,6 +40,12 @@ class GameViewController: UIViewController {
         self.gameManager.startGame()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.gameManager.stopTimer()
+    }
+    
     func setupNewGame() {
         //Setup game with according color
         self.gameManager = GameManager(gameMode: self.gameMode, initialSetup: { [weak self] (setup) in
