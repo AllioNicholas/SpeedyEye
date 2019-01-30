@@ -34,7 +34,7 @@ class GameManager: NSObject {
     
     private var randomSelectedValues: [Int] = [0]
     
-    var timeUpdateBlock: (String)->() = { _ in }
+    var timeUpdateBlock: ((String) -> Void)?
     
     override init() {
         super.init()
@@ -74,12 +74,17 @@ class GameManager: NSObject {
     
     func startGame() {
         self.timeManager = TimeManager({ [weak self] (timeString) in
-            self?.timeUpdateBlock(timeString)
+            guard let timeUpdateBlock = self?.timeUpdateBlock else { return }
+            timeUpdateBlock(timeString)
         })
     }
     
-    func endGame() {
+    func stopTimer() {
         self.timeManager.stopTimer()
+    }
+    
+    func endGame() {
+        stopTimer()
         
         //        if self.elapsedTime < self.highscore {
         //            switch inMode {
