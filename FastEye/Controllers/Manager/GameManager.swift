@@ -80,6 +80,20 @@ class GameManager: NSObject {
     
     func endGame() {
         self.timeManager.stopTimer()
+        
+        //        if self.elapsedTime < self.highscore {
+        //            switch inMode {
+        //            case .UpCount:
+        //                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_up")
+        //                break
+        //            case .DownCount:
+        //                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_down")
+        //                break
+        //            case .Random:
+        //                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_rand")
+        //                break
+        //            }
+        //        }
     }
     
     func didSelectValue(value: Int) -> (finish:Bool, correct:Bool, nextValue:Int) {
