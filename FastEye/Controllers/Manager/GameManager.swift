@@ -27,10 +27,14 @@ let GameColor = "kGameColor"
 
 class GameManager: NSObject {
     
-    var currentGameMode: GameMode = .UpCount
-    var valueToBeSelected: Int = 0
+    private var timeManager: TimeManager = TimeManager()
+
+    private var currentGameMode: GameMode = .UpCount
+    private var valueToBeSelected: Int = 0
     
-    var randomSelectedValues: [Int] = [0]
+    private var randomSelectedValues: [Int] = [0]
+    
+    var timeUpdateBlock: (String)->() = { _ in }
     
     override init() {
         super.init()
@@ -68,14 +72,30 @@ class GameManager: NSObject {
         initialSetup(returningSetup)
     }
     
+    func startGame() {
+        self.timeManager = TimeManager({ [weak self] (timeString) in
+            self?.timeUpdateBlock(timeString)
+        })
+    }
+    
+    func endGame() {
+        self.timeManager.stopTimer()
+    }
+    
     func didSelectValue(value: Int) -> (finish:Bool, correct:Bool, nextValue:Int) {
         let correctSelection = self.valueToBeSelected == value
         switch self.currentGameMode {
         case .UpCount:
             self.valueToBeSelected = correctSelection ? self.valueToBeSelected + 1 : UpCountModeInitialValue
+
+            if self.valueToBeSelected == 26 { self.endGame() }
+
             return (self.valueToBeSelected == 26, correctSelection, self.valueToBeSelected)
         case .DownCount:
             self.valueToBeSelected = correctSelection ? self.valueToBeSelected - 1 : DownCountModeInitialValue
+
+            if self.valueToBeSelected == 0 { self.endGame() }
+
             return (self.valueToBeSelected == 0, correctSelection, self.valueToBeSelected)
         case .Random:
             var num = arc4random() % 26
@@ -89,6 +109,9 @@ class GameManager: NSObject {
                 self.randomSelectedValues = [0]
                 self.valueToBeSelected = RandomModeInitialValue
             }
+            
+            if self.randomSelectedValues.count == 26 { self.endGame() }
+
             return (self.randomSelectedValues.count == 26, correctSelection, self.valueToBeSelected)
         }
     }
