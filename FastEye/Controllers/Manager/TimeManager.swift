@@ -31,7 +31,7 @@ class TimeManager: NSObject {
         })
     }
     
-    func endGame() {
+    func stopTimer() {
         self.gameTimer.invalidate()
     }
 }
