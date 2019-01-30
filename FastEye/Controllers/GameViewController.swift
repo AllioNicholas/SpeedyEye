@@ -14,8 +14,6 @@ import CoreGraphics
 
 class GameViewController: UIViewController {
     
-    var gameTimer: Timer = Timer()
-    var elapsedTime = 0.0
     var correctCount = 0
     var highscore = Double.greatestFiniteMagnitude
     
@@ -36,35 +34,27 @@ class GameViewController: UIViewController {
         self.loadingScore()
     }
     
-    func startCrono()  {
-        //Start chrono with 0.01 precision
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
-            self.elapsedTime += 0.01
-            if self.elapsedTime >= 60.0 {
-                let minutes = Int(self.elapsedTime / 60)
-                let secAndMill = self.elapsedTime - Double(60 * minutes)
-                self.cronoLabel.text = NSString(format: "%d:%05.2f", minutes, secAndMill) as String
-            } else {
-                self.cronoLabel.text = NSString(format: "%.2f", self.elapsedTime) as String
-            }
-        })
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.gameManager.startGame()
     }
     
     func setupNewGame() {
         //Setup game with according color
-        self.gameManager = GameManager(gameMode: self.gameMode, initialSetup: { (setup) in
+        self.gameManager = GameManager(gameMode: self.gameMode, initialSetup: { [weak self] (setup) in
             let colorGame = setup[GameColor] as! UIColor
             let initialValue = setup[GameInitialValue] as! Int
             
-            self.correctCount = 0
-            self.progressBar.progress = 0.0
-            self.progressBar.progressTintColor = colorGame
-            self.displayLabel.text = "\(initialValue)"
-            self.cronoLabel.text = "0.0"
+            self?.correctCount = 0
+            self?.progressBar.progress = 0.0
+            self?.progressBar.progressTintColor = colorGame
+            self?.displayLabel.text = "\(initialValue)"
+            self?.cronoLabel.text = "0.0"
             
             var taken = [0]
             for idx in 1...25 {
-                let but = self.view.viewWithTag(idx) as! UIButton
+                let but = self?.view.viewWithTag(idx) as! UIButton
                 var lab = Int(arc4random_uniform(26))
                 while taken.contains(lab) {
                     lab = Int(arc4random_uniform(26))
@@ -74,6 +64,10 @@ class GameViewController: UIViewController {
                 but.backgroundColor = colorGame
             }
         })
+        
+        self.gameManager.timeUpdateBlock = { [weak self] (timeString) in
+            self?.cronoLabel.text = timeString
+        }
     }
     
     func loadingScore() {
@@ -94,7 +88,6 @@ class GameViewController: UIViewController {
             
             if finished {
                 //end of the game
-                self.gameTimer.invalidate()
                 self.displayLabel.text = ""
                 self.progressBar.setProgress(1.0, animated: true)
                 
@@ -113,19 +106,6 @@ class GameViewController: UIViewController {
     }
     
     func gameEnded(_ inMode: GameMode) {
-        if self.elapsedTime < self.highscore {
-            switch inMode {
-            case .UpCount:
-                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_up")
-                break
-            case .DownCount:
-                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_down")
-                break
-            case .Random:
-                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_rand")
-                break
-            }
-        }
         self.performSegue(withIdentifier: "gameEnd", sender: nil)
     }
     
@@ -133,16 +113,16 @@ class GameViewController: UIViewController {
         if segue.identifier == "gameEnd" {
             let endViewController : EndGameViewController = segue.destination as! EndGameViewController
             
-            if self.elapsedTime < self.highscore {
-                endViewController.isHighscore = true
-                SoundManager.sharedInstance().playRecordSound()
-                GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
-            } else {
-                endViewController.isHighscore = false
-                SoundManager.sharedInstance().playEndSound()
-            }
-            
-            endViewController.timeToDisplay = self.elapsedTime
+//            if self.elapsedTime < self.highscore {
+//                endViewController.isHighscore = true
+//                SoundManager.sharedInstance().playRecordSound()
+//                GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
+//            } else {
+//                endViewController.isHighscore = false
+//                SoundManager.sharedInstance().playEndSound()
+//            }
+//
+//            endViewController.timeToDisplay = self.elapsedTime
             endViewController.gameMode = self.gameMode
             endViewController.dismissalBlock = {
                 self.navigationController?.popToRootViewController(animated: true)
