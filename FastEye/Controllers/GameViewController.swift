@@ -15,7 +15,6 @@ import CoreGraphics
 class GameViewController: UIViewController {
     
     var correctCount = 0
-    var highscore = Double.greatestFiniteMagnitude
     
     var gameManager: GameManager = GameManager()
     var gameMode: GameMode = .UpCount
@@ -119,16 +118,17 @@ class GameViewController: UIViewController {
         if segue.identifier == "gameEnd" {
             let endViewController : EndGameViewController = segue.destination as! EndGameViewController
             
-//            if self.elapsedTime < self.highscore {
-//                endViewController.isHighscore = true
-//                SoundManager.sharedInstance().playRecordSound()
-//                GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
-//            } else {
-//                endViewController.isHighscore = false
-//                SoundManager.sharedInstance().playEndSound()
-//            }
-//
-//            endViewController.timeToDisplay = self.elapsedTime
+            if let isHighScore = self.gameManager.isHighScore(), isHighScore {
+                endViewController.isHighscore = true
+                SoundManager.sharedInstance().playRecordSound()
+            } else {
+                endViewController.isHighscore = false
+                SoundManager.sharedInstance().playEndSound()
+            }
+            
+            if let finalTime = self.gameManager.finalTime() {
+                endViewController.timeToDisplay = finalTime
+            }
             endViewController.gameMode = self.gameMode
             endViewController.dismissalBlock = {
                 self.navigationController?.popToRootViewController(animated: true)
