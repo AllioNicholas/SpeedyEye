@@ -99,6 +99,22 @@ class GameManager: NSObject {
         //                break
         //            }
         //        }
+        
+//        GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
+
+    }
+    
+    func finalTime() -> Double? {
+        return self.timeManager.finalTime()
+    }
+    
+    func isHighScore() -> Bool? {
+        guard !self.timeManager.isTimeRunning(),
+            let elapsedTime = self.finalTime(),
+            let highscoreForGameMode = GameCenterManager.sharedInstance()?.getHighScoreForGameMode(gameMode: self.currentGameMode)
+            else { return nil }
+        
+        return elapsedTime < highscoreForGameMode
     }
     
     func didSelectValue(value: Int) -> (finish:Bool, correct:Bool, nextValue:Int) {
