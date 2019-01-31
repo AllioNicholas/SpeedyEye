@@ -16,6 +16,7 @@
 		018B03032187C7FB00B8908F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 018B03012187C7FB00B8908F /* Localizable.strings */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
 		01CD715221F91EC00022669A /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD715121F91EC00022669A /* GameManagerTests.swift */; };
+		01CD715A220252A40022669A /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD7159220252A40022669A /* TimeManager.swift */; };
 		01D55A9C1F7991110039D03A /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9B1F7991110039D03A /* SoundManager.swift */; };
 		01D55A9E1F7991200039D03A /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9D1F7991200039D03A /* GameManager.swift */; };
 		01D55AA01F79A0910039D03A /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9F1F79A0910039D03A /* EndGameViewController.swift */; };
@@ -55,6 +56,7 @@
 		01CD714F21F91EC00022669A /* FastEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD715121F91EC00022669A /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
 		01CD715321F91EC00022669A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01CD7159220252A40022669A /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeManager.swift; path = Controllers/Manager/TimeManager.swift; sourceTree = "<group>"; };
 		01D55A9B1F7991110039D03A /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundManager.swift; path = Controllers/Manager/SoundManager.swift; sourceTree = "<group>"; };
 		01D55A9D1F7991200039D03A /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameManager.swift; path = Controllers/Manager/GameManager.swift; sourceTree = "<group>"; };
 		01D55A9F1F79A0910039D03A /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndGameViewController.swift; path = Controllers/EndGameViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				015466FD1EEF38E600ED375A /* GameCenterManager.swift */,
 				01D55A9B1F7991110039D03A /* SoundManager.swift */,
 				01D55A9D1F7991200039D03A /* GameManager.swift */,
+				01CD7159220252A40022669A /* TimeManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				01D55AA01F79A0910039D03A /* EndGameViewController.swift in Sources */,
 				01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */,
 				015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */,
+				01CD715A220252A40022669A /* TimeManager.swift in Sources */,
 				01D55AA31F79A60F0039D03A /* Utils.swift in Sources */,
 				01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */,
 				013C0B0D1EEF2D92009092D2 /* CountDownViewController.swift in Sources */,

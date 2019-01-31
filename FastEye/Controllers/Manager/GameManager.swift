@@ -27,10 +27,14 @@ let GameColor = "kGameColor"
 
 class GameManager: NSObject {
     
-    var currentGameMode: GameMode = .UpCount
-    var valueToBeSelected: Int = 0
+    private var timeManager: TimeManager = TimeManager()
+
+    private var currentGameMode: GameMode = .UpCount
+    private var valueToBeSelected: Int = 0
     
-    var randomSelectedValues: [Int] = [0]
+    private var randomSelectedValues: [Int] = [0]
+    
+    var timeUpdateBlock: ((String) -> Void)?
     
     override init() {
         super.init()
@@ -68,14 +72,65 @@ class GameManager: NSObject {
         initialSetup(returningSetup)
     }
     
+    func startGame() {
+        self.timeManager = TimeManager({ [weak self] (timeString) in
+            guard let timeUpdateBlock = self?.timeUpdateBlock else { return }
+            timeUpdateBlock(timeString)
+        })
+    }
+    
+    func stopTimer() {
+        self.timeManager.stopTimer()
+    }
+    
+    func endGame() {
+        stopTimer()
+        
+        //        if self.elapsedTime < self.highscore {
+        //            switch inMode {
+        //            case .UpCount:
+        //                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_up")
+        //                break
+        //            case .DownCount:
+        //                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_down")
+        //                break
+        //            case .Random:
+        //                UserDefaults.standard.setValue(elapsedTime, forKey: "highscore_rand")
+        //                break
+        //            }
+        //        }
+        
+//        GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
+
+    }
+    
+    func finalTime() -> Double? {
+        return self.timeManager.finalTime()
+    }
+    
+    func isHighScore() -> Bool? {
+        guard !self.timeManager.isTimeRunning(),
+            let elapsedTime = self.finalTime(),
+            let highscoreForGameMode = GameCenterManager.sharedInstance()?.getHighScoreForGameMode(gameMode: self.currentGameMode)
+            else { return nil }
+        
+        return elapsedTime < highscoreForGameMode
+    }
+    
     func didSelectValue(value: Int) -> (finish:Bool, correct:Bool, nextValue:Int) {
         let correctSelection = self.valueToBeSelected == value
         switch self.currentGameMode {
         case .UpCount:
             self.valueToBeSelected = correctSelection ? self.valueToBeSelected + 1 : UpCountModeInitialValue
+
+            if self.valueToBeSelected == 26 { self.endGame() }
+
             return (self.valueToBeSelected == 26, correctSelection, self.valueToBeSelected)
         case .DownCount:
             self.valueToBeSelected = correctSelection ? self.valueToBeSelected - 1 : DownCountModeInitialValue
+
+            if self.valueToBeSelected == 0 { self.endGame() }
+
             return (self.valueToBeSelected == 0, correctSelection, self.valueToBeSelected)
         case .Random:
             var num = arc4random() % 26
@@ -89,6 +144,9 @@ class GameManager: NSObject {
                 self.randomSelectedValues = [0]
                 self.valueToBeSelected = RandomModeInitialValue
             }
+            
+            if self.randomSelectedValues.count == 26 { self.endGame() }
+
             return (self.randomSelectedValues.count == 26, correctSelection, self.valueToBeSelected)
         }
     }
