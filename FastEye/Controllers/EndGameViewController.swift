@@ -24,13 +24,13 @@ class EndGameViewController: UIViewController {
 
         self.modeLabel.text = "Mode \(self.gameMode!.rawValue)"
         
-//        if self.isHighscore {
-//            self.mainTitleLabel.text = "New Record!"
-//            self.finalTimeLabel.text = NSString(format: "New best time: %.2f s", self.timeToDisplay) as String
-//        } else {
-//            self.mainTitleLabel.text = "Too slow!"
-//            self.finalTimeLabel.text = NSString(format: "Your time: %.2f s", self.timeToDisplay) as String
-//        }
+        if self.isHighscore {
+            self.mainTitleLabel.text = "New Record!"
+            self.finalTimeLabel.text = NSString(format: "New best time: %.2f s", self.timeToDisplay) as String
+        } else {
+            self.mainTitleLabel.text = "Too slow!"
+            self.finalTimeLabel.text = NSString(format: "Your time: %.2f s", self.timeToDisplay) as String
+        }
     }
 
     @IBAction func backHomeButtonPressed(_ sender: Any) {
