@@ -31,6 +31,16 @@ class TimeManager: NSObject {
         })
     }
     
+    func isTimeRunning() -> Bool {
+        return self.gameTimer.isValid
+    }
+    
+    func finalTime() -> Double? {
+        guard !self.isTimeRunning() else { return nil }
+        
+        return self.elapsedTime
+    }
+    
     func stopTimer() {
         self.gameTimer.invalidate()
     }
