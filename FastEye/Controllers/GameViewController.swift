@@ -15,51 +15,59 @@ import CoreGraphics
 class GameViewController: UIViewController {
     
     var correctCount = 0
-    
+
     var gameManager: GameManager = GameManager()
     var gameMode: GameMode = .UpCount
-   
+
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var cronoLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupNewGame()
-        
+
         //load high score
         self.loadingScore()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.gameManager.startGame()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         self.gameManager.stopTimer()
     }
-    
+
     func setupNewGame() {
         //Setup game with according color
         self.gameManager = GameManager(gameMode: self.gameMode, initialSetup: { [weak self] (setup) in
-            let colorGame = setup[GameColor] as! UIColor
-            let initialValue = setup[GameInitialValue] as! Int
-            
+            guard let colorGame = setup[GameColor] as? UIColor,
+                    let initialValue = setup[GameInitialValue] as? Int else {
+                assertionFailure("Error initializing game with color and initial value")
+                self?.navigationController?.popToRootViewController(animated: true)
+                return
+            }
+
             self?.correctCount = 0
             self?.progressBar.progress = 0.0
             self?.progressBar.progressTintColor = colorGame
             self?.displayLabel.text = "\(initialValue)"
             self?.cronoLabel.text = "0.0"
-            
+
             var taken = [0]
             for idx in 1...25 {
-                let but = self?.view.viewWithTag(idx) as! UIButton
+                guard let but = self?.view.viewWithTag(idx) as? UIButton else {
+                    assertionFailure("View tagged with idx \(idx) is not a button")
+                    self?.navigationController?.popToRootViewController(animated: true)
+                    return
+                }
                 var lab = Int(arc4random_uniform(26))
                 while taken.contains(lab) {
                     lab = Int(arc4random_uniform(26))
@@ -69,12 +77,12 @@ class GameViewController: UIViewController {
                 but.backgroundColor = colorGame
             }
         })
-        
+
         self.gameManager.timeUpdateBlock = { [weak self] (timeString) in
             self?.cronoLabel.text = timeString
         }
     }
-    
+
     func loadingScore() {
         if let highScore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: gameMode) {
             highScoreLabel.text = "High score: \(highScore.formatHighScore())"
@@ -82,7 +90,7 @@ class GameViewController: UIViewController {
             highScoreLabel.text = "High score: -.-"
         }
     }
-    
+
     @IBAction func buttonPressed(_ sender: UIButton) {
         let stringNumberSelected = sender.titleLabel?.text
         guard let numberSelected = NumberFormatter().number(from: stringNumberSelected!) else { return }
@@ -90,18 +98,18 @@ class GameViewController: UIViewController {
         if correct {
             SoundManager.sharedInstance().playCorrectSound()
             self.correctCount += 1
-            
+
             if finished {
                 //end of the game
                 self.displayLabel.text = ""
                 self.progressBar.setProgress(1.0, animated: true)
-                
+
                 gameEnded(self.gameMode)
             } else {
                 self.progressBar.setProgress(Float(self.correctCount)/25.0, animated: true)
                 self.displayLabel.text = "\(nextValue)"
             }
-            
+
         } else {
             SoundManager.sharedInstance().playWrongSound()
             self.correctCount = 0
@@ -109,15 +117,19 @@ class GameViewController: UIViewController {
             self.displayLabel.text = "\(nextValue)"
         }
     }
-    
+
     func gameEnded(_ inMode: GameMode) {
         self.performSegue(withIdentifier: "gameEnd", sender: nil)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameEnd" {
-            let endViewController : EndGameViewController = segue.destination as! EndGameViewController
-            
+            guard let endViewController = segue.destination as? EndGameViewController else {
+                assertionFailure("Destination segue is not EndGameViewController")
+                self.navigationController?.popToRootViewController(animated: true)
+                return
+            }
+
             if let isHighScore = self.gameManager.isHighScore(), isHighScore {
                 endViewController.isHighscore = true
                 SoundManager.sharedInstance().playRecordSound()
@@ -125,7 +137,7 @@ class GameViewController: UIViewController {
                 endViewController.isHighscore = false
                 SoundManager.sharedInstance().playEndSound()
             }
-            
+
             if let finalTime = self.gameManager.finalTime() {
                 endViewController.timeToDisplay = finalTime
             }
@@ -135,15 +147,15 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func backButton(_ sender: UIButton) {
         SoundManager.sharedInstance().playNavigationSound()
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
-    
+
     func dismissEndView() {
         SoundManager.sharedInstance().playNavigationSound()
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
-    
+
 }
