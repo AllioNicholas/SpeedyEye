@@ -1,3 +1,5 @@
+disabled_rules:
+  - trailing_whitespace
 line_length: 110
 type_body_length:
   - 300 # warning
