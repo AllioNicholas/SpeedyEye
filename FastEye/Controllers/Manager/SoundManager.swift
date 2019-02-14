@@ -15,13 +15,13 @@ class SoundManager: NSObject {
 
     static private var _sharedInstance: SoundManager!
     
-    private var isSoundDisabled : Bool = false
+    private var isSoundDisabled: Bool = false
     
-    private var FastEyeSoundNavigation : SystemSoundID = 0
-    private var FastEyeSoundCorrect : SystemSoundID = 1
-    private var FastEyeSoundWrong : SystemSoundID = 2
-    private var FastEyeSoundEnd : SystemSoundID = 3
-    private var FastEyeSoundRecord : SystemSoundID = 4
+    private var sFastEyeSoundNavigation: SystemSoundID = 0
+    private var sFastEyeSoundCorrect: SystemSoundID = 1
+    private var sFastEyeSoundWrong: SystemSoundID = 2
+    private var sFastEyeSoundEnd: SystemSoundID = 3
+    private var sFastEyeSoundRecord: SystemSoundID = 4
     
     override init() {
         super.init()
@@ -30,23 +30,23 @@ class SoundManager: NSObject {
         
         //Navigation button
         var filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundNavigation)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundNavigation)
         
         //Correct button pressed
         filePath = Bundle.main.path(forResource: "Correct", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundCorrect)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundCorrect)
         
         //Wrong button pressed
         filePath = Bundle.main.path(forResource: "Fail", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundWrong)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundWrong)
         
         //Game ended with no new record
         filePath = Bundle.main.path(forResource: "ending_sound", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundEnd)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundEnd)
         
         //Game ended with new record
         filePath = Bundle.main.path(forResource: "new_record", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundRecord)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundRecord)
         
     }
     
@@ -67,31 +67,31 @@ class SoundManager: NSObject {
     
     func playNavigationSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundNavigation)
+            AudioServicesPlaySystemSound(sFastEyeSoundNavigation)
         }
     }
     
     func playCorrectSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundCorrect)
+            AudioServicesPlaySystemSound(sFastEyeSoundCorrect)
         }
     }
     
     func playWrongSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundWrong)
+            AudioServicesPlaySystemSound(sFastEyeSoundWrong)
         }
     }
     
     func playEndSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundEnd)
+            AudioServicesPlaySystemSound(sFastEyeSoundEnd)
         }
     }
     
     func playRecordSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundRecord)
+            AudioServicesPlaySystemSound(sFastEyeSoundRecord)
         }
     }
 }
