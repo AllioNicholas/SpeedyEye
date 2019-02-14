@@ -8,19 +8,19 @@
 
 import UIKit
 
-enum GameMode : Int {
-    case UpCount
-    case DownCount
-    case Random
+enum GameMode: Int {
+    case upCount
+    case downCount
+    case random
 }
 
-private let UpCountModeColor = UIColor(netHex: 0x332433) //Viola
-private let DownCountModeColor = UIColor(netHex: 0x4A5B82) //Azzurro scuro
-private let RandomModeColor = UIColor(netHex: 0x6FA79A) //Verde acqua
+private let upCountModeColor = UIColor(netHex: 0x332433) //Viola
+private let downCountModeColor = UIColor(netHex: 0x4A5B82) //Azzurro scuro
+private let randomModeColor = UIColor(netHex: 0x6FA79A) //Verde acqua
 
-private let UpCountModeInitialValue = 1
-private let DownCountModeInitialValue = 25
-private let RandomModeInitialValue = Int(arc4random_uniform(25) + 1)
+private let upCountModeInitialValue = 1
+private let downCountModeInitialValue = 25
+private let randomModeInitialValue = Int(arc4random_uniform(25) + 1)
 
 let GameInitialValue = "kGameInitialValue"
 let GameColor = "kGameColor"
@@ -29,7 +29,7 @@ class GameManager: NSObject {
     
     private var timeManager: TimeManager = TimeManager()
 
-    private var currentGameMode: GameMode = .UpCount
+    private var currentGameMode: GameMode = .upCount
     private var valueToBeSelected: Int = 0
     
     private var randomSelectedValues: [Int] = [0]
@@ -40,33 +40,30 @@ class GameManager: NSObject {
         super.init()
     }
     
-    convenience init(gameMode: GameMode, initialSetup: @escaping ([String: Any])->()) {
+    convenience init(gameMode: GameMode, initialSetup: @escaping ([String: Any]) -> Void) {
         self.init()
         self.currentGameMode = gameMode
         
-        var returningSetup: [String:Any]
+        var returningSetup: [String: Any]
         switch self.currentGameMode {
-        case .UpCount:
-            self.valueToBeSelected = UpCountModeInitialValue
+        case .upCount:
+            self.valueToBeSelected = upCountModeInitialValue
             returningSetup = [
-                GameInitialValue: UpCountModeInitialValue,
-                GameColor: UpCountModeColor
+                GameInitialValue: upCountModeInitialValue,
+                GameColor: upCountModeColor
             ]
-            break
-        case .DownCount:
-            self.valueToBeSelected = DownCountModeInitialValue
+        case .downCount:
+            self.valueToBeSelected = downCountModeInitialValue
             returningSetup = [
-                GameInitialValue: DownCountModeInitialValue,
-                GameColor: DownCountModeColor
+                GameInitialValue: downCountModeInitialValue,
+                GameColor: downCountModeColor
             ]
-            break
-        case .Random:
-            self.valueToBeSelected = RandomModeInitialValue
+        case .random:
+            self.valueToBeSelected = randomModeInitialValue
             returningSetup = [
-                GameInitialValue: RandomModeInitialValue,
-                GameColor: RandomModeColor
+                GameInitialValue: randomModeInitialValue,
+                GameColor: randomModeColor
             ]
-            break
         }
         
         initialSetup(returningSetup)
@@ -100,7 +97,9 @@ class GameManager: NSObject {
         //            }
         //        }
         
-//        GameCenterManager.sharedInstance().submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
+//GameCenterManager
+//            .sharedInstance()
+//            .submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
 
     }
     
@@ -111,28 +110,31 @@ class GameManager: NSObject {
     func isHighScore() -> Bool? {
         guard !self.timeManager.isTimeRunning(),
             let elapsedTime = self.finalTime(),
-            let highscoreForGameMode = GameCenterManager.sharedInstance()?.getHighScoreForGameMode(gameMode: self.currentGameMode)
+            let highscoreForGameMode = GameCenterManager
+                                        .sharedInstance()?
+                                        .getHighScoreForGameMode(gameMode: self.currentGameMode)
             else { return nil }
         
         return elapsedTime < highscoreForGameMode
     }
     
-    func didSelectValue(value: Int) -> (finish:Bool, correct:Bool, nextValue:Int) {
+    // swiftlint:disable large_tuple
+    func didSelectValue(value: Int) -> (finish: Bool, correct: Bool, nextValue: Int) {
         let correctSelection = self.valueToBeSelected == value
         switch self.currentGameMode {
-        case .UpCount:
-            self.valueToBeSelected = correctSelection ? self.valueToBeSelected + 1 : UpCountModeInitialValue
+        case .upCount:
+            self.valueToBeSelected = correctSelection ? self.valueToBeSelected + 1 : upCountModeInitialValue
 
             if self.valueToBeSelected == 26 { self.endGame() }
 
             return (self.valueToBeSelected == 26, correctSelection, self.valueToBeSelected)
-        case .DownCount:
-            self.valueToBeSelected = correctSelection ? self.valueToBeSelected - 1 : DownCountModeInitialValue
+        case .downCount:
+            self.valueToBeSelected = correctSelection ? self.valueToBeSelected - 1 : downCountModeInitialValue
 
             if self.valueToBeSelected == 0 { self.endGame() }
 
             return (self.valueToBeSelected == 0, correctSelection, self.valueToBeSelected)
-        case .Random:
+        case .random:
             var num = arc4random() % 26
             while self.randomSelectedValues.contains(Int(num)) {
                 num = arc4random() % 26
@@ -142,7 +144,7 @@ class GameManager: NSObject {
                 self.valueToBeSelected = Int(num)
             } else {
                 self.randomSelectedValues = [0]
-                self.valueToBeSelected = RandomModeInitialValue
+                self.valueToBeSelected = randomModeInitialValue
             }
             
             if self.randomSelectedValues.count == 26 { self.endGame() }
