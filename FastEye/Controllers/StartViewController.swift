@@ -50,11 +50,11 @@ class StartViewController: UIViewController {
                 return
             }
             if segue.identifier == "upcount" {
-                viewController.gameMode = .UpCount
+                viewController.gameMode = .upCount
             } else if segue.identifier == "downcount" {
-                viewController.gameMode = .DownCount
+                viewController.gameMode = .downCount
             } else if segue.identifier == "random" {
-                viewController.gameMode = .Random
+                viewController.gameMode = .random
             }
         }
     }

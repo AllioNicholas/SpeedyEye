@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     var correctCount = 0
 
     var gameManager: GameManager = GameManager()
-    var gameMode: GameMode = .UpCount
+    var gameMode: GameMode = .upCount
 
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!

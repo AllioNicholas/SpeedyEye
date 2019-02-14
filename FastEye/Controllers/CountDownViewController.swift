@@ -12,7 +12,7 @@ class CountDownViewController: UIViewController {
     
     @IBOutlet weak var countdownLabel: UILabel!
     
-    var gameMode: GameMode = .UpCount
+    var gameMode: GameMode = .upCount
     var countDownTimer: Timer = Timer()
     var countDown = 3
     
