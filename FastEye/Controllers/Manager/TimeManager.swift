@@ -17,9 +17,9 @@ class TimeManager: NSObject {
         super.init()
     }
     
-    convenience init(_ updateBlock: @escaping (String)->() ) {
+    convenience init(_ updateBlock: @escaping (String) -> Void ) {
         self.init()
-        self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
+        self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (_) in
             self.elapsedTime += 0.01
             if self.elapsedTime >= 60.0 {
                 let minutes = Int(self.elapsedTime / 60)

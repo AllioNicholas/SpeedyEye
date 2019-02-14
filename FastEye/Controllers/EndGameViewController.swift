@@ -14,10 +14,10 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var modeLabel: UILabel!
     @IBOutlet weak var finalTimeLabel: UILabel!
     
-    var dismissalBlock : (() -> Void)?
+    var dismissalBlock: (() -> Void)?
     var gameMode: GameMode!
-    var timeToDisplay : Double!
-    var isHighscore : Bool!
+    var timeToDisplay: Double!
+    var isHighscore: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()

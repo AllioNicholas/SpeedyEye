@@ -49,7 +49,9 @@ class HighScoresViewController: UIViewController {
 
     @IBAction func displayGameCenter(_ sender: UIButton) {
         SoundManager.sharedInstance().playNavigationSound()
-        let leaderboardViewController = GameCenterManager.sharedInstance().getGameCenterLeaderboardViewController()
+        let leaderboardViewController = GameCenterManager
+                                        .sharedInstance()
+                                        .getGameCenterLeaderboardViewController()
         present(leaderboardViewController, animated: true, completion: nil)
     }
     
