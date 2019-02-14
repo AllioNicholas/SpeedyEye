@@ -67,31 +67,31 @@ class SoundManager: NSObject {
     
     func playNavigationSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundNavigation)
+            AudioServicesPlaySystemSound(sFastEyeSoundNavigation)
         }
     }
     
     func playCorrectSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundCorrect)
+            AudioServicesPlaySystemSound(sFastEyeSoundCorrect)
         }
     }
     
     func playWrongSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundWrong)
+            AudioServicesPlaySystemSound(sFastEyeSoundWrong)
         }
     }
     
     func playEndSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundEnd)
+            AudioServicesPlaySystemSound(sFastEyeSoundEnd)
         }
     }
     
     func playRecordSound() {
         if !self.isSoundDisabled {
-            AudioServicesPlaySystemSound(FastEyeSoundRecord)
+            AudioServicesPlaySystemSound(sFastEyeSoundRecord)
         }
     }
 }
