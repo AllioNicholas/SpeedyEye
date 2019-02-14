@@ -22,8 +22,8 @@ private let upCountModeInitialValue = 1
 private let downCountModeInitialValue = 25
 private let randomModeInitialValue = Int(arc4random_uniform(25) + 1)
 
-let GameInitialValue = "kGameInitialValue"
-let GameColor = "kGameColor"
+let kGameInitialValue = "kGameInitialValue"
+let kGameColor = "kGameColor"
 
 class GameManager: NSObject {
     
@@ -49,20 +49,20 @@ class GameManager: NSObject {
         case .upCount:
             self.valueToBeSelected = upCountModeInitialValue
             returningSetup = [
-                GameInitialValue: upCountModeInitialValue,
-                GameColor: upCountModeColor
+                kGameInitialValue: upCountModeInitialValue,
+                kGameColor: upCountModeColor
             ]
         case .downCount:
             self.valueToBeSelected = downCountModeInitialValue
             returningSetup = [
-                GameInitialValue: downCountModeInitialValue,
-                GameColor: downCountModeColor
+                kGameInitialValue: downCountModeInitialValue,
+                kGameColor: downCountModeColor
             ]
         case .random:
             self.valueToBeSelected = randomModeInitialValue
             returningSetup = [
-                GameInitialValue: randomModeInitialValue,
-                GameColor: randomModeColor
+                kGameInitialValue: randomModeInitialValue,
+                kGameColor: randomModeColor
             ]
         }
         

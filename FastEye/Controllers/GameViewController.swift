@@ -48,8 +48,8 @@ class GameViewController: UIViewController {
     func setupNewGame() {
         //Setup game with according color
         self.gameManager = GameManager(gameMode: self.gameMode, initialSetup: { [weak self] (setup) in
-            guard let colorGame = setup[GameColor] as? UIColor,
-                    let initialValue = setup[GameInitialValue] as? Int else {
+            guard let colorGame = setup[kGameColor] as? UIColor,
+                    let initialValue = setup[kGameInitialValue] as? Int else {
                 assertionFailure("Error initializing game with color and initial value")
                 self?.navigationController?.popToRootViewController(animated: true)
                 return
