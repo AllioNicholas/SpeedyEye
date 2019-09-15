@@ -28,7 +28,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>up</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Up Count</string>
+			<string>SHORTCUT_TITLE_UPCOUNT</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>UpCount</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
@@ -41,7 +41,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>down</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Down Count</string>
+			<string>SHORTCUT_TITLE_DOWNCOUNT</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>DownCount</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
@@ -54,7 +54,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>random</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Random</string>
+			<string>SHORTCUT_TITLE_RANDOM</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>Random</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
