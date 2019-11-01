@@ -13,41 +13,44 @@ import GameKit
 
 class HighScoresViewController: UIViewController {
     
-    @IBOutlet weak var upHS: UILabel!
-    @IBOutlet weak var downHS: UILabel!
-    @IBOutlet weak var randomHS: UILabel!
-        
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak private var upHS: UILabel!
+    @IBOutlet weak private var downHS: UILabel!
+    @IBOutlet weak private var randomHS: UILabel!
+    @IBOutlet weak private var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton .setTitle(NSLocalizedString("done_button_text", comment: "Done"), for: UIControl.State.normal)
+        doneButton.setTitle(NSLocalizedString("done_button_text", comment: "Done"),
+                            for: UIControl.State.normal)
         
-        self.setupUI()
+        setupUI()
     }
     
-    func setupUI() {
+    private func setupUI() {
         if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .upCount) {
-            upHS.text = NSLocalizedString("upcount", comment: "Up Count") + ":\n\(highscore.formatHighScore())"
+            upHS.text = NSLocalizedString("upcount", comment: "Up Count") +
+            ":\n\(highscore.formatHighScore())"
         } else {
             upHS.text = NSLocalizedString("upcount", comment: "Up Count") + ":\n-.-"
         }
         
         if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .downCount) {
-            downHS.text = NSLocalizedString("downcount", comment: "Down Count") + ":\n\(highscore.formatHighScore())"
+            downHS.text = NSLocalizedString("downcount", comment: "Down Count") +
+            ":\n\(highscore.formatHighScore())"
         } else {
             downHS.text = NSLocalizedString("downcount", comment: "Down Count") + ":\n-.-"
         }
         
         if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .random) {
-            randomHS.text = NSLocalizedString("random", comment: "Random") + ":\n\(highscore.formatHighScore())"
+            randomHS.text = NSLocalizedString("random", comment: "Random") +
+            ":\n\(highscore.formatHighScore())"
         } else {
             randomHS.text = NSLocalizedString("random", comment: "Random") + ":\n-.-"
         }
     }
 
-    @IBAction func displayGameCenter(_ sender: UIButton) {
+    @IBAction private func displayGameCenter(_ sender: UIButton) {
         SoundManager.sharedInstance().playNavigationSound()
         let leaderboardViewController = GameCenterManager
                                         .sharedInstance()
@@ -55,7 +58,7 @@ class HighScoresViewController: UIViewController {
         present(leaderboardViewController, animated: true, completion: nil)
     }
     
-    @IBAction func backToHome(_ sender: UIButton) {
+    @IBAction private func backToHome(_ sender: UIButton) {
         SoundManager.sharedInstance().playNavigationSound()
         self.dismiss(animated: true, completion: nil)
     }
