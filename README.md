@@ -1,5 +1,5 @@
 ![Icon](https://github.com/AllioNicholas/Images/blob/master/SpeedyEye/Icon%402x.png?raw=true)
-# Speedy Eye
+# Speedy Eye [![Build Status](https://travis-ci.com/AllioNicholas/SpeedyEye.svg?branch=development)](https://travis-ci.com/AllioNicholas/SpeedyEye)
 Challenge your friends and discover who's the quickest finger!
 
 ## 3 game modes
@@ -20,4 +20,3 @@ Immediatelly start a new game thanks to the powerful 3D touch, time is precious!
 
 ___
 Need help? <a href="mailto:nicholas.allio@me.com?Subject=SpeedyEye%20support" target="_top">Contact the developer</a>
-
