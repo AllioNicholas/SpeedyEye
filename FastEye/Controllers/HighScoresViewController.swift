@@ -22,28 +22,28 @@ class HighScoresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton .setTitle(NSLocalizedString("done_button_text", comment: ""), for: UIControl.State.normal)
+        doneButton .setTitle(NSLocalizedString("done_button_text", comment: "Done"), for: UIControl.State.normal)
         
         self.setupUI()
     }
     
     func setupUI() {
         if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .upCount) {
-            upHS.text = "Up Count:\n\(highscore.formatHighScore())"
+            upHS.text = NSLocalizedString("upcount", comment: "Up Count") + ":\n\(highscore.formatHighScore())"
         } else {
-            upHS.text = "Up Count:\n-.-"
+            upHS.text = NSLocalizedString("upcount", comment: "Up Count") + ":\n-.-"
         }
         
         if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .downCount) {
-            downHS.text = "Down Count:\n\(highscore.formatHighScore())"
+            downHS.text = NSLocalizedString("downcount", comment: "Down Count") + ":\n\(highscore.formatHighScore())"
         } else {
-            downHS.text = "Down Count:\n-.-"
+            downHS.text = NSLocalizedString("downcount", comment: "Down Count") + ":\n-.-"
         }
         
         if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .random) {
-            randomHS.text = "Random Count:\n\(highscore.formatHighScore())"
+            randomHS.text = NSLocalizedString("random", comment: "Random") + ":\n\(highscore.formatHighScore())"
         } else {
-            randomHS.text = "Random Count:\n-.-"
+            randomHS.text = NSLocalizedString("random", comment: "Random") + ":\n-.-"
         }
     }
 
