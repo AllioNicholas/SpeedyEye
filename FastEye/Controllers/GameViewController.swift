@@ -96,7 +96,7 @@ class GameViewController: UIViewController {
         guard let numberSelected = NumberFormatter().number(from: stringNumberSelected!) else { return }
         let (finished, correct, nextValue) = self.gameManager.didSelectValue(value: numberSelected.intValue)
         if correct {
-            SoundManager.sharedInstance().playCorrectSound()
+            SoundManager.shared.playCorrectSound()
             self.correctCount += 1
 
             if finished {
@@ -111,7 +111,7 @@ class GameViewController: UIViewController {
             }
 
         } else {
-            SoundManager.sharedInstance().playWrongSound()
+            SoundManager.shared.playWrongSound()
             self.correctCount = 0
             self.progressBar.setProgress(0.0, animated: true)
             self.displayLabel.text = "\(nextValue)"
@@ -132,10 +132,10 @@ class GameViewController: UIViewController {
 
             if self.gameManager.isHighScore() {
                 endViewController.isHighscore = true
-                SoundManager.sharedInstance().playRecordSound()
+                SoundManager.shared.playRecordSound()
             } else {
                 endViewController.isHighscore = false
-                SoundManager.sharedInstance().playEndSound()
+                SoundManager.shared.playEndSound()
             }
 
             if let finalTime = self.gameManager.finalTime() {
@@ -149,13 +149,13 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func backButton(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
-        _ = self.navigationController?.popToRootViewController(animated: true)
+        SoundManager.shared.playNavigationSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     func dismissEndView() {
-        SoundManager.sharedInstance().playNavigationSound()
-        _ = self.navigationController?.popToRootViewController(animated: true)
+        SoundManager.shared.playNavigationSound()
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
 }

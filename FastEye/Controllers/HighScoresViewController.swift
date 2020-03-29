@@ -51,7 +51,7 @@ class HighScoresViewController: UIViewController {
     }
 
     @IBAction private func displayGameCenter(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+        SoundManager.shared.playNavigationSound()
         let leaderboardViewController = GameCenterManager
                                         .shared
                                         .leaderboardViewController
@@ -59,7 +59,7 @@ class HighScoresViewController: UIViewController {
     }
     
     @IBAction private func backToHome(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+        SoundManager.shared.playNavigationSound()
         self.dismiss(animated: true, completion: nil)
     }
 }
