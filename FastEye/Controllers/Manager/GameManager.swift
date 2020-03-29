@@ -111,7 +111,7 @@ class GameManager: NSObject {
         guard !self.timeManager.isTimeRunning(),
             let elapsedTime = self.finalTime(),
             let highscoreForGameMode = GameCenterManager
-                                        .sharedInstance()?
+                                        .shared
                                         .getHighScoreForGameMode(gameMode: self.currentGameMode)
             else { return nil }
         

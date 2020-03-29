@@ -84,7 +84,7 @@ class GameViewController: UIViewController {
     }
 
     func loadingScore() {
-        if let highScore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: gameMode) {
+        if let highScore = GameCenterManager.shared.getHighScoreForGameMode(gameMode: gameMode) {
             highScoreLabel.text = "High score: \(highScore.formatHighScore())"
         } else {
             highScoreLabel.text = "High score: -.-"
