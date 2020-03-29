@@ -15,3 +15,7 @@
 "highscores" = "High Scores";
 "done_button_text" = "Done";
 "go_txt" = "Go!";
+"new_record" = "New Record!"
+"too_slow" = "Too slow!"
+"new_best_time_%f" = "New best time: %.2f s"
+"your_time_%f" = "Your time: %.2f s"
