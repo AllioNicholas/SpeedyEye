@@ -13,17 +13,14 @@
             continueAfterRunningActions = "No"
             scope = "1"
             stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            uuid = "267F9021-DB07-4515-A9E5-C228CEACECB0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po $0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -33,6 +30,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po $0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

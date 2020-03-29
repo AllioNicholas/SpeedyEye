@@ -32,7 +32,7 @@ class StartViewController: UIViewController {
                                   for: UIControl.State.normal)
         
         weak var weakSelf = self
-        GameCenterManager.sharedInstance().authenticateGameCenterUser(
+        GameCenterManager.shared.authenticateGameCenterUser(
             successBlockOrViewController: { (success, viewController) in
                 if !success, let viewController = viewController {
                     weakSelf!.present(viewController, animated: true, completion: nil)

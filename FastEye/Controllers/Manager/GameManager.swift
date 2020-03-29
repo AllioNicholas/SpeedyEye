@@ -107,13 +107,13 @@ class GameManager: NSObject {
         return self.timeManager.finalTime()
     }
     
-    func isHighScore() -> Bool? {
+    func isHighScore() -> Bool {
         guard !self.timeManager.isTimeRunning(),
             let elapsedTime = self.finalTime(),
             let highscoreForGameMode = GameCenterManager
-                                        .sharedInstance()?
-                                        .getHighScoreForGameMode(gameMode: self.currentGameMode)
-            else { return nil }
+                                        .shared
+                                        .getHighScoreForGameMode(self.currentGameMode)
+            else { return false }
         
         return elapsedTime < highscoreForGameMode
     }
