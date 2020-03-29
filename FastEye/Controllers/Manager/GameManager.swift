@@ -28,7 +28,7 @@ let kGameColor = "kGameColor"
 class GameManager: NSObject {
     
     private var timeManager: TimeManager = TimeManager()
-
+    
     private var currentGameMode: GameMode = .upCount
     private var valueToBeSelected: Int = 0
     
@@ -37,11 +37,11 @@ class GameManager: NSObject {
     var timeUpdateBlock: ((String) -> Void)?
     
     lazy var finalTime: Double? = {
-        return self.timeManager.finalTime()
+        return self.timeManager.finalTime
     }()
     
     lazy var isHighScore: Bool = {
-        guard !self.timeManager.isTimeRunning(),
+        guard !self.timeManager.isTimeRunning,
             let elapsedTime = finalTime,
             let highscoreForGameMode = GameCenterManager
                                         .shared
