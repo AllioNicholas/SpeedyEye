@@ -22,7 +22,7 @@ private enum UserDefaultHighScore: String {
 }
 
 class GameCenterManager: NSObject {
-    var gcEnabled: Bool = false
+    private var gameCenterEnabled: Bool = false
     
     lazy private var leaderborad: GKLeaderboard = {
         let leaderboard = GKLeaderboard()
@@ -39,12 +39,8 @@ class GameCenterManager: NSObject {
     
     static let shared = GameCenterManager()
     
-    var isEnabled: Bool {
-        return self.gcEnabled
-    }
-    
     func loadHighScoresFromGameCenter() {
-        if isEnabled {
+        if gameCenterEnabled {
             
             // UpCount score
             self.leaderborad.identifier = LeaderboardID.upCount.rawValue
@@ -154,12 +150,12 @@ extension GameCenterManager: GKGameCenterControllerDelegate {
                 successBlockOrViewController(error == nil, viewController)
             } else if localPlayer.isAuthenticated {
                 // 2. Player is already authenticated & logged in, load game center
-                self?.gcEnabled = true
+                self?.gameCenterEnabled = true
                 self?.loadHighScoresFromGameCenter()
                 successBlockOrViewController(true, nil)
             } else {
                 // 3. Game center is not enabled on the users device
-                self?.gcEnabled = false
+                self?.gameCenterEnabled = false
                 successBlockOrViewController(false, nil)
             }
         }
