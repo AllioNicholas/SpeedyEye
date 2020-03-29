@@ -145,6 +145,7 @@
 		019A34BB1EEDE2ED00736C8A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
 				01F0436E232D12C300DC6B2A /* InfoPlist.strings */,
 				018B03012187C7FB00B8908F /* Localizable.strings */,
@@ -195,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				01ECF20E1E6582D000BDC321 /* Controller */,
-				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
 				015466FC1EEF38A600ED375A /* Manager */,
 				019A34BB1EEDE2ED00736C8A /* Resources */,
 				01D55AA11F79A5EC0039D03A /* Utils */,
@@ -596,7 +596,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = FastEye/Info.plist;
+				INFOPLIST_FILE = FastEye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
@@ -615,7 +615,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = FastEye/Info.plist;
+				INFOPLIST_FILE = FastEye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
