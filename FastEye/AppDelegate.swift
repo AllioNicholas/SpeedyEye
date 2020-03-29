@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions
                         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        _ = GameCenterManager.sharedInstance()
+        
         _ = SoundManager.sharedInstance()
         
         // If a shortcut was launched, display its information and take the appropriate action
