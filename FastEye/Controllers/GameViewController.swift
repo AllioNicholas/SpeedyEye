@@ -129,16 +129,16 @@ class GameViewController: UIViewController {
                 self.navigationController?.popToRootViewController(animated: true)
                 return
             }
-
-            if self.gameManager.isHighScore() {
+            
+            if self.gameManager.isHighScore {
                 endViewController.isHighscore = true
                 SoundManager.shared.playRecordSound()
             } else {
                 endViewController.isHighscore = false
                 SoundManager.shared.playEndSound()
             }
-
-            if let finalTime = self.gameManager.finalTime() {
+            
+            if let finalTime = self.gameManager.finalTime {
                 endViewController.timeToDisplay = finalTime
             }
             endViewController.gameMode = self.gameMode
