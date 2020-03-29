@@ -15,7 +15,7 @@
 "highscores" = "Risultati";
 "done_button_text" = "Fine";
 "go_txt" = "Via!";
-"new_record" = "Nuovo Record!"
-"too_slow" = "Troppo lento!"
-"new_best_time_%f" = "Nuovo tempo migliore: %.2f s"
-"your_time_%f" = "Il tuo tempo: %.2f s"
+"new_record" = "Nuovo Record!";
+"too_slow" = "Troppo lento!";
+"new_best_time_%f" = "Nuovo tempo migliore: %.2f s";
+"your_time_%f" = "Il tuo tempo: %.2f s";
