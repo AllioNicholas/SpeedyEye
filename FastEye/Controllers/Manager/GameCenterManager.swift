@@ -10,7 +10,6 @@ import UIKit
 import GameKit
 
 private enum LeaderboardID: String {
-    case main = "nicholas.allio.fasteye"
     case upCount = "nicholas.allio.fasteye.upcount"
     case downCount = "nicholas.allio.fasteye.downcount"
     case random = "nicholas.allio.fasteye.random"
@@ -27,7 +26,6 @@ class GameCenterManager: NSObject {
     
     lazy private var leaderborad: GKLeaderboard = {
         let leaderboard = GKLeaderboard()
-        leaderboard.identifier = LeaderboardID.main.rawValue
         leaderboard.timeScope = .allTime
         return leaderboard
     }()
@@ -92,17 +90,17 @@ class GameCenterManager: NSObject {
         }
     }
     
-    func getHighScoreForGameMode(gameMode: GameMode) -> Double? {
+    func getHighScoreForGameMode( _ gameMode: GameMode) -> Double? {
         switch gameMode {
         case .upCount:
             let int64Value = UserDefaults.standard.double(forKey: UserDefaultHighScore.upCount.rawValue)
-            return Double(int64Value/100)
+            return int64Value > 0 ? Double(int64Value/100) : nil
         case .downCount:
             let int64Value = UserDefaults.standard.double(forKey: UserDefaultHighScore.downCount.rawValue)
-            return Double(int64Value/100)
+            return int64Value > 0 ? Double(int64Value/100) : nil
         case .random:
             let int64Value = UserDefaults.standard.double(forKey: UserDefaultHighScore.random.rawValue)
-            return Double(int64Value/100)
+            return int64Value > 0 ? Double(int64Value/100) : nil
         }
     }
     
@@ -147,6 +145,10 @@ extension GameCenterManager: GKGameCenterControllerDelegate {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.local
         
         localPlayer.authenticateHandler = { [weak self] (viewController, error) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
             if let viewController = viewController {
                 // 1. Show login if player is not logged in
                 successBlockOrViewController(error == nil, viewController)
