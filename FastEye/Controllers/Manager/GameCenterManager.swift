@@ -25,47 +25,67 @@ private enum UserDefaultHighScore: String {
 class GameCenterManager: NSObject {
     var gcEnabled: Bool = false
     
-    static private var _sharedInstance: GameCenterManager!
-    private let leaderborad = GKLeaderboard()
-    private var _leaderboardViewController: GKGameCenterViewController!
+    lazy private var leaderborad: GKLeaderboard = {
+        let leaderboard = GKLeaderboard()
+        leaderboard.identifier = LeaderboardID.main.rawValue
+        leaderboard.timeScope = .allTime
+        return leaderboard
+    }()
     
-    class func sharedInstance() -> GameCenterManager! {
-        if _sharedInstance == nil {
-            _sharedInstance = GameCenterManager()
-        }
-        return _sharedInstance
-    }
+    lazy var leaderboardViewController: GKGameCenterViewController = {
+        let leaderboardVC = GKGameCenterViewController()
+        leaderboardVC.viewState = .leaderboards
+        leaderboardVC.gameCenterDelegate = self
+        return leaderboardVC
+    }()
     
-    func isEnabled() -> Bool {
+    static let shared = GameCenterManager()
+    
+    var isEnabled: Bool {
         return self.gcEnabled
     }
     
     func loadHighScoresFromGameCenter() {
-        if self.isEnabled() {
+        if isEnabled {
+            
             // UpCount score
-            weak var weakSelf: GameCenterManager! = self
             self.leaderborad.identifier = LeaderboardID.upCount.rawValue
-            self.leaderborad.loadScores(completionHandler: { (scores, error) in
-                if error == nil, let localPlayerScore = weakSelf.leaderborad.localPlayerScore {
-                    weakSelf.saveHighScoreLocaly(withHighScore: localPlayerScore.value,
+            self.leaderborad.loadScores(completionHandler: { [weak self] (_, error) in
+                guard let self = self else { return }
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+                if let localPlayerScore = self.leaderborad.localPlayerScore {
+                    self.saveHighScoreLocaly(withHighScore: localPlayerScore.value,
                                                  forModeGameKey: .upCount)
                 }
             })
             
             // DownCount score
             self.leaderborad.identifier = LeaderboardID.downCount.rawValue
-            self.leaderborad.loadScores(completionHandler: { (scores, error) in
-                if error == nil, let localPlayerScore = weakSelf.leaderborad.localPlayerScore {
-                    weakSelf.saveHighScoreLocaly(withHighScore: localPlayerScore.value,
+            self.leaderborad.loadScores(completionHandler: { [weak self] (_, error) in
+                guard let self = self else { return }
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+                if let localPlayerScore = self.leaderborad.localPlayerScore {
+                    self.saveHighScoreLocaly(withHighScore: localPlayerScore.value,
                                                  forModeGameKey: .downCount)
                 }
             })
             
             // Random score
             self.leaderborad.identifier = LeaderboardID.random.rawValue
-            self.leaderborad.loadScores(completionHandler: { (scores, error) in
-                if error == nil, let localPlayerScore = weakSelf.leaderborad.localPlayerScore {
-                    weakSelf.saveHighScoreLocaly(withHighScore: localPlayerScore.value,
+            self.leaderborad.loadScores(completionHandler: { [weak self] (_, error) in
+                guard let self = self else { return }
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+                if let localPlayerScore = self.leaderborad.localPlayerScore {
+                    self.saveHighScoreLocaly(withHighScore: localPlayerScore.value,
                                                  forModeGameKey: .random)
                 }
             })
@@ -108,22 +128,10 @@ class GameCenterManager: NSObject {
         saveHighScoreLocaly(withHighScore: bestScoreInt.value, forModeGameKey: userDefaultKey)
     }
     
-    func getGameCenterLeaderboardViewController() -> GKGameCenterViewController {
-        if _leaderboardViewController == nil {
-            _leaderboardViewController = GKGameCenterViewController()
-            _leaderboardViewController.viewState = .leaderboards
-            _leaderboardViewController.gameCenterDelegate = self
-        }
-        return _leaderboardViewController
-    }
-    
     private func saveHighScoreLocaly(
         withHighScore highScore: Int64,
         forModeGameKey userDefaultKey: UserDefaultHighScore) {
-        objc_sync_enter(self)
         UserDefaults.standard.set(highScore, forKey: userDefaultKey.rawValue)
-        UserDefaults.standard.synchronize()
-        objc_sync_exit(self)
     }
     
 }
@@ -138,20 +146,18 @@ extension GameCenterManager: GKGameCenterControllerDelegate {
         successBlockOrViewController: @escaping (Bool, UIViewController?) -> Void) {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.local
         
-        weak var weakSelf: GameCenterManager! = self
-        
-        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+        localPlayer.authenticateHandler = { [weak self] (viewController, error) -> Void in
             if let viewController = viewController {
                 // 1. Show login if player is not logged in
                 successBlockOrViewController(error == nil, viewController)
             } else if localPlayer.isAuthenticated {
                 // 2. Player is already authenticated & logged in, load game center
-                weakSelf.gcEnabled = true
-                weakSelf.loadHighScoresFromGameCenter()
+                self?.gcEnabled = true
+                self?.loadHighScoresFromGameCenter()
                 successBlockOrViewController(true, nil)
             } else {
                 // 3. Game center is not enabled on the users device
-                weakSelf.gcEnabled = false
+                self?.gcEnabled = false
                 successBlockOrViewController(false, nil)
             }
         }
