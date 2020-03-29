@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum GameMode: Int {
+enum GameMode {
     case upCount
     case downCount
     case random
