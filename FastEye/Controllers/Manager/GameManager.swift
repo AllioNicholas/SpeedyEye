@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum GameMode: Int {
+enum GameMode {
     case upCount
     case downCount
     case random
@@ -28,13 +28,28 @@ let kGameColor = "kGameColor"
 class GameManager: NSObject {
     
     private var timeManager: TimeManager = TimeManager()
-
+    
     private var currentGameMode: GameMode = .upCount
     private var valueToBeSelected: Int = 0
     
     private var randomSelectedValues: [Int] = [0]
     
     var timeUpdateBlock: ((String) -> Void)?
+    
+    lazy var finalTime: Double? = {
+        return self.timeManager.finalTime
+    }()
+    
+    lazy var isHighScore: Bool = {
+        guard !self.timeManager.isTimeRunning,
+            let elapsedTime = finalTime,
+            let highscoreForGameMode = GameCenterManager
+                                        .shared
+                                        .getHighScoreForGameMode(self.currentGameMode)
+            else { return false }
+        
+        return elapsedTime < highscoreForGameMode
+    }()
     
     override init() {
         super.init()
@@ -101,21 +116,6 @@ class GameManager: NSObject {
 //            .sharedInstance()
 //            .submitHighScoreToGameCenter(highScore: self.elapsedTime, inMode: self.gameMode)
 
-    }
-    
-    func finalTime() -> Double? {
-        return self.timeManager.finalTime()
-    }
-    
-    func isHighScore() -> Bool {
-        guard !self.timeManager.isTimeRunning(),
-            let elapsedTime = self.finalTime(),
-            let highscoreForGameMode = GameCenterManager
-                                        .shared
-                                        .getHighScoreForGameMode(self.currentGameMode)
-            else { return false }
-        
-        return elapsedTime < highscoreForGameMode
     }
     
     // swiftlint:disable large_tuple

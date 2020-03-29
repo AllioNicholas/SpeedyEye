@@ -8,10 +8,6 @@
 
 import UIKit
 
-class Utils: NSObject {
-
-}
-
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
@@ -30,7 +26,7 @@ extension UIColor {
 }
 
 extension Double {
-    func formatHighScore() -> String {
+    var formattedHighScore: String {
         if self >= 60.0 {
             let minutes = Int(self / 60)
             let secAndMill = self - Double(60 * minutes)

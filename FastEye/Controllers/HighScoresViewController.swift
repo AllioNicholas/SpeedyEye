@@ -30,28 +30,28 @@ class HighScoresViewController: UIViewController {
     private func setupUI() {
         if let highscore = GameCenterManager.shared.getHighScoreForGameMode(.upCount) {
             upHS.text = NSLocalizedString("upcount", comment: "Up Count") +
-            ":\n\(highscore.formatHighScore())"
+            ":\n\(highscore.formattedHighScore)"
         } else {
             upHS.text = NSLocalizedString("upcount", comment: "Up Count") + ":\n-.-"
         }
         
         if let highscore = GameCenterManager.shared.getHighScoreForGameMode(.downCount) {
             downHS.text = NSLocalizedString("downcount", comment: "Down Count") +
-            ":\n\(highscore.formatHighScore())"
+            ":\n\(highscore.formattedHighScore)"
         } else {
             downHS.text = NSLocalizedString("downcount", comment: "Down Count") + ":\n-.-"
         }
         
         if let highscore = GameCenterManager.shared.getHighScoreForGameMode(.random) {
             randomHS.text = NSLocalizedString("random", comment: "Random") +
-            ":\n\(highscore.formatHighScore())"
+            ":\n\(highscore.formattedHighScore)"
         } else {
             randomHS.text = NSLocalizedString("random", comment: "Random") + ":\n-.-"
         }
     }
 
     @IBAction private func displayGameCenter(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+        SoundManager.shared.playNavigationSound()
         let leaderboardViewController = GameCenterManager
                                         .shared
                                         .leaderboardViewController
@@ -59,7 +59,7 @@ class HighScoresViewController: UIViewController {
     }
     
     @IBAction private func backToHome(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+        SoundManager.shared.playNavigationSound()
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -60,6 +60,6 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func playNavigationSound(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+        SoundManager.shared.playNavigationSound()
     }
 }

@@ -9,13 +9,21 @@
 import UIKit
 import AudioToolbox
 
-let kUserDefaultAudioDisabledKey = "UserDefaultAudioDisabledKey"
-
 class SoundManager: NSObject {
-
-    static private var _sharedInstance: SoundManager!
     
-    private var isSoundDisabled: Bool = false
+    private let kUserDefaultAudioDisabledKey = "UserDefaultAudioDisabledKey"
+    
+    static let shared = SoundManager()
+    
+    private var isSoundDisabled: Bool {
+        get {
+            let disabled = UserDefaults.standard.bool(forKey: kUserDefaultAudioDisabledKey)
+            return disabled
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: kUserDefaultAudioDisabledKey)
+        }
+    }
     
     private var sFastEyeSoundNavigation: SystemSoundID = 0
     private var sFastEyeSoundCorrect: SystemSoundID = 1
@@ -25,8 +33,6 @@ class SoundManager: NSObject {
     
     override init() {
         super.init()
-        
-        self.isSoundDisabled = UserDefaults.standard.bool(forKey: kUserDefaultAudioDisabledKey)
         
         //Navigation button
         var filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
@@ -50,19 +56,8 @@ class SoundManager: NSObject {
         
     }
     
-    class func sharedInstance() -> SoundManager! {
-        if _sharedInstance == nil {
-            _sharedInstance = SoundManager()
-        }
-        return _sharedInstance
-    }
-    
     func toggleSoundActive() {
-        self.isSoundDisabled = !self.isSoundDisabled
-        objc_sync_enter(self)
-        UserDefaults.standard.set(self.isSoundDisabled, forKey: kUserDefaultAudioDisabledKey)
-        UserDefaults.standard.synchronize()
-        objc_sync_exit(self)
+        self.isSoundDisabled.toggle()
     }
     
     func playNavigationSound() {

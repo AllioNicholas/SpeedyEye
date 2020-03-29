@@ -12,7 +12,17 @@ class TimeManager: NSObject {
     
     private var gameTimer: Timer = Timer()
     private var elapsedTime = 0.0
-
+    
+    lazy var isTimeRunning: Bool = {
+        return self.gameTimer.isValid
+    }()
+    
+    lazy var finalTime: Double? = {
+        guard !self.isTimeRunning else { return nil }
+        
+        return self.elapsedTime
+    }()
+    
     override init() {
         super.init()
     }
@@ -29,16 +39,6 @@ class TimeManager: NSObject {
                 updateBlock(NSString(format: "%.2f", self.elapsedTime) as String)
             }
         })
-    }
-    
-    func isTimeRunning() -> Bool {
-        return self.gameTimer.isValid
-    }
-    
-    func finalTime() -> Double? {
-        guard !self.isTimeRunning() else { return nil }
-        
-        return self.elapsedTime
     }
     
     func stopTimer() {

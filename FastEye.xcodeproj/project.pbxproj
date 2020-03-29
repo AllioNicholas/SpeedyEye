@@ -105,8 +105,8 @@
 		013C0B0A1EEF2AA6009092D2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
 				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
+				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -114,11 +114,11 @@
 		013C0B0B1EEF2AB1009092D2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
 				01F392331C1E3F5F0053B644 /* ending_sound.wav */,
+				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
 				01F392341C1E3F5F0053B644 /* navigation_button.wav */,
 				01F392351C1E3F5F0053B644 /* new_record.wav */,
-				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
-				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -135,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				015466FD1EEF38E600ED375A /* GameCenterManager.swift */,
-				01D55A9B1F7991110039D03A /* SoundManager.swift */,
 				01D55A9D1F7991200039D03A /* GameManager.swift */,
+				01D55A9B1F7991110039D03A /* SoundManager.swift */,
 				01CD7159220252A40022669A /* TimeManager.swift */,
 			);
 			name = Manager;
@@ -145,11 +145,12 @@
 		019A34BB1EEDE2ED00736C8A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
+				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
 				01F0436E232D12C300DC6B2A /* InfoPlist.strings */,
 				018B03012187C7FB00B8908F /* Localizable.strings */,
 				013C0B0B1EEF2AB1009092D2 /* Sounds */,
+				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				013C0B0A1EEF2AA6009092D2 /* UI */,
 			);
 			path = Resources;
@@ -195,9 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				01ECF20E1E6582D000BDC321 /* Controller */,
-				010EB89C1C072EDE007D49E0 /* View */,
+				015466FC1EEF38A600ED375A /* Manager */,
 				019A34BB1EEDE2ED00736C8A /* Resources */,
-				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
+				01D55AA11F79A5EC0039D03A /* Utils */,
+				010EB89C1C072EDE007D49E0 /* View */,
 			);
 			path = FastEye;
 			sourceTree = "<group>";
@@ -206,13 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
-				015466FC1EEF38A600ED375A /* Manager */,
-				01D55AA11F79A5EC0039D03A /* Utils */,
-				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
-				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
-				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
 				013C0B0C1EEF2D92009092D2 /* CountDownViewController.swift */,
 				01D55A9F1F79A0910039D03A /* EndGameViewController.swift */,
+				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
+				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
+				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -596,7 +596,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = FastEye/Info.plist;
+				INFOPLIST_FILE = FastEye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
@@ -615,7 +615,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = FastEye/Info.plist;
+				INFOPLIST_FILE = FastEye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;

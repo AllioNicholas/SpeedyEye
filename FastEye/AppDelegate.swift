@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions
                         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        _ = SoundManager.sharedInstance()
-        
         // If a shortcut was launched, display its information and take the appropriate action
         if let shortcutItem =
             launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
