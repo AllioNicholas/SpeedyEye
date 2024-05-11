@@ -1,5 +1,5 @@
 ![Icon](https://github.com/AllioNicholas/Images/blob/master/SpeedyEye/Icon%402x.png?raw=true)
-# Speedy Eye [![Build Status](https://travis-ci.com/AllioNicholas/SpeedyEye.svg?branch=development)](https://travis-ci.com/AllioNicholas/SpeedyEye)
+# Speedy Eye
 Challenge your friends and discover who's the quickest finger!
 
 ## 3 game modes
