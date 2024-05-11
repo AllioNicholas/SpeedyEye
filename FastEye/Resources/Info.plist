@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationShortcutItems</key>
@@ -28,7 +28,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>up</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Up Count</string>
+			<string>SHORTCUT_TITLE_UPCOUNT</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>UpCount</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
@@ -41,7 +41,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>down</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Down Count</string>
+			<string>SHORTCUT_TITLE_DOWNCOUNT</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>DownCount</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
@@ -54,7 +54,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>random</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Random</string>
+			<string>SHORTCUT_TITLE_RANDOM</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>Random</string>
 			<key>UIApplicationShortcutItemUserInfo</key>

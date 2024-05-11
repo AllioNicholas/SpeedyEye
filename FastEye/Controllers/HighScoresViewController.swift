@@ -13,48 +13,53 @@ import GameKit
 
 class HighScoresViewController: UIViewController {
     
-    @IBOutlet weak var upHS: UILabel!
-    @IBOutlet weak var downHS: UILabel!
-    @IBOutlet weak var randomHS: UILabel!
-        
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak private var upHS: UILabel!
+    @IBOutlet weak private var downHS: UILabel!
+    @IBOutlet weak private var randomHS: UILabel!
+    @IBOutlet weak private var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton .setTitle(NSLocalizedString("done_button_text", comment: ""), for: UIControl.State.normal)
+        doneButton.setTitle(NSLocalizedString("done_button_text", comment: "Done"),
+                            for: UIControl.State.normal)
         
-        self.setupUI()
+        setupUI()
     }
     
-    func setupUI() {
-        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .UpCount) {
-            upHS.text = "Up Count:\n\(highscore.formatHighScore())"
+    private func setupUI() {
+        if let highscore = GameCenterManager.shared.getHighScoreForGameMode(.upCount) {
+            upHS.text = NSLocalizedString("upcount", comment: "Up Count") +
+            ":\n\(highscore.formattedHighScore)"
         } else {
-            upHS.text = "Up Count:\n-.-"
+            upHS.text = NSLocalizedString("upcount", comment: "Up Count") + ":\n-.-"
         }
         
-        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .DownCount) {
-            downHS.text = "Down Count:\n\(highscore.formatHighScore())"
+        if let highscore = GameCenterManager.shared.getHighScoreForGameMode(.downCount) {
+            downHS.text = NSLocalizedString("downcount", comment: "Down Count") +
+            ":\n\(highscore.formattedHighScore)"
         } else {
-            downHS.text = "Down Count:\n-.-"
+            downHS.text = NSLocalizedString("downcount", comment: "Down Count") + ":\n-.-"
         }
         
-        if let highscore = GameCenterManager.sharedInstance().getHighScoreForGameMode(gameMode: .Random) {
-            randomHS.text = "Random Count:\n\(highscore.formatHighScore())"
+        if let highscore = GameCenterManager.shared.getHighScoreForGameMode(.random) {
+            randomHS.text = NSLocalizedString("random", comment: "Random") +
+            ":\n\(highscore.formattedHighScore)"
         } else {
-            randomHS.text = "Random Count:\n-.-"
+            randomHS.text = NSLocalizedString("random", comment: "Random") + ":\n-.-"
         }
     }
 
-    @IBAction func displayGameCenter(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
-        let leaderboardViewController = GameCenterManager.sharedInstance().getGameCenterLeaderboardViewController()
+    @IBAction private func displayGameCenter(_ sender: UIButton) {
+        SoundManager.shared.playNavigationSound()
+        let leaderboardViewController = GameCenterManager
+                                        .shared
+                                        .leaderboardViewController
         present(leaderboardViewController, animated: true, completion: nil)
     }
     
-    @IBAction func backToHome(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+    @IBAction private func backToHome(_ sender: UIButton) {
+        SoundManager.shared.playNavigationSound()
         self.dismiss(animated: true, completion: nil)
     }
 }

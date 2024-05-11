@@ -9,89 +9,84 @@
 import UIKit
 import AudioToolbox
 
-let kUserDefaultAudioActiveKey = "kUserDefaultAudioActiveKey"
-
 class SoundManager: NSObject {
-
-    static private var _sharedInstance: SoundManager!
     
-    private var _isSoundActive : Bool = true
+    private let kUserDefaultAudioDisabledKey = "UserDefaultAudioDisabledKey"
     
-    private var FastEyeSoundNavigation : SystemSoundID = 0
-    private var FastEyeSoundCorrect : SystemSoundID = 1
-    private var FastEyeSoundWrong : SystemSoundID = 2
-    private var FastEyeSoundEnd : SystemSoundID = 3
-    private var FastEyeSoundRecord : SystemSoundID = 4
+    static let shared = SoundManager()
+    
+    private var isSoundDisabled: Bool {
+        get {
+            let disabled = UserDefaults.standard.bool(forKey: kUserDefaultAudioDisabledKey)
+            return disabled
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: kUserDefaultAudioDisabledKey)
+        }
+    }
+    
+    private var sFastEyeSoundNavigation: SystemSoundID = 0
+    private var sFastEyeSoundCorrect: SystemSoundID = 1
+    private var sFastEyeSoundWrong: SystemSoundID = 2
+    private var sFastEyeSoundEnd: SystemSoundID = 3
+    private var sFastEyeSoundRecord: SystemSoundID = 4
     
     override init() {
         super.init()
         
-        _isSoundActive = UserDefaults.standard.bool(forKey: kUserDefaultAudioActiveKey)
-        
         //Navigation button
         var filePath = Bundle.main.path(forResource: "navigation_button", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundNavigation)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundNavigation)
         
         //Correct button pressed
         filePath = Bundle.main.path(forResource: "Correct", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundCorrect)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundCorrect)
         
         //Wrong button pressed
         filePath = Bundle.main.path(forResource: "Fail", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundWrong)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundWrong)
         
         //Game ended with no new record
         filePath = Bundle.main.path(forResource: "ending_sound", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundEnd)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundEnd)
         
         //Game ended with new record
         filePath = Bundle.main.path(forResource: "new_record", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &FastEyeSoundRecord)
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: filePath!) as CFURL, &sFastEyeSoundRecord)
         
     }
     
-    class func sharedInstance() -> SoundManager! {
-        if _sharedInstance == nil {
-            _sharedInstance = SoundManager()
-        }
-        return _sharedInstance
-    }
-    
     func toggleSoundActive() {
-        _isSoundActive = !_isSoundActive
-        objc_sync_enter(self)
-        UserDefaults.standard.set(_isSoundActive, forKey: kUserDefaultAudioActiveKey)
-        UserDefaults.standard.synchronize()
-        objc_sync_exit(self)
+        self.isSoundDisabled.toggle()
     }
     
     func playNavigationSound() {
-        if _isSoundActive {
-            AudioServicesPlaySystemSound(FastEyeSoundNavigation)
+        if !self.isSoundDisabled {
+            AudioServicesPlaySystemSound(sFastEyeSoundNavigation)
         }
     }
     
     func playCorrectSound() {
-        if _isSoundActive {
-            AudioServicesPlaySystemSound(FastEyeSoundCorrect)
+        if !self.isSoundDisabled {
+            AudioServicesPlaySystemSound(sFastEyeSoundCorrect)
         }
     }
     
     func playWrongSound() {
-        if _isSoundActive {
-            AudioServicesPlaySystemSound(FastEyeSoundWrong)
+        if !self.isSoundDisabled {
+            AudioServicesPlaySystemSound(sFastEyeSoundWrong)
         }
     }
     
     func playEndSound() {
-        if _isSoundActive {
-            AudioServicesPlaySystemSound(FastEyeSoundEnd)
+        if !self.isSoundDisabled {
+            AudioServicesPlaySystemSound(sFastEyeSoundEnd)
         }
     }
     
     func playRecordSound() {
-        if _isSoundActive {
-            AudioServicesPlaySystemSound(FastEyeSoundRecord)
+        if !self.isSoundDisabled {
+            AudioServicesPlaySystemSound(sFastEyeSoundRecord)
         }
     }
 }

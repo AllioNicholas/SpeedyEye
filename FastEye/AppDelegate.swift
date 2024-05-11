@@ -12,87 +12,62 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var launchedShortcutItem: UIApplicationShortcutItem?
+    var shortcutItemToProcess: UIApplicationShortcutItem?
     
-    enum ShortcutItemType: String {
-        case UpCount
-        case DownCount
-        case Random
-        
-        // MARK: - Initializers
-        
-        init?(fullType: String) {
-            guard let last = fullType.components(separatedBy: ".").last else { return nil }
-            
-            self.init(rawValue: last)
-        }
-        
+    private enum ShortcutItemType {
+        static let upCount = "UpCount"
+        static let downCount = "DownCount"
+        static let random = "Random"
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        _ = GameCenterManager.sharedInstance()
-        _ = SoundManager.sharedInstance()
-        
-        // Override point for customization after application launch.
-        var shouldPerformAdditionalDelegateHandling = true
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions
+                        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // If a shortcut was launched, display its information and take the appropriate action
-        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-            
-            launchedShortcutItem = shortcutItem
-            
-            // This will block "performActionForShortcutItem:completionHandler" from being called.
-            shouldPerformAdditionalDelegateHandling = false
+        if let shortcutItem =
+            launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            shortcutItemToProcess = shortcutItem
         }
-        
-        return shouldPerformAdditionalDelegateHandling
+
+        return true
     }
-    
+
     func applicationDidBecomeActive(_ application: UIApplication) {
-        guard let shortcut = launchedShortcutItem else { return }
-        
-        _ = handleShortCutItem(shortcut)
-        
-        launchedShortcutItem = nil
+        if let shortcut = shortcutItemToProcess {
+            
+            handleShortCutItem(shortcut)
+            
+            shortcutItemToProcess = nil
+        }
+    }
+
+    func application(_ application: UIApplication,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        shortcutItemToProcess = shortcutItem
     }
     
-    func handleShortCutItem(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
-        var handled = false
-                
-        guard let shortCutType = shortcutItem.type as String? else { return false }
-        
+    // MARK: Application Shortcut
+    func handleShortCutItem(_ shortcutItem: UIApplicationShortcutItem) {
+        guard let shortCutType = shortcutItem.type as String? else { return }
+
         var segueID = ""
-        
-        switch (shortCutType) {
-        case ShortcutItemType.UpCount.rawValue:
-            segueID = "up"
-            handled = true
-            break
-        case ShortcutItemType.DownCount.rawValue:
-            segueID = "down"
-            handled = true
-            break
-        case ShortcutItemType.Random.rawValue:
+
+        switch shortCutType {
+        case ShortcutItemType.upCount:
+            segueID = "upcount"
+        case ShortcutItemType.downCount:
+            segueID = "downcount"
+        case ShortcutItemType.random:
             segueID = "random"
-            handled = true
-            break
         default:
             break
         }
-        
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        window!.rootViewController = sb.instantiateViewController(withIdentifier: "root")
-        window?.rootViewController?.addChild(sb.instantiateViewController(withIdentifier: "Start"))
-        window?.rootViewController?.children.first?.performSegue(withIdentifier: segueID, sender: nil)
-        
-        return handled
-    }
 
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        let handledShortCutItem = handleShortCutItem(shortcutItem)
-        
-        completionHandler(handledShortCutItem)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "root")
+        window?.rootViewController?.addChild(storyboard.instantiateViewController(withIdentifier: "Start"))
+        window?.rootViewController?.children.first?.performSegue(withIdentifier: segueID, sender: nil)
     }
 }
-

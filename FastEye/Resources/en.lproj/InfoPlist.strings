@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  FastEye
+
+  Created by Nicholas Allio on 14/09/2019.
+  Copyright © 2019 Nicholas Allio. All rights reserved.
+*/
+
+"SHORTCUT_TITLE_UPCOUNT" = "Up Count";
+"SHORTCUT_TITLE_DOWNCOUNT" = "Down Count";
+"SHORTCUT_TITLE_RANDOM" = "Random";

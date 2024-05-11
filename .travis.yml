@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode10.3
+xcode_project: FastEye.xcodeproj
+xcode_scheme: FastEye
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X

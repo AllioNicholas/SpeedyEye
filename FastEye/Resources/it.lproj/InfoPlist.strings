@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  FastEye
+
+  Created by Nicholas Allio on 14/09/2019.
+  Copyright © 2019 Nicholas Allio. All rights reserved.
+*/
+
+"SHORTCUT_TITLE_UPCOUNT" = "Progressivo";
+"SHORTCUT_TITLE_DOWNCOUNT" = "Alla rovescia";
+"SHORTCUT_TITLE_RANDOM" = "Casuale";

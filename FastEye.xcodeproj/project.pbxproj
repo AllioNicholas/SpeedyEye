@@ -15,6 +15,8 @@
 		015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015916EE1BC709C100EB03D7 /* GameViewController.swift */; };
 		018B03032187C7FB00B8908F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 018B03012187C7FB00B8908F /* Localizable.strings */; };
 		01A5CFDC1BCC54C6002ABBF0 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */; };
+		01CD715221F91EC00022669A /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD715121F91EC00022669A /* GameManagerTests.swift */; };
+		01CD715A220252A40022669A /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD7159220252A40022669A /* TimeManager.swift */; };
 		01D55A9C1F7991110039D03A /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9B1F7991110039D03A /* SoundManager.swift */; };
 		01D55A9E1F7991200039D03A /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9D1F7991200039D03A /* GameManager.swift */; };
 		01D55AA01F79A0910039D03A /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D55A9F1F79A0910039D03A /* EndGameViewController.swift */; };
@@ -24,11 +26,22 @@
 		01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB941BC6BBC0004C3695 /* Main.storyboard */; };
 		01DAAB981BC6BBC0004C3695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB971BC6BBC0004C3695 /* Assets.xcassets */; };
 		01DAAB9B1BC6BBC0004C3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */; };
+		01F0436C232D12C300DC6B2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01F0436E232D12C300DC6B2A /* InfoPlist.strings */; };
 		01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392331C1E3F5F0053B644 /* ending_sound.wav */; };
 		01F392371C1E3F5F0053B644 /* navigation_button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392341C1E3F5F0053B644 /* navigation_button.wav */; };
 		01F392381C1E3F5F0053B644 /* new_record.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01F392351C1E3F5F0053B644 /* new_record.wav */; };
 		01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01CD715421F91EC00022669A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01DAAB851BC6BBC0004C3695 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01DAAB8C1BC6BBC0004C3695;
+			remoteInfo = FastEye;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01025F0E1BF93C1C00CF5B32 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Correct.wav; path = Sounds/Correct.wav; sourceTree = "<group>"; };
@@ -37,10 +50,14 @@
 		0146613B1E66E102008C2410 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		015466FD1EEF38E600ED375A /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCenterManager.swift; path = Controllers/Manager/GameCenterManager.swift; sourceTree = "<group>"; };
 		015916EE1BC709C100EB03D7 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Controllers/GameViewController.swift; sourceTree = "<group>"; };
-		018B03022187C7FB00B8908F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = FastEye/Base.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		018B03052187C81800B8908F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = ../it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01699AF4242FDCCD006FC71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01699AF5242FDCCD006FC71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		018B03062187C83400B8908F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = Controllers/HighScoresViewController.swift; sourceTree = "<group>"; };
+		01CD714F21F91EC00022669A /* FastEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CD715121F91EC00022669A /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
+		01CD715321F91EC00022669A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01CD7159220252A40022669A /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeManager.swift; path = Controllers/Manager/TimeManager.swift; sourceTree = "<group>"; };
 		01D55A9B1F7991110039D03A /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundManager.swift; path = Controllers/Manager/SoundManager.swift; sourceTree = "<group>"; };
 		01D55A9D1F7991200039D03A /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameManager.swift; path = Controllers/Manager/GameManager.swift; sourceTree = "<group>"; };
 		01D55A9F1F79A0910039D03A /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndGameViewController.swift; path = Controllers/EndGameViewController.swift; sourceTree = "<group>"; };
@@ -48,10 +65,11 @@
 		01DAAB8D1BC6BBC0004C3695 /* FastEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01DAAB921BC6BBC0004C3695 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = Controllers/StartViewController.swift; sourceTree = "<group>"; };
-		01DAAB951BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01DAAB971BC6BBC0004C3695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		01DAAB9A1BC6BBC0004C3695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01DAAB9C1BC6BBC0004C3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F04369232D11E300DC6B2A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = ../it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01F0436D232D12C300DC6B2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01F0436F232D12C900DC6B2A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01F392331C1E3F5F0053B644 /* ending_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ending_sound.wav; path = Sounds/ending_sound.wav; sourceTree = "<group>"; };
 		01F392341C1E3F5F0053B644 /* navigation_button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = navigation_button.wav; path = Sounds/navigation_button.wav; sourceTree = "<group>"; };
 		01F392351C1E3F5F0053B644 /* new_record.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = new_record.wav; path = Sounds/new_record.wav; sourceTree = "<group>"; };
@@ -59,6 +77,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		01CD714C21F91EC00022669A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01DAAB8A1BC6BBC0004C3695 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,8 +105,8 @@
 		013C0B0A1EEF2AA6009092D2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
 				01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */,
+				01DAAB941BC6BBC0004C3695 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -89,11 +114,11 @@
 		013C0B0B1EEF2AB1009092D2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
 				01F392331C1E3F5F0053B644 /* ending_sound.wav */,
+				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
 				01F392341C1E3F5F0053B644 /* navigation_button.wav */,
 				01F392351C1E3F5F0053B644 /* new_record.wav */,
-				01025F0E1BF93C1C00CF5B32 /* Correct.wav */,
-				01025F0F1BF93C1C00CF5B32 /* Fail.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -110,8 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				015466FD1EEF38E600ED375A /* GameCenterManager.swift */,
-				01D55A9B1F7991110039D03A /* SoundManager.swift */,
 				01D55A9D1F7991200039D03A /* GameManager.swift */,
+				01D55A9B1F7991110039D03A /* SoundManager.swift */,
+				01CD7159220252A40022669A /* TimeManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -119,13 +145,24 @@
 		019A34BB1EEDE2ED00736C8A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
+				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
 				01DAAB971BC6BBC0004C3695 /* Assets.xcassets */,
+				01F0436E232D12C300DC6B2A /* InfoPlist.strings */,
 				018B03012187C7FB00B8908F /* Localizable.strings */,
 				013C0B0B1EEF2AB1009092D2 /* Sounds */,
+				01FB7FB31C18B972008937E7 /* Ubuntu-Bold.ttf */,
 				013C0B0A1EEF2AA6009092D2 /* UI */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		01CD715021F91EC00022669A /* FastEyeTests */ = {
+			isa = PBXGroup;
+			children = (
+				01CD715121F91EC00022669A /* GameManagerTests.swift */,
+				01CD715321F91EC00022669A /* Info.plist */,
+			);
+			path = FastEyeTests;
 			sourceTree = "<group>";
 		};
 		01D55AA11F79A5EC0039D03A /* Utils */ = {
@@ -140,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAAB8F1BC6BBC0004C3695 /* FastEye */,
+				01CD715021F91EC00022669A /* FastEyeTests */,
 				01DAAB8E1BC6BBC0004C3695 /* Products */,
 				0146613A1E66E102008C2410 /* Frameworks */,
 			);
@@ -149,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAAB8D1BC6BBC0004C3695 /* FastEye.app */,
+				01CD714F21F91EC00022669A /* FastEyeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,9 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				01ECF20E1E6582D000BDC321 /* Controller */,
-				010EB89C1C072EDE007D49E0 /* View */,
+				015466FC1EEF38A600ED375A /* Manager */,
 				019A34BB1EEDE2ED00736C8A /* Resources */,
-				01DAAB9C1BC6BBC0004C3695 /* Info.plist */,
+				01D55AA11F79A5EC0039D03A /* Utils */,
+				010EB89C1C072EDE007D49E0 /* View */,
 			);
 			path = FastEye;
 			sourceTree = "<group>";
@@ -168,13 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				01DAAB901BC6BBC0004C3695 /* AppDelegate.swift */,
-				015466FC1EEF38A600ED375A /* Manager */,
-				01D55AA11F79A5EC0039D03A /* Utils */,
-				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
-				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
-				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
 				013C0B0C1EEF2D92009092D2 /* CountDownViewController.swift */,
 				01D55A9F1F79A0910039D03A /* EndGameViewController.swift */,
+				015916EE1BC709C100EB03D7 /* GameViewController.swift */,
+				01A5CFDB1BCC54C6002ABBF0 /* HighScoresViewController.swift */,
+				01DAAB921BC6BBC0004C3695 /* StartViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,6 +220,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		01CD714E21F91EC00022669A /* FastEyeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01CD715621F91EC00022669A /* Build configuration list for PBXNativeTarget "FastEyeTests" */;
+			buildPhases = (
+				01CD714B21F91EC00022669A /* Sources */,
+				01CD714C21F91EC00022669A /* Frameworks */,
+				01CD714D21F91EC00022669A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01CD715521F91EC00022669A /* PBXTargetDependency */,
+			);
+			name = FastEyeTests;
+			productName = FastEyeTests;
+			productReference = 01CD714F21F91EC00022669A /* FastEyeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		01DAAB8C1BC6BBC0004C3695 /* FastEye */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01DAAB9F1BC6BBC0004C3695 /* Build configuration list for PBXNativeTarget "FastEye" */;
@@ -189,6 +245,7 @@
 				01DAAB891BC6BBC0004C3695 /* Sources */,
 				01DAAB8A1BC6BBC0004C3695 /* Frameworks */,
 				01DAAB8B1BC6BBC0004C3695 /* Resources */,
+				01CD715B220B54700022669A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -205,13 +262,21 @@
 		01DAAB851BC6BBC0004C3695 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Nicholas Allio";
 				TargetAttributes = {
+					01CD714E21F91EC00022669A = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 4R644JN289;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 01DAAB8C1BC6BBC0004C3695;
+					};
 					01DAAB8C1BC6BBC0004C3695 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 4R644JN289;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -223,12 +288,12 @@
 			};
 			buildConfigurationList = 01DAAB881BC6BBC0004C3695 /* Build configuration list for PBXProject "FastEye" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				it,
+				Base,
 			);
 			mainGroup = 01DAAB841BC6BBC0004C3695;
 			productRefGroup = 01DAAB8E1BC6BBC0004C3695 /* Products */;
@@ -236,11 +301,19 @@
 			projectRoot = "";
 			targets = (
 				01DAAB8C1BC6BBC0004C3695 /* FastEye */,
+				01CD714E21F91EC00022669A /* FastEyeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		01CD714D21F91EC00022669A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01DAAB8B1BC6BBC0004C3695 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,13 +327,42 @@
 				01FB7FB41C18B972008937E7 /* Ubuntu-Bold.ttf in Resources */,
 				01F392361C1E3F5F0053B644 /* ending_sound.wav in Resources */,
 				01DAAB961BC6BBC0004C3695 /* Main.storyboard in Resources */,
+				01F0436C232D12C300DC6B2A /* InfoPlist.strings in Resources */,
 				01025F101BF93C1C00CF5B32 /* Correct.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01CD715B220B54700022669A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		01CD714B21F91EC00022669A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CD715221F91EC00022669A /* GameManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01DAAB891BC6BBC0004C3695 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +372,7 @@
 				01D55AA01F79A0910039D03A /* EndGameViewController.swift in Sources */,
 				01DAAB931BC6BBC0004C3695 /* StartViewController.swift in Sources */,
 				015916EF1BC709C100EB03D7 /* GameViewController.swift in Sources */,
+				01CD715A220252A40022669A /* TimeManager.swift in Sources */,
 				01D55AA31F79A60F0039D03A /* Utils.swift in Sources */,
 				01DAAB911BC6BBC0004C3695 /* AppDelegate.swift in Sources */,
 				013C0B0D1EEF2D92009092D2 /* CountDownViewController.swift in Sources */,
@@ -280,13 +383,20 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		01CD715521F91EC00022669A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01DAAB8C1BC6BBC0004C3695 /* FastEye */;
+			targetProxy = 01CD715421F91EC00022669A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		018B03012187C7FB00B8908F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				018B03022187C7FB00B8908F /* Base */,
-				018B03052187C81800B8908F /* it */,
 				018B03062187C83400B8908F /* en */,
+				01F04369232D11E300DC6B2A /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -294,7 +404,7 @@
 		01DAAB941BC6BBC0004C3695 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				01DAAB951BC6BBC0004C3695 /* Base */,
+				01699AF4242FDCCD006FC71A /* Base */,
 			);
 			name = Main.storyboard;
 			path = ..;
@@ -303,15 +413,78 @@
 		01DAAB991BC6BBC0004C3695 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				01DAAB9A1BC6BBC0004C3695 /* Base */,
+				01699AF5242FDCCD006FC71A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;
 			sourceTree = "<group>";
 		};
+		01F0436E232D12C300DC6B2A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01F0436D232D12C300DC6B2A /* en */,
+				01F0436F232D12C900DC6B2A /* it */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		01CD715721F91EC00022669A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4R644JN289;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FastEyeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEyeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastEye.app/FastEye";
+			};
+			name = Debug;
+		};
+		01CD715821F91EC00022669A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4R644JN289;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FastEyeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEyeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastEye.app/FastEye";
+			};
+			name = Release;
+		};
 		01DAAB9D1BC6BBC0004C3695 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -421,14 +594,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = FastEye/Info.plist;
+				INFOPLIST_FILE = FastEye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -438,20 +613,31 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nicholas Allio (4R644JN289)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = FastEye/Info.plist;
+				INFOPLIST_FILE = FastEye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nicholas.allio.FastEye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		01CD715621F91EC00022669A /* Build configuration list for PBXNativeTarget "FastEyeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01CD715721F91EC00022669A /* Debug */,
+				01CD715821F91EC00022669A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		01DAAB881BC6BBC0004C3695 /* Build configuration list for PBXProject "FastEye" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

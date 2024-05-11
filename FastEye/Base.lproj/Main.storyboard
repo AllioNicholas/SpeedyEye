@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gi4-7F-ifd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,44 +26,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmg-6o-lvT">
-                                <rect key="frame" x="67.5" y="193.5" width="240" height="280"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q4F-3n-urY">
+                                <rect key="frame" x="92" y="201.5" width="191" height="264"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g88-zR-UfG">
-                                        <rect key="frame" x="20" y="76" width="200" height="60"/>
-                                        <color key="backgroundColor" red="0.29019607843137252" green="0.35686274509803922" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="C1t-Ss-5u3"/>
-                                            <constraint firstAttribute="width" constant="200" id="F89-DV-R4s"/>
-                                            <constraint firstAttribute="height" constant="30" id="Hcv-MN-QEH"/>
-                                            <constraint firstAttribute="height" constant="60" id="YVi-td-eRb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Down count mode">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="C1t-Ss-5u3"/>
-                                                <exclude reference="Hcv-MN-QEH"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahl-Qs-Sv8"/>
-                                            <segue destination="L7D-pw-YPa" kind="show" identifier="downcount" id="J7y-Il-QHT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-tK-Ugc">
-                                        <rect key="frame" x="20" y="8" width="200" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-tK-Ugc">
+                                        <rect key="frame" x="0.0" y="0.0" width="191" height="60"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.14117647058823529" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="I3v-Re-KEl"/>
                                             <constraint firstAttribute="width" constant="150" id="I5s-5j-6ZJ"/>
                                             <constraint firstAttribute="height" constant="30" id="S4F-zF-5CN"/>
-                                            <constraint firstAttribute="width" constant="200" id="aE8-ND-Uxs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Up count mode">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,16 +54,41 @@
                                             <segue destination="L7D-pw-YPa" kind="show" identifier="upcount" id="bhP-kM-jyJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d1-Pv-H55">
-                                        <rect key="frame" x="20" y="144" width="200" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="g88-zR-UfG">
+                                        <rect key="frame" x="0.0" y="68" width="191" height="60"/>
+                                        <color key="backgroundColor" red="0.29019607843137252" green="0.35686274509803922" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="C1t-Ss-5u3"/>
+                                            <constraint firstAttribute="height" constant="30" id="Hcv-MN-QEH"/>
+                                            <constraint firstAttribute="height" constant="60" id="YVi-td-eRb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Down count mode">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="C1t-Ss-5u3"/>
+                                                <exclude reference="Hcv-MN-QEH"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="playNavigationSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahl-Qs-Sv8"/>
+                                            <segue destination="L7D-pw-YPa" kind="show" identifier="downcount" id="J7y-Il-QHT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="2d1-Pv-H55">
+                                        <rect key="frame" x="0.0" y="136" width="191" height="60"/>
                                         <color key="backgroundColor" red="0.43529411764705883" green="0.65490196078431373" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Q12-Xs-BqG"/>
                                             <constraint firstAttribute="height" constant="30" id="RQz-9i-NV1"/>
                                             <constraint firstAttribute="width" constant="150" id="RUh-M4-LGk"/>
-                                            <constraint firstAttribute="width" constant="200" id="z4j-Qg-8q2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Random mode">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,16 +104,16 @@
                                             <segue destination="L7D-pw-YPa" kind="show" identifier="random" id="6tH-bR-rbl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-Za-fgd">
-                                        <rect key="frame" x="20" y="212" width="200" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-Za-fgd">
+                                        <rect key="frame" x="0.0" y="204" width="191" height="60"/>
                                         <color key="backgroundColor" red="0.69803921568627447" green="0.85098039215686272" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="8ze-rb-3kc"/>
                                             <constraint firstAttribute="height" constant="30" id="C7R-LR-3yo"/>
-                                            <constraint firstAttribute="width" constant="200" id="IHG-oe-L9f"/>
                                             <constraint firstAttribute="height" constant="60" id="u29-1L-dNE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="High Scores">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,29 +130,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="4vd-oh-m5R"/>
-                                    <constraint firstItem="QBs-tK-Ugc" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="KsG-ry-wVg"/>
-                                    <constraint firstItem="g88-zR-UfG" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="PdU-8G-qcr"/>
-                                    <constraint firstItem="g88-zR-UfG" firstAttribute="top" secondItem="QBs-tK-Ugc" secondAttribute="bottom" constant="8" id="Z4b-g6-ODz"/>
-                                    <constraint firstItem="QBs-tK-Ugc" firstAttribute="top" secondItem="Rmg-6o-lvT" secondAttribute="top" constant="8" id="a7N-ep-Tlm"/>
-                                    <constraint firstItem="2d1-Pv-H55" firstAttribute="top" secondItem="g88-zR-UfG" secondAttribute="bottom" constant="8" id="aYk-9r-LIm"/>
-                                    <constraint firstItem="2d1-Pv-H55" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="boN-Sa-ifQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="ndG-Za-fgd" secondAttribute="bottom" constant="8" id="esP-Yq-oQN"/>
-                                    <constraint firstItem="g88-zR-UfG" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="hHr-ux-0fj"/>
-                                    <constraint firstItem="ndG-Za-fgd" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="kof-lc-lgu"/>
-                                    <constraint firstItem="QBs-tK-Ugc" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="tAq-Zw-wbN"/>
-                                    <constraint firstAttribute="height" constant="280" id="uay-hs-EIV"/>
-                                    <constraint firstItem="2d1-Pv-H55" firstAttribute="centerX" secondItem="Rmg-6o-lvT" secondAttribute="centerX" id="xKU-hm-eRB"/>
-                                    <constraint firstItem="ndG-Za-fgd" firstAttribute="top" secondItem="2d1-Pv-H55" secondAttribute="bottom" constant="8" id="xhn-ys-Sv6"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Rmg-6o-lvT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="40K-Fq-vlm"/>
-                            <constraint firstItem="Rmg-6o-lvT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GUa-Fg-eEX"/>
+                            <constraint firstItem="Q4F-3n-urY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1e5-kb-GOg"/>
+                            <constraint firstItem="Q4F-3n-urY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="H31-pD-LbI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="usb-uf-rYs"/>

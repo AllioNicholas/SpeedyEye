@@ -18,16 +18,25 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        upcountButton.setTitle(NSLocalizedString("upcount_mode", comment: "button title"), for: UIControl.State.normal)
-        downcountButton.setTitle(NSLocalizedString("downcount_mode", comment: "button title"), for: UIControl.State.normal)
-        randomButton.setTitle(NSLocalizedString("random_mode", comment: "button title"), for: UIControl.State.normal)
-        highscoresButton.setTitle(NSLocalizedString("highscores", comment: "button title"), for: UIControl.State.normal)
+        upcountButton.setTitle(NSLocalizedString("upcount_mode",
+                                                 comment: "button title"),
+                               for: UIControl.State.normal)
+        downcountButton.setTitle(NSLocalizedString("downcount_mode",
+                                                   comment: "button title"),
+                                 for: UIControl.State.normal)
+        randomButton.setTitle(NSLocalizedString("random_mode",
+                                                comment: "button title"),
+                              for: UIControl.State.normal)
+        highscoresButton.setTitle(NSLocalizedString("highscores",
+                                                    comment: "button title"),
+                                  for: UIControl.State.normal)
         
         weak var weakSelf = self
-        GameCenterManager.sharedInstance().authenticateGameCenterUser(successBlockOrViewController: { (success, viewController) in
-            if !success, let vc = viewController {
-                weakSelf!.present(vc, animated: true, completion: nil)
-            }
+        GameCenterManager.shared.authenticateGameCenterUser(
+            successBlockOrViewController: { (success, viewController) in
+                if !success, let viewController = viewController {
+                    weakSelf!.present(viewController, animated: true, completion: nil)
+                }
         })
     }
     
@@ -35,19 +44,22 @@ class StartViewController: UIViewController {
         if segue.identifier == "displayHighScores" {
             
         } else {
-            let vc:CountDownViewController = segue.destination as! CountDownViewController
+            guard let viewController = segue.destination as? CountDownViewController else {
+                assertionFailure("Destination segue is not CountDownViewController")
+                self.navigationController?.popToRootViewController(animated: true)
+                return
+            }
             if segue.identifier == "upcount" {
-                vc.gameMode = .UpCount
+                viewController.gameMode = .upCount
             } else if segue.identifier == "downcount" {
-                vc.gameMode = .DownCount
+                viewController.gameMode = .downCount
             } else if segue.identifier == "random" {
-                vc.gameMode = .Random
+                viewController.gameMode = .random
             }
         }
     }
     
     @IBAction func playNavigationSound(_ sender: UIButton) {
-        SoundManager.sharedInstance().playNavigationSound()
+        SoundManager.shared.playNavigationSound()
     }
 }
-

@@ -14,22 +14,36 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var modeLabel: UILabel!
     @IBOutlet weak var finalTimeLabel: UILabel!
     
-    var dismissalBlock : (() -> Void)?
+    var dismissalBlock: (() -> Void)?
     var gameMode: GameMode!
-    var timeToDisplay : Double!
-    var isHighscore : Bool!
+    var timeToDisplay: Double!
+    var isHighscore: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.modeLabel.text = "Mode \(self.gameMode!.rawValue)"
         
         if self.isHighscore {
-            self.mainTitleLabel.text = "New Record!"
-            self.finalTimeLabel.text = NSString(format: "New best time: %.2f s", self.timeToDisplay) as String
+            self.mainTitleLabel.text = NSLocalizedString("new_record", comment: "")
+            self.finalTimeLabel.text = NSString(
+                format: NSLocalizedString("new_best_time_%f", comment: "") as NSString,
+                self.timeToDisplay) as String
         } else {
-            self.mainTitleLabel.text = "Too slow!"
-            self.finalTimeLabel.text = NSString(format: "Your time: %.2f s", self.timeToDisplay) as String
+            self.mainTitleLabel.text = NSLocalizedString("too_slow", comment: "")
+            self.finalTimeLabel.text = NSString(
+            format: NSLocalizedString("your_time_%f", comment: "") as NSString,
+            self.timeToDisplay) as String
+        }
+    }
+    
+    private func bindMode() {
+        guard let gameMode = gameMode else { return }
+        switch gameMode {
+        case .upCount:
+            self.modeLabel.text = "Mode " + NSLocalizedString("upcount", comment: "")
+        case .downCount:
+            self.modeLabel.text = "Mode " + NSLocalizedString("downcount", comment: "")
+        case .random:
+            self.modeLabel.text = "Mode " + NSLocalizedString("random", comment: "")
         }
     }
 
